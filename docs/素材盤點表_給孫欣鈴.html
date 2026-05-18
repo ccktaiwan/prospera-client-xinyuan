@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>欣轅官網｜素材盤點表（給孫欣鈴）</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Noto+Serif+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --stone:  #f2ede6;
+  --stone2: #e8e1d6;
+  --stone3: #c8bfb2;
+  --ink:    #1a1714;
+  --ink2:   #3d3830;
+  --ink3:   #7a7268;
+  --teal:   #2d6e5a;
+  --teal-l: #e4f0eb;
+  --gold:   #9a7c4a;
+  --gold-l: #f5ede0;
+  --green-l:#e8f3ed;
+  --red-l:  #faece8;
+  --amber-l:#fbf3e2;
+  --border: rgba(26,23,20,.10);
+  --border2:rgba(26,23,20,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--stone);color:var(--ink);font-family:'Noto Serif TC',serif;font-size:14px;line-height:1.75;padding:48px 32px 80px}
+.wrap{max-width:880px;margin:0 auto}
+
+.hdr{border-bottom:2px solid var(--ink);padding-bottom:24px;margin-bottom:36px;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.hdr-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;letter-spacing:-.3px;margin-bottom:6px}
+.hdr-sub{font-size:13px;color:var(--ink3);line-height:1.75}
+.hdr-meta{font-size:12px;color:var(--ink3);text-align:right;line-height:1.85;font-family:'Cormorant Garamond',serif;letter-spacing:1px}
+
+.intro{background:#fff;border:1px solid var(--border);padding:24px 28px;margin-bottom:32px;border-left:3px solid var(--teal)}
+.intro h2{font-size:14px;font-weight:500;margin-bottom:10px;color:var(--ink)}
+.intro p{font-size:13px;color:var(--ink2);line-height:1.85;font-weight:300}
+
+.guide{background:var(--gold-l);border:1px solid var(--gold);padding:18px 24px;margin-bottom:32px;display:flex;gap:14px;align-items:flex-start}
+.guide-icon{font-size:18px;flex-shrink:0;margin-top:2px;color:var(--gold)}
+.guide-text{font-size:12px;color:var(--ink2);line-height:1.85}
+.guide-text strong{color:var(--gold);font-weight:600}
+
+.sect{background:#fff;border:1px solid var(--border);margin-bottom:24px;overflow:hidden}
+.sect-h{background:var(--ink);color:#fff;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.sect-num{font-family:'Cormorant Garamond',serif;font-size:18px;letter-spacing:2px;color:var(--gold)}
+.sect-name{font-size:15px;font-weight:500;letter-spacing:.5px}
+.sect-tag{font-size:10px;letter-spacing:2px;color:rgba(255,255,255,.5);text-transform:uppercase;font-family:'Cormorant Garamond',serif}
+
+.row{display:grid;grid-template-columns:1fr 220px 1fr;padding:20px 24px;border-bottom:1px solid var(--border);gap:20px;align-items:start}
+.row:last-child{border-bottom:none}
+.row-head{background:var(--stone2);padding:12px 24px;font-size:11px;letter-spacing:1.5px;color:var(--ink3);text-transform:uppercase;font-family:'Cormorant Garamond',serif;display:grid;grid-template-columns:1fr 220px 1fr;gap:20px;font-weight:500}
+
+.item-label{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:4px;line-height:1.5}
+.item-desc{font-size:12px;color:var(--ink3);line-height:1.7;font-weight:300}
+
+.opts{display:flex;flex-direction:column;gap:6px}
+.opt{display:flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid var(--border);background:var(--stone);cursor:pointer;font-size:12px;color:var(--ink2);transition:all .15s}
+.opt:hover{border-color:var(--teal)}
+.opt-yes:hover{background:var(--green-l);border-color:#3a8a5e}
+.opt-no:hover{background:var(--red-l);border-color:#a32d2d}
+.opt-prep:hover{background:var(--amber-l);border-color:var(--gold)}
+.opt input{margin:0;cursor:pointer;accent-color:var(--teal)}
+.opt-yes input{accent-color:#3a8a5e}
+.opt-no input{accent-color:#a32d2d}
+.opt-prep input{accent-color:var(--gold)}
+
+.note-box{width:100%;min-height:60px;background:var(--stone);border:1px solid var(--border);padding:8px 12px;font-family:'Noto Serif TC',serif;font-size:12px;color:var(--ink2);resize:vertical;outline:none;line-height:1.7}
+.note-box:focus{border-color:var(--teal)}
+
+.summary{background:var(--teal-l);border:1px solid var(--teal);padding:24px 28px;margin-top:32px;border-left:3px solid var(--teal)}
+.summary h3{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:var(--teal);margin-bottom:14px;letter-spacing:.5px}
+.summary p{font-size:13px;color:var(--ink2);line-height:1.85;margin-bottom:8px;font-weight:300}
+.summary p strong{color:var(--teal);font-weight:600}
+
+footer{margin-top:48px;padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--ink3);letter-spacing:1px;font-family:'Cormorant Garamond',serif;flex-wrap:wrap;gap:12px}
+
+@media (max-width:720px){
+  body{padding:32px 16px 64px}
+  .row,.row-head{grid-template-columns:1fr;gap:12px}
+  .row-head{display:none}
+  .item-label{margin-bottom:2px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hdr">
+  <div>
+    <div class="hdr-title">素材盤點表</div>
+    <div class="hdr-sub">給孫欣鈴 · 欣轅官網 Phase 1 素材確認</div>
+  </div>
+  <div class="hdr-meta">
+    XINYUAN × PROSPERA<br>
+    Form v1.0 · 2026
+  </div>
+</div>
+
+<div class="intro">
+  <h2>這份表單做什麼？</h2>
+  <p>欣轅官網 Phase 1 即將進入素材收集階段。為了讓設計與工程方一次到位，請依下列項目逐項勾選目前狀態，並在備註欄補充細節。內容會直接帶進工程方的素材清單，不需要重複交付。</p>
+</div>
+
+<div class="guide">
+  <div class="guide-icon">★</div>
+  <div class="guide-text">
+    <strong>填寫方式：</strong>每一項都有「有 / 沒有 / 準備中」三個選項，請依現況勾選。「備註」欄可填寫數量、檔案位置、預計時間或任何補充。完成後直接傳回給 Kevin。
+  </div>
+</div>
+
+<!-- SECTION 1 -->
+<div class="sect">
+  <div class="sect-h">
+    <div><span class="sect-num">01</span> · <span class="sect-name">工程案例素材</span></div>
+    <div class="sect-tag">CASE MATERIALS</div>
+  </div>
+
+  <div class="row-head">
+    <div>項目</div>
+    <div>目前狀態</div>
+    <div>備註</div>
+  </div>
+
+  <div class="row">
+    <div>
+      <div class="item-label">已完工案例數量</div>
+      <div class="item-desc">過去三年內可公開的完工案例，含老屋翻新、新成屋衛浴、整層改造等。</div>
+    </div>
+    <div class="opts">
+      <label class="opt opt-yes"><input type="radio" name="q1_1"> 有（請補總數）</label>
+      <label class="opt opt-no"><input type="radio" name="q1_1"> 沒有</label>
+      <label class="opt opt-prep"><input type="radio" name="q1_1"> 準備中</label>
+    </div>
+    <textarea class="note-box" placeholder="例：約 12 件完工，含三件 TOTO 大案"></textarea>
+  </div>
+
+  <div class="row">
+    <div>
+      <div class="item-label">案例現場照片</div>
+      <div class="item-desc">完工照片、Before/After 對照、施工過程記錄。原拍照片優先，避免取自設備商樣板。</div>
+    </div>
+    <div class="opts">
+      <label class="opt opt-yes"><input type="radio" name="q1_2"> 有（含完工照）</label>
+      <label class="opt opt-no"><input type="radio" name="q1_2"> 沒有</label>
+      <label class="opt opt-prep"><input type="radio" name="q1_2"> 部分有（補拍中）</label>
+    </div>
+    <textarea class="note-box" placeholder="例：8 件有完工照、Before 照片只有 4 件"></textarea>
+  </div>
+
+  <div class="row">
+    <div>
+      <div class="item-label">屋主授權同意</div>
+      <div class="item-desc">公開於官網需取得屋主書面或訊息授權。是否已取得？</div>
+    </div>
+    <div class="opts">
+      <label class="opt opt-yes"><input type="radio" name="q1_3"> 已取得</label>
+      <label class="opt opt-no"><input type="radio" name="q1_3"> 尚未取得</label>
+      <label class="opt opt-prep"><input type="radio" name="q1_3"> 部分取得</label>
+    </div>
+    <textarea class="note-box" placeholder="例：4 件已取得書面、其他可詢問"></textarea>
+  </div>
+</div>
+
+<!-- SECTION 2 -->
+<div class="sect">
+  <div class="sect-h">
+    <div><span class="sect-num">02</span> · <span class="sect-name">品牌視覺</span></div>
+    <div class="sect-tag">BRAND VISUAL</div>
+  </div>
+
+  <div class="row-head">
+    <div>項目</div>
+    <div>目前狀態</div>
+    <div>備註</div>
+  </div>
+
+  <div class="row">
+    <div>
+      <div class="item-label">Logo 原始檔</div>
+      <div class="item-desc">向量格式 (.ai / .svg / .pdf)。若僅有 .jpg/.png，需另外重製。</div>
+    </div>
+    <div class="opts">
+      <label class="opt opt-yes"><input type="radio" name="q2_1"> 有向量檔</label>
+      <label class="opt opt-no"><input type="radio" name="q2_1"> 只有圖檔</label>
+      <label class="opt opt-prep"><input type="radio" name="q2_1"> 重製中</label>
+    </div>
+    <textarea class="note-box" placeholder="例：.ai 檔在前同事手上，待索取"></textarea>
+  </div>
+
+  <div class="row">
+    <div>
+      <div class="item-label">主視覺色系定義</div>
+      <div class="item-desc">既定的品牌色（CMYK / HEX）。若尚未定義，可由顧問建議。</div>
+    </div>
+    <div class="opts">
+      <label class="opt opt-yes"><input type="radio" name="q2_2"> 已定義</label>
+      <label class="opt opt-no"><input type="radio" name="q2_2"> 沒有</label>
+      <label class="opt opt-prep"><input type="radio" name="q2_2"> 由顧問建議</label>
+    </div>
+    <textarea class="note-box" placeholder="例：希望沿用名片上的綠色系"></textarea>
+  </div>
+
+  <div class="row">
+    <div>
+      <div class="item-label">名片、信封、印刷品</div>
+      <div class="item-desc">目前使用中的印刷品，可作為品牌延伸的參考。</div>
+    </div>
+    <div class="opts">
+      <label class="opt opt-yes"><input type="radio" name="q2_3"> 有</label>
+      <label class="opt opt-no"><input type="radio" name="q2_3"> 沒有</label>
+      <label class="opt opt-prep"><input type="radio" name="q2_3"> 籌備中</label>
+    </div>
+    <textarea class="note-box" placeholder="例：名片有，可拍照提供"></textarea>
+  </div>
+</div>
+
+<!-- SECTION 3 -->
+<div class="sect">
+  <div class="sect-h">
+    <div><span class="sect-num">03</span> · <span class="sect-name">團隊照片</span></div>
+    <div class="sect-tag">TEAM PHOTOS</div>
+  </div>
+
+  <div class="row-head">
+    <div>項目</div>
+    <div>目前狀態</div>
+    <div>備註</div>
+  </div>
+
+  <div class="row">
+    <div>
+      <div class="item-label">負責人 / 主理人形象照</div>
+      <div class="item-desc">官網「關於欣轅」頁面使用。建議橫式半身，光線清晰。</div>
+    </div>
+    <div class="opts">
+      <label class="opt opt-yes"><input type="radio" name="q3_1"> 有現成</label>
+      <label class="opt opt-no"><input type="radio" name="q3_1"> 沒有</label>
+      <label class="opt opt-prep"><input type="radio" name="q3_1"> 安排拍攝中</label>
+    </div>
+    <textarea class="note-box" placeholder="例：可請攝影師到現場拍"></textarea>
+  </div>
+
+  <div class="row">
+    <div>
+      <div class="item-label">工程團隊合照</div>
+      <div class="item-desc">建議現場工作中的真實畫面，避免棚拍感。</div>
+    </div>
+    <div class="opts">
+      <label class="opt opt-yes"><input type="radio" name="q3_2"> 有</label>
+      <label class="opt opt-no"><input type="radio" name="q3_2"> 沒有</label>
+      <label class="opt opt-prep"><input type="radio" name="q3_2"> 待補</label>
+    </div>
+    <textarea class="note-box" placeholder="例：下次工地可請工程師現場拍"></textarea>
+  </div>
+
+  <div class="row">
+    <div>
+      <div class="item-label">工作現場照片</div>
+      <div class="item-desc">工程進行中的現場照、施工細節照、工具與設備使用畫面。</div>
+    </div>
+    <div class="opts">
+      <label class="opt opt-yes"><input type="radio" name="q3_3"> 有</label>
+      <label class="opt opt-no"><input type="radio" name="q3_3"> 沒有</label>
+      <label class="opt opt-prep"><input type="radio" name="q3_3"> 部分有</label>
+    </div>
+    <textarea class="note-box" placeholder="例：手機拍的有不少，需挑選"></textarea>
+  </div>
+</div>
+
+<!-- SECTION 4 -->
+<div class="sect">
+  <div class="sect-h">
+    <div><span class="sect-num">04</span> · <span class="sect-name">通訊管道</span></div>
+    <div class="sect-tag">CONTACT CHANNELS</div>
+  </div>
+
+  <div class="row-head">
+    <div>項目</div>
+    <div>目前狀態</div>
+    <div>備註</div>
+  </div>
+
+  <div class="row">
+    <div>
+      <div class="item-label">LINE@ 官方帳號</div>
+      <div class="item-desc">官網主要 CTA。請填寫 LINE ID 與 QR Code 圖檔。</div>
+    </div>
+    <div class="opts">
+      <label class="opt opt-yes"><input type="radio" name="q4_1"> 有（請填 ID）</label>
+      <label class="opt opt-no"><input type="radio" name="q4_1"> 沒有</label>
+      <label class="opt opt-prep"><input type="radio" name="q4_1"> 申請中</label>
+    </div>
+    <textarea class="note-box" placeholder="LINE ID： @xxxxx"></textarea>
+  </div>
+
+  <div class="row">
+    <div>
+      <div class="item-label">聯絡電話與市話</div>
+      <div class="item-desc">至少一支可白天接聽。建議市話 + 手機雙線。</div>
+    </div>
+    <div class="opts">
+      <label class="opt opt-yes"><input type="radio" name="q4_2"> 已準備</label>
+      <label class="opt opt-no"><input type="radio" name="q4_2"> 沒有</label>
+      <label class="opt opt-prep"><input type="radio" name="q4_2"> 準備中</label>
+    </div>
+    <textarea class="note-box" placeholder="市話、手機分別填寫"></textarea>
+  </div>
+
+  <div class="row">
+    <div>
+      <div class="item-label">公司電子郵件</div>
+      <div class="item-desc">建議使用網域 @xinyuan-xxx.com，避免使用個人 gmail。</div>
+    </div>
+    <div class="opts">
+      <label class="opt opt-yes"><input type="radio" name="q4_3"> 有</label>
+      <label class="opt opt-no"><input type="radio" name="q4_3"> 沒有（用個人）</label>
+      <label class="opt opt-prep"><input type="radio" name="q4_3"> 申請中</label>
+    </div>
+    <textarea class="note-box" placeholder="email： xxx@xxx.com"></textarea>
+  </div>
+</div>
+
+<!-- SECTION 5 -->
+<div class="sect">
+  <div class="sect-h">
+    <div><span class="sect-num">05</span> · <span class="sect-name">帳號與網域</span></div>
+    <div class="sect-tag">DOMAIN &amp; ACCOUNTS</div>
+  </div>
+
+  <div class="row-head">
+    <div>項目</div>
+    <div>目前狀態</div>
+    <div>備註</div>
+  </div>
+
+  <div class="row">
+    <div>
+      <div class="item-label">Google 工作帳號</div>
+      <div class="item-desc">Google Analytics、Search Console、Drive 共享所需。建議使用公司專用帳號。</div>
+    </div>
+    <div class="opts">
+      <label class="opt opt-yes"><input type="radio" name="q5_1"> 有</label>
+      <label class="opt opt-no"><input type="radio" name="q5_1"> 沒有</label>
+      <label class="opt opt-prep"><input type="radio" name="q5_1"> 申請中</label>
+    </div>
+    <textarea class="note-box" placeholder="例：可用 xxx@gmail.com 暫代"></textarea>
+  </div>
+
+  <div class="row">
+    <div>
+      <div class="item-label">網域名稱</div>
+      <div class="item-desc">建議 .com 或 .com.tw。若已購買，請提供註冊商與到期日。</div>
+    </div>
+    <div class="opts">
+      <label class="opt opt-yes"><input type="radio" name="q5_2"> 已購買</label>
+      <label class="opt opt-no"><input type="radio" name="q5_2"> 還沒</label>
+      <label class="opt opt-prep"><input type="radio" name="q5_2"> 比較中</label>
+    </div>
+    <textarea class="note-box" placeholder="網域： xxx.com，註冊商： xx，到期： YYYY-MM"></textarea>
+  </div>
+
+  <div class="row">
+    <div>
+      <div class="item-label">主機 / 託管</div>
+      <div class="item-desc">官網將以 WordPress + Stitch 部署，需確認主機商。可由顧問建議。</div>
+    </div>
+    <div class="opts">
+      <label class="opt opt-yes"><input type="radio" name="q5_3"> 已有主機</label>
+      <label class="opt opt-no"><input type="radio" name="q5_3"> 沒有</label>
+      <label class="opt opt-prep"><input type="radio" name="q5_3"> 由顧問建議</label>
+    </div>
+    <textarea class="note-box" placeholder="例：交由 Prospera 協助選"></textarea>
+  </div>
+</div>
+
+<!-- SUMMARY -->
+<div class="summary">
+  <h3>填完之後</h3>
+  <p>把填好的表單（截圖或文字整理）傳回給 <strong>Kevin（Prospera 顧問）</strong>。</p>
+  <p>下一步會根據盤點結果，列出「素材補拍清單」與「待申請帳號清單」，雙方再對工期。</p>
+  <p>如果有任何項目不確定怎麼填，先空著沒關係，Kevin 會在後續對話中協助釐清。</p>
+</div>
+
+<footer>
+  <div>XINYUAN × PROSPERA · MATERIAL CHECKLIST</div>
+  <div>v1.0 · 2026</div>
+</footer>
+
+</div>
+</body>
+</html>
