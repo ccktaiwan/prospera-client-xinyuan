@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>欣轅工程案例｜案例頁模板 v1.0</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --stone:  #f2ede6;
+  --stone2: #e8e1d6;
+  --stone3: #c8bfb2;
+  --ink:    #1a1714;
+  --ink2:   #3d3830;
+  --ink3:   #7a7268;
+  --teal:   #2d6e5a;
+  --teal-d: #1e4d3e;
+  --teal-l: #e4f0eb;
+  --gold:   #9a7c4a;
+  --gold-l: #f5ede0;
+  --line:   #25b94e;
+  --border: rgba(26,23,20,.10);
+  --border2:rgba(26,23,20,.18);
+  --nav-h:  64px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--stone);color:var(--ink);font-family:'Noto Serif TC',serif;font-size:14px;line-height:1.8;overflow-x:hidden}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(242,237,230,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 48px;z-index:200}
+.logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;letter-spacing:4px;cursor:pointer;color:var(--ink)}
+.logo span{color:var(--teal)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:11px;letter-spacing:1.8px;color:var(--ink2);text-decoration:none;cursor:pointer;font-family:'Noto Serif TC',serif;padding:4px 0;border-bottom:1px solid transparent;transition:all .2s}
+.nav-links a:hover,.nav-links a.act{color:var(--teal);border-bottom-color:var(--teal)}
+.nav-cta{background:var(--teal)!important;color:#fff!important;padding:9px 22px!important;letter-spacing:1.5px!important;border-bottom:none!important;font-size:11px!important}
+.nav-cta:hover{background:var(--teal-d)!important}
+
+/* ── HERO ── */
+.case-hero{position:relative;height:560px;display:flex;align-items:flex-end;padding:0 80px 64px;overflow:hidden;background:var(--ink);margin-top:var(--nav-h)}
+.case-hero-bg{position:absolute;inset:0;background:var(--ink2);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.25);font-size:13px;letter-spacing:3px;font-family:'Cormorant Garamond',serif}
+.case-hero-grad{position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,23,20,.7) 0%,rgba(26,23,20,.2) 100%)}
+.case-hero-content{position:relative;z-index:2;max-width:780px}
+.case-eyebrow{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:14px}
+.case-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold)}
+.case-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,5vw,62px);font-weight:300;line-height:1.15;color:#fff;letter-spacing:-.5px;margin-bottom:18px}
+.case-meta{display:flex;gap:32px;color:rgba(255,255,255,.6);font-size:12px;letter-spacing:1.5px}
+.case-meta span strong{color:rgba(255,255,255,.9);font-weight:500;margin-right:6px}
+
+/* ── SECTION COMMONS ── */
+.sec{padding:96px 80px}
+.sec-alt{background:var(--stone2)}
+.sec-white{background:#fff}
+.sec-dark{background:var(--ink);color:#fff}
+.sec-ey{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:3.5px;color:var(--teal);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:12px}
+.sec-ey::before{content:'';width:24px;height:1px;background:var(--teal)}
+.sec-dark .sec-ey{color:var(--gold)}.sec-dark .sec-ey::before{background:var(--gold)}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3vw,42px);font-weight:300;line-height:1.2;margin-bottom:14px;letter-spacing:-.3px}
+.sec-dark .sec-title{color:#fff}
+.sec-sub{font-size:13px;color:var(--ink3);max-width:640px;line-height:1.95;margin-bottom:48px;font-weight:300}
+.sec-dark .sec-sub{color:rgba(255,255,255,.55)}
+
+/* ── BEFORE / AFTER ── */
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ba-card{background:#fff;border:1px solid var(--border);overflow:hidden}
+.ba-img{aspect-ratio:4/3;background:var(--stone2);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:12px;letter-spacing:2px;font-family:'Cormorant Garamond',serif;flex-direction:column;gap:8px}
+.ba-img-icon{font-size:32px;opacity:.4}
+.ba-label{position:absolute;top:16px;left:16px;background:var(--ink);color:#fff;padding:6px 14px;font-size:10px;letter-spacing:2px;font-family:'Cormorant Garamond',serif;text-transform:uppercase}
+.ba-card-inner{position:relative}
+.ba-body{padding:28px 32px}
+.ba-body h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;margin-bottom:10px;color:var(--ink)}
+.ba-after h3{color:var(--teal)}
+.ba-body p{font-size:13px;color:var(--ink3);line-height:1.85;font-weight:300}
+
+/* ── BACKGROUND TABLE ── */
+.bg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border)}
+.bg-cell{background:#fff;padding:32px 28px;border-top:2px solid var(--teal)}
+.bg-cell-label{font-size:10px;letter-spacing:2.5px;color:var(--ink3);text-transform:uppercase;font-family:'Cormorant Garamond',serif;margin-bottom:10px}
+.bg-cell-value{font-size:18px;font-weight:400;color:var(--ink);line-height:1.5}
+.bg-cell-sub{font-size:12px;color:var(--ink3);line-height:1.8;font-weight:300;margin-top:6px}
+.problem-list{margin-top:32px;background:var(--gold-l);border-left:3px solid var(--gold);padding:24px 28px}
+.problem-list h4{font-size:12px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;font-family:'Cormorant Garamond',serif;margin-bottom:14px}
+.problem-list ul{list-style:none}
+.problem-list li{font-size:13px;color:var(--ink2);line-height:1.95;padding-left:18px;position:relative;font-weight:300}
+.problem-list li::before{content:'—';position:absolute;left:0;color:var(--gold)}
+
+/* ── STRATEGY ── */
+.strategy-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:48px}
+.strategy-text h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;margin-bottom:16px;color:var(--ink)}
+.strategy-text p{font-size:13px;color:var(--ink2);line-height:1.95;margin-bottom:14px;font-weight:300}
+.strategy-pillars{display:flex;flex-direction:column;gap:18px}
+.pillar{background:var(--stone);padding:24px 28px;border-left:2px solid var(--teal)}
+.pillar-tag{font-size:10px;letter-spacing:2.5px;color:var(--teal);text-transform:uppercase;font-family:'Cormorant Garamond',serif;margin-bottom:8px}
+.pillar h4{font-size:14px;font-weight:500;margin-bottom:6px}
+.pillar p{font-size:12px;color:var(--ink3);line-height:1.8;font-weight:300}
+
+/* ── STEPS ── */
+.step-list{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border)}
+.step-card{background:var(--stone);padding:32px 28px}
+.sec-dark .step-card{background:var(--ink2)}
+.step-n{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:var(--stone3);line-height:1;margin-bottom:14px}
+.sec-dark .step-n{color:rgba(255,255,255,.18)}
+.step-card h4{font-size:14px;font-weight:500;margin-bottom:8px}
+.sec-dark .step-card h4{color:#fff}
+.step-card p{font-size:12px;color:var(--ink3);line-height:1.85;font-weight:300}
+.sec-dark .step-card p{color:rgba(255,255,255,.5)}
+
+/* ── EQUIPMENT TABLE ── */
+.eq-table{background:#fff;border:1px solid var(--border)}
+.eq-row{display:grid;grid-template-columns:160px 1fr 1fr 140px;padding:18px 28px;border-bottom:1px solid var(--border);align-items:center;gap:20px}
+.eq-row:last-child{border-bottom:none}
+.eq-row.head{background:var(--stone2);font-size:11px;letter-spacing:2px;color:var(--ink3);text-transform:uppercase;font-family:'Cormorant Garamond',serif;font-weight:500}
+.eq-cat{font-size:11px;letter-spacing:2px;color:var(--teal);text-transform:uppercase;font-family:'Cormorant Garamond',serif}
+.eq-model{font-size:14px;font-weight:500;color:var(--ink)}
+.eq-desc{font-size:12px;color:var(--ink3);line-height:1.7;font-weight:300}
+.eq-qty{font-size:13px;color:var(--ink2);text-align:right;font-family:'Cormorant Garamond',serif}
+
+/* ── GALLERY ── */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+.gallery-img{aspect-ratio:4/3;background:var(--stone2);border:1px dashed var(--stone3);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ink3);font-size:11px;letter-spacing:2px;font-family:'Cormorant Garamond',serif;gap:8px}
+.gallery-img-icon{font-size:26px;opacity:.4}
+.gallery-img.big{grid-column:span 2;aspect-ratio:auto;min-height:340px}
+
+/* ── RELATED CARDS ── */
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.related-card{background:#fff;border:1px solid var(--border);cursor:pointer;transition:all .25s;overflow:hidden}
+.related-card:hover{border-color:var(--teal);transform:translateY(-4px);box-shadow:0 16px 48px rgba(26,23,20,.08)}
+.related-img{aspect-ratio:16/10;background:var(--stone2);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:10px;letter-spacing:2px;font-family:'Cormorant Garamond',serif}
+.related-body{padding:26px 28px}
+.related-cat{font-size:10px;letter-spacing:2px;color:var(--teal);text-transform:uppercase;margin-bottom:10px;font-family:'Cormorant Garamond',serif}
+.related-card h3{font-size:15px;font-weight:500;margin-bottom:8px;line-height:1.5}
+.related-card p{font-size:12px;color:var(--ink3);line-height:1.8;font-weight:300}
+
+/* ── LINE CTA ── */
+.line-cta{background:var(--teal-d);padding:72px 80px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.line-cta-text h2{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:#fff;max-width:520px;line-height:1.3;margin-bottom:10px}
+.line-cta-text p{font-size:13px;color:rgba(255,255,255,.55)}
+.line-cta-buttons{display:flex;gap:14px;flex-wrap:wrap}
+.btn-line{background:var(--line);color:#fff;padding:16px 32px;font-size:13px;letter-spacing:1.5px;border:none;cursor:pointer;font-family:'Noto Serif TC',serif;display:inline-flex;align-items:center;gap:10px;font-weight:500}
+.btn-line:hover{background:#1ea63f}
+.btn-line-icon{font-weight:700;letter-spacing:0}
+.btn-outline{background:transparent;color:#fff;padding:16px 32px;font-size:13px;letter-spacing:1.5px;border:1px solid rgba(255,255,255,.35);cursor:pointer;font-family:'Noto Serif TC',serif}
+.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);padding:48px 80px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+footer .logo{color:#fff;font-size:18px}
+footer p{font-size:11px;color:rgba(255,255,255,.4);letter-spacing:1.5px;font-family:'Cormorant Garamond',serif}
+
+/* ── RESPONSIVE ── */
+@media (max-width:960px){
+  .case-hero{padding:0 32px 48px;height:480px}
+  .sec{padding:64px 32px}
+  .ba-grid,.strategy-grid,.related-grid{grid-template-columns:1fr;gap:16px}
+  .bg-grid,.step-list{grid-template-columns:1fr 1fr}
+  .gallery{grid-template-columns:1fr 1fr}
+  .gallery-img.big{grid-column:span 2}
+  .eq-row{grid-template-columns:1fr;gap:6px;padding:14px 20px}
+  .eq-row.head{display:none}
+  .line-cta{padding:56px 32px;flex-direction:column;align-items:flex-start}
+  footer{padding:32px}
+}
+
+/* ── PLACEHOLDER MARKER ── */
+.ph{color:var(--gold);background:var(--gold-l);padding:0 6px;font-style:italic;font-size:.95em}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">XIN<span>YUAN</span></div>
+  <div class="nav-links">
+    <a>關於欣轅</a>
+    <a>服務項目</a>
+    <a class="act">工程案例</a>
+    <a>知識庫</a>
+    <a>設計師合作</a>
+    <a class="nav-cta">預約諮詢</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="case-hero">
+  <div class="case-hero-bg">[ 案例主圖 · 寬幅 · 1800×900 建議 ]</div>
+  <div class="case-hero-grad"></div>
+  <div class="case-hero-content">
+    <div class="case-eyebrow">CASE STUDY · <span class="ph">案例編號</span></div>
+    <h1><span class="ph">案例名稱：例「百年老屋 · 衛浴重生」</span></h1>
+    <div class="case-meta">
+      <span><strong>屋型</strong><span class="ph">老屋 / 公寓 / 透天</span></span>
+      <span><strong>坪數</strong><span class="ph">X 坪</span></span>
+      <span><strong>工期</strong><span class="ph">X 日</span></span>
+      <span><strong>完工</strong><span class="ph">YYYY-MM</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="sec sec-white">
+  <div class="sec-ey">BEFORE &amp; AFTER</div>
+  <h2 class="sec-title">同一個空間，兩種樣貌</h2>
+  <p class="sec-sub">從屋況拆解到完工呈現，欣轅工程整合的真實落差。所有照片為現場原拍，未經影像合成。</p>
+  <div class="ba-grid">
+    <div class="ba-card">
+      <div class="ba-card-inner">
+        <div class="ba-label">BEFORE</div>
+        <div class="ba-img"><div class="ba-img-icon">▢</div>原狀照片 · 4:3</div>
+      </div>
+      <div class="ba-body">
+        <h3>翻新前</h3>
+        <p><span class="ph">屋況描述：例「壁癌嚴重、地面隆起、原排水管鏽蝕、防水層失效。屋齡 30 年，從未整理過。」</span></p>
+      </div>
+    </div>
+    <div class="ba-card ba-after">
+      <div class="ba-card-inner">
+        <div class="ba-label" style="background:var(--teal)">AFTER</div>
+        <div class="ba-img"><div class="ba-img-icon">▢</div>完工照片 · 4:3</div>
+      </div>
+      <div class="ba-body">
+        <h3>翻新後</h3>
+        <p><span class="ph">完工描述：例「全室結構補強、雙層防水、TOTO 整套衛浴、乾濕分離拉門、暖風機與除霧鏡一體整合。」</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 案件背景 -->
+<section class="sec">
+  <div class="sec-ey">PROJECT CONTEXT</div>
+  <h2 class="sec-title">案件背景</h2>
+  <p class="sec-sub">這個案件的真實條件，與屋主在動工前面臨的決策。</p>
+  <div class="bg-grid">
+    <div class="bg-cell">
+      <div class="bg-cell-label">屋況</div>
+      <div class="bg-cell-value"><span class="ph">例：30 年公寓 三樓</span></div>
+      <div class="bg-cell-sub"><span class="ph">補充：例「位處台北市內巷弄，無電梯，材料運送需人力。」</span></div>
+    </div>
+    <div class="bg-cell">
+      <div class="bg-cell-label">坪數</div>
+      <div class="bg-cell-value"><span class="ph">例：1.8 坪</span></div>
+      <div class="bg-cell-sub"><span class="ph">補充：例「規劃乾濕分離 + 浴缸 + 馬桶 + 雙面盆。」</span></div>
+    </div>
+    <div class="bg-cell">
+      <div class="bg-cell-label">主要問題</div>
+      <div class="bg-cell-value"><span class="ph">例：滲水 / 異味 / 結構老化</span></div>
+      <div class="bg-cell-sub"><span class="ph">補充：例「樓下天花板已出現黃斑，迫切性高。」</span></div>
+    </div>
+  </div>
+  <div class="problem-list">
+    <h4>動工前現場確認</h4>
+    <ul>
+      <li><span class="ph">問題 1：例「樓板厚度僅 12 公分，無法承載石材浴缸。」</span></li>
+      <li><span class="ph">問題 2：例「原排水管為鏽蝕鑄鐵管，內徑剩 60%。」</span></li>
+      <li><span class="ph">問題 3：例「防水層已粉化，必須拆除見底重做。」</span></li>
+      <li><span class="ph">問題 4：例「電力負載僅一條 15A 迴路，無法支撐智能設備。」</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 設計策略 -->
+<section class="sec sec-alt">
+  <div class="sec-ey">DESIGN STRATEGY</div>
+  <h2 class="sec-title">設計策略</h2>
+  <p class="sec-sub">針對屋況條件的三項核心決策，以及為什麼這樣選擇。</p>
+  <div class="strategy-grid">
+    <div class="strategy-text">
+      <h3>從風險出發，不從美感出發</h3>
+      <p><span class="ph">敘事段落：例「老屋衛浴的真正成本不在表面材，而在動工前看不見的隱性條件。屋主原本希望以最低成本翻新，但在欣轅完成五項勘查後，雙方共同確認必須以結構與管線為優先，美感配合工程條件調整。」</span></p>
+      <p><span class="ph">補充段落：例「最終設計回歸『工程可靠 + 視覺極簡』的雙軸，磁磚改採 R11 半消光石英磚，TOTO 設備選用 Washlet GS 系列，整體預算控制在原預算上限的 105%。」</span></p>
+    </div>
+    <div class="strategy-pillars">
+      <div class="pillar">
+        <div class="pillar-tag">PILLAR 01</div>
+        <h4><span class="ph">策略一標題：例「結構優先」</span></h4>
+        <p><span class="ph">策略一說明：例「樓板補強 + 排水管全換 + 雙層防水。」</span></p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-tag">PILLAR 02</div>
+        <h4><span class="ph">策略二標題：例「設備整合」</span></h4>
+        <p><span class="ph">策略二說明：例「TOTO 主體 + 暖風機 + 除霧鏡單一控制。」</span></p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-tag">PILLAR 03</div>
+        <h4><span class="ph">策略三標題：例「視覺極簡」</span></h4>
+        <p><span class="ph">策略三說明：例「全室同色系，無外露管線。」</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 工程順序 -->
+<section class="sec sec-dark">
+  <div class="sec-ey">CONSTRUCTION SEQUENCE</div>
+  <h2 class="sec-title">工程順序</h2>
+  <p class="sec-sub">從拆除到完工的八個工序，每一步的工法判斷與品質檢核。</p>
+  <div class="step-list">
+    <div class="step-card"><div class="step-n">01</div><h4>拆除清運</h4><p><span class="ph">說明：例「保留主樓板，全室見底拆除。鋁料、磁磚分類回收。」</span></p></div>
+    <div class="step-card"><div class="step-n">02</div><h4>結構補強</h4><p><span class="ph">說明：例「樓板加厚 4 公分，浴缸下方追加鋼筋網。」</span></p></div>
+    <div class="step-card"><div class="step-n">03</div><h4>管線重配</h4><p><span class="ph">說明：例「冷熱水管全換不鏽鋼壓接，排水管 PVC 加大管徑。」</span></p></div>
+    <div class="step-card"><div class="step-n">04</div><h4>水泥打底</h4><p><span class="ph">說明：例「依排水坡度 1/80 收坡，先試水後封層。」</span></p></div>
+    <div class="step-card"><div class="step-n">05</div><h4>防水施作</h4><p><span class="ph">說明：例「彈性水泥 + PU 雙層，淋浴區牆面 1.8 公尺。」</span></p></div>
+    <div class="step-card"><div class="step-n">06</div><h4>泥作貼磚</h4><p><span class="ph">說明：例「壁磚對縫處理，地磚雙面背膠。」</span></p></div>
+    <div class="step-card"><div class="step-n">07</div><h4>設備安裝</h4><p><span class="ph">說明：例「TOTO 整套就位 + 暖風機接管 + 除霧鏡電路。」</span></p></div>
+    <div class="step-card"><div class="step-n">08</div><h4>完工驗收</h4><p><span class="ph">說明：例「24 小時試水 + 排水流向確認 + 屋主現場交付。」</span></p></div>
+  </div>
+</section>
+
+<!-- 設備使用 -->
+<section class="sec sec-white">
+  <div class="sec-ey">EQUIPMENT</div>
+  <h2 class="sec-title">設備使用</h2>
+  <p class="sec-sub">本案使用的所有主要設備型號，含品牌、規格與數量。</p>
+  <div class="eq-table">
+    <div class="eq-row head">
+      <div>類別</div>
+      <div>品牌 / 型號</div>
+      <div>說明</div>
+      <div>數量</div>
+    </div>
+    <div class="eq-row">
+      <div class="eq-cat">馬桶</div>
+      <div class="eq-model"><span class="ph">例：TOTO Washlet GS CW923B</span></div>
+      <div class="eq-desc"><span class="ph">例：CEFIONTECT 釉、龍捲式沖水、瞬熱座圈</span></div>
+      <div class="eq-qty">1</div>
+    </div>
+    <div class="eq-row">
+      <div class="eq-cat">面盆</div>
+      <div class="eq-model"><span class="ph">例：TOTO LW1717CB</span></div>
+      <div class="eq-desc"><span class="ph">例：枱面下嵌式、CEFIONTECT 處理</span></div>
+      <div class="eq-qty">1</div>
+    </div>
+    <div class="eq-row">
+      <div class="eq-cat">花灑</div>
+      <div class="eq-model"><span class="ph">例：TOTO TBW01404B</span></div>
+      <div class="eq-desc"><span class="ph">例：恆溫龍頭 + 頂噴 + 手持，內建壓力平衡</span></div>
+      <div class="eq-qty">1</div>
+    </div>
+    <div class="eq-row">
+      <div class="eq-cat">磁磚</div>
+      <div class="eq-model"><span class="ph">例：冠軍 60×120 石英磚 R11</span></div>
+      <div class="eq-desc"><span class="ph">例：半消光面、低吸水率 BIa</span></div>
+      <div class="eq-qty">12 m²</div>
+    </div>
+    <div class="eq-row">
+      <div class="eq-cat">乾濕分離</div>
+      <div class="eq-model"><span class="ph">例：客製無框 8mm 強化玻璃</span></div>
+      <div class="eq-desc"><span class="ph">例：菱形對開、五金 SUS304</span></div>
+      <div class="eq-qty">1 組</div>
+    </div>
+    <div class="eq-row">
+      <div class="eq-cat">暖風機</div>
+      <div class="eq-model"><span class="ph">例：阿拉斯加 968SKN</span></div>
+      <div class="eq-desc"><span class="ph">例：220V 專用迴路、PTC 陶瓷加熱</span></div>
+      <div class="eq-qty">1</div>
+    </div>
+  </div>
+</section>
+
+<!-- 完工展示 -->
+<section class="sec sec-alt">
+  <div class="sec-ey">FINAL PRESENTATION</div>
+  <h2 class="sec-title">完工展示</h2>
+  <p class="sec-sub">不同角度與光線下的完工面貌，所有照片為現場原拍。</p>
+  <div class="gallery">
+    <div class="gallery-img big"><div class="gallery-img-icon">▢</div>主圖 · 大尺寸 · 寬幅</div>
+    <div class="gallery-img"><div class="gallery-img-icon">▢</div>細節 · 4:3</div>
+    <div class="gallery-img"><div class="gallery-img-icon">▢</div>細節 · 4:3</div>
+    <div class="gallery-img"><div class="gallery-img-icon">▢</div>細節 · 4:3</div>
+    <div class="gallery-img"><div class="gallery-img-icon">▢</div>細節 · 4:3</div>
+  </div>
+</section>
+
+<!-- 延伸閱讀 -->
+<section class="sec sec-white">
+  <div class="sec-ey">RELATED READING</div>
+  <h2 class="sec-title">延伸閱讀</h2>
+  <p class="sec-sub">與本案相關的知識庫文章與案例。</p>
+  <div class="related-grid">
+    <div class="related-card">
+      <div class="related-img">[ 縮圖 · 16:10 ]</div>
+      <div class="related-body">
+        <div class="related-cat">KNOWLEDGE</div>
+        <h3><span class="ph">文章標題 1：例「老屋浴室翻新前，你必須先確認這五件事」</span></h3>
+        <p><span class="ph">摘要：例「動工前要先看的五項隱性條件。」</span></p>
+      </div>
+    </div>
+    <div class="related-card">
+      <div class="related-img">[ 縮圖 · 16:10 ]</div>
+      <div class="related-body">
+        <div class="related-cat">KNOWLEDGE</div>
+        <h3><span class="ph">文章標題 2：例「為什麼浴室防水要做兩層？」</span></h3>
+        <p><span class="ph">摘要：例「雙層防水的成本邏輯與工法說明。」</span></p>
+      </div>
+    </div>
+    <div class="related-card">
+      <div class="related-img">[ 縮圖 · 16:10 ]</div>
+      <div class="related-body">
+        <div class="related-cat">CASE</div>
+        <h3><span class="ph">案例標題：例「七期老屋 · 主衛浴改造」</span></h3>
+        <p><span class="ph">摘要：例「相似屋況、不同設計策略的對照案例。」</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LINE CTA -->
+<section class="line-cta">
+  <div class="line-cta-text">
+    <h2>下一個案例，可能是你家</h2>
+    <p>欣轅提供現場勘查與動工前完整評估，先看清楚再決定。</p>
+  </div>
+  <div class="line-cta-buttons">
+    <a class="btn-line"><span class="btn-line-icon">LINE</span>加入官方帳號</a>
+    <a class="btn-outline">預約現場勘查</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">XIN<span style="color:var(--teal)">YUAN</span></div>
+  <p>© 2026 XINYUAN INTERIOR ENGINEERING · ALL RIGHTS RESERVED</p>
+</footer>
+
+</body>
+</html>
