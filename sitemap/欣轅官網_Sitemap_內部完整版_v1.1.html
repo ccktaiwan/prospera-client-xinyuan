@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>欣轅官網 Sitemap｜內部完整版 v1.1</title>
+<style>
+  :root {
+    --sand: #f5f1eb;
+    --sand2: #ede8df;
+    --ink: #1e1c18;
+    --ink2: #4a4740;
+    --ink3: #8a8680;
+    --teal: #0f6e56;
+    --teal-l: #e1f5ee;
+    --amber: #ba7517;
+    --amber-l: #faeeda;
+    --red: #a32d2d;
+    --red-l: #fcebeb;
+    --purple: #534ab7;
+    --purple-l: #eeedfe;
+    --coral: #993c1d;
+    --coral-l: #faece7;
+    --gray-l: #f1efe8;
+    --blue: #185fa5;
+    --blue-l: #e6f1fb;
+    --border: rgba(30,28,24,0.12);
+    --border2: rgba(30,28,24,0.22);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--sand);
+    color: var(--ink);
+    font-family: 'Hiragino Sans', 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    padding: 40px 32px 80px;
+  }
+
+  /* HEADER */
+  .doc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--border2);
+    padding-bottom: 20px;
+    margin-bottom: 36px;
+  }
+  .doc-title { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; }
+  .doc-sub { font-size: 13px; color: var(--ink3); margin-top: 4px; }
+  .badge-internal {
+    background: var(--red-l);
+    color: var(--red);
+    border: 1px solid var(--red);
+    border-radius: 4px;
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  /* SECTION LABEL */
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink3);
+    margin: 32px 0 12px;
+  }
+
+  /* STRATEGY STRIP */
+  .strategy-strip {
+    background: var(--teal-l);
+    border: 1px solid var(--teal);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 28px;
+    font-size: 12px;
+    color: var(--teal);
+  }
+  .strategy-strip strong { font-weight: 700; }
+
+  /* PRODUCT LINES */
+  .product-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .product-card {
+    border-radius: 8px;
+    padding: 14px 16px;
+    border: 1px solid var(--border2);
+  }
+  .product-card.sanitary { background: var(--teal-l); border-color: var(--teal); }
+  .product-card.kitchen  { background: var(--purple-l); border-color: var(--purple); }
+  .product-card.cabinet  { background: var(--coral-l); border-color: var(--coral); }
+  .product-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .product-card.sanitary h3 { color: var(--teal); }
+  .product-card.kitchen h3  { color: var(--purple); }
+  .product-card.cabinet h3  { color: var(--coral); }
+  .product-card p { font-size: 12px; color: var(--ink2); }
+  .product-card ul { margin-top: 8px; padding-left: 14px; color: var(--ink2); font-size: 12px; }
+
+  /* PARTNER TIERS */
+  .partner-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .tier-card {
+    border-radius: 8px;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    background: var(--sand2);
+  }
+  .tier-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+  .tier-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 3px;
+    padding: 2px 7px;
+    margin-bottom: 8px;
+  }
+  .tag-select { background: var(--purple-l); color: var(--purple); }
+  .tag-bulk   { background: var(--teal-l);   color: var(--teal);   }
+  .tag-team   { background: var(--coral-l);  color: var(--coral);  }
+  .tier-card ul { padding-left: 14px; color: var(--ink2); font-size: 12px; }
+
+  /* SITEMAP TABLE */
+  .sitemap-wrap { overflow-x: auto; margin-bottom: 28px; }
+  table.sitemap {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  table.sitemap th {
+    background: var(--ink);
+    color: #fff;
+    padding: 9px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
+  table.sitemap td {
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    color: var(--ink2);
+  }
+  table.sitemap tr:hover td { background: var(--sand2); }
+  .page-name {
+    font-weight: 700;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 3px;
+    padding: 1px 6px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .tag-p1  { background: var(--teal-l);   color: var(--teal);   }
+  .tag-p2  { background: var(--purple-l); color: var(--purple); }
+  .tag-key { background: var(--amber-l);  color: var(--amber);  }
+  .tag-seo { background: var(--blue-l);   color: var(--blue);   }
+  .tag-cta { background: var(--coral-l);  color: var(--coral);  }
+  .sub-list { padding-left: 14px; margin: 0; }
+  .sub-list li { padding: 2px 0; }
+
+  /* CONTENT BUILD */
+  .content-risk {
+    background: var(--amber-l);
+    border: 1px solid var(--amber);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 28px;
+  }
+  .content-risk h3 { color: var(--amber); font-size: 14px; margin-bottom: 10px; }
+  .content-risk .risk-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .risk-block { font-size: 12px; color: var(--ink2); }
+  .risk-block strong { display: block; color: var(--ink); margin-bottom: 4px; }
+  .risk-block ul { padding-left: 14px; }
+
+  /* PHASE */
+  .phase-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .phase-card {
+    border-radius: 8px;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+  }
+  .phase-card.p1 { background: var(--teal-l);   border-color: var(--teal); }
+  .phase-card.p2 { background: var(--purple-l); border-color: var(--purple); }
+  .phase-card.p3 { background: var(--coral-l);  border-color: var(--coral); }
+  .phase-card h3 { font-size: 13px; font-weight: 700; margin-bottom: 2px; }
+  .phase-card.p1 h3 { color: var(--teal); }
+  .phase-card.p2 h3 { color: var(--purple); }
+  .phase-card.p3 h3 { color: var(--coral); }
+  .phase-sub { font-size: 11px; color: var(--ink3); margin-bottom: 8px; }
+  .phase-card ul { padding-left: 14px; font-size: 12px; color: var(--ink2); }
+  .do { color: var(--teal); }
+  .dont { color: var(--red); text-decoration: line-through; opacity: 0.6; }
+
+  /* NEXT STEPS */
+  .next-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .next-card {
+    background: var(--red-l);
+    border: 1px solid var(--red);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .next-card h3 { color: var(--red); font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+  .next-card p  { font-size: 12px; color: var(--ink2); }
+
+  /* FOOTER */
+  .doc-footer {
+    margin-top: 48px;
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+    font-size: 11px;
+    color: var(--ink3);
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
+</head>
+<body>
+
+<div class="doc-header">
+  <div>
+    <div class="doc-title">欣轅官網 Sitemap｜內部完整版 v1.1</div>
+    <div class="doc-sub">線二｜顧問服務 × 欣轅 TOTO 案例 · 2026-05 · Prospera 顧問規劃</div>
+  </div>
+  <div class="badge-internal">🔒 INTERNAL ONLY — 請勿對外分享</div>
+</div>
+
+<!-- STRATEGY -->
+<div class="strategy-strip">
+  <strong>核心策略：</strong>欣轅 = 品牌母艦（企業旗艦），巍傑 = 工程技術層（案例外溢來源）。<br>
+  品牌主張：<strong>把看不見的工程風險，寫成人人看得懂的標準。</strong><br>
+  顧問角色：Prospera 全程協助內容完成（案例收集 / 文案撰寫 / 知識庫初稿 / 上線品質審閱）。
+</div>
+
+<!-- PRODUCT LINES -->
+<div class="section-label">三大產品線</div>
+<div class="product-row">
+  <div class="product-card sanitary">
+    <h3>衛浴</h3>
+    <p>Phase 1 先行，主力產品線</p>
+    <ul>
+      <li>TOTO 為主品牌</li>
+      <li>多品牌合作（待確認）</li>
+      <li>整體改造 / 設備安裝</li>
+    </ul>
+  </div>
+  <div class="product-card kitchen">
+    <h3>廚具</h3>
+    <p>Phase 2 加入</p>
+    <ul>
+      <li>合作廠商待補充</li>
+      <li>廚具改造 / 品牌選品</li>
+    </ul>
+  </div>
+  <div class="product-card cabinet">
+    <h3>系統櫃</h3>
+    <p>Phase 2 加入，已有強項廠商</p>
+    <ul>
+      <li>系統櫃強項合作廠商</li>
+      <li>系統櫃規劃 / 合作廠商展示</li>
+    </ul>
+  </div>
+</div>
+
+<!-- PARTNER TIERS -->
+<div class="section-label">合作對象三層架構</div>
+<div class="partner-row">
+  <div class="tier-card">
+    <h3>室內設計師</h3>
+    <span class="tier-tag tag-select">精選少數</span>
+    <ul>
+      <li>深度合作，品質掌控</li>
+      <li>申請 → 審核入口</li>
+      <li>核心訴求：可靠、不讓設計師背鍋</li>
+    </ul>
+  </div>
+  <div class="tier-card">
+    <h3>輕裝師</h3>
+    <span class="tier-tag tag-bulk">大量合作</span>
+    <ul>
+      <li>標準化流程，快速轉介</li>
+      <li>合作表單 + 規格下載</li>
+      <li>核心訴求：報價快、流程清楚</li>
+    </ul>
+  </div>
+  <div class="tier-card">
+    <h3>軟裝師</h3>
+    <span class="tier-tag tag-team">已有班底</span>
+    <ul>
+      <li>持續培養，課程培訓</li>
+      <li>LINE@ 入口 + 培訓資訊</li>
+      <li>核心訴求：生態深化、長期關係</li>
+    </ul>
+  </div>
+</div>
+
+<!-- SITEMAP TABLE -->
+<div class="section-label">完整頁面架構</div>
+<div class="sitemap-wrap">
+<table class="sitemap">
+  <thead>
+    <tr>
+      <th>H1 頁面</th>
+      <th>Phase</th>
+      <th>子頁 / 區塊</th>
+      <th>核心任務</th>
+      <th>內容來源</th>
+      <th>CTA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- 首頁 -->
+    <tr>
+      <td><span class="page-name">首頁 Home</span></td>
+      <td><span class="tag tag-p1">P1</span></td>
+      <td>
+        <ul class="sub-list">
+          <li>Hero 全幅（大標 / 小標 / 主視覺）</li>
+          <li>核心價值區（3～4欄）</li>
+          <li>三大服務入口 Cards</li>
+          <li>案例精選（3～6張）</li>
+          <li>為何選擇欣轅</li>
+          <li>設計師合作入口</li>
+          <li>Journal 入口</li>
+        </ul>
+      </td>
+      <td>品牌第一印象，三線入口，合作夥伴 CTA</td>
+      <td>文案：Prospera 撰寫<br>圖：衛浴實拍優先</td>
+      <td>LINE@ 諮詢 / 查看案例</td>
+    </tr>
+    <!-- 關於欣轅 -->
+    <tr>
+      <td><span class="page-name">關於欣轅 About</span></td>
+      <td><span class="tag tag-p1">P1</span></td>
+      <td>
+        <ul class="sub-list">
+          <li>品牌故事與願景</li>
+          <li>核心定位說明</li>
+          <li>欣轅 × 巍傑架構</li>
+          <li>專業團隊介紹</li>
+          <li>企業年表（預留）</li>
+        </ul>
+      </td>
+      <td>品牌信任建立，說清楚欣轅是誰</td>
+      <td>文案：Prospera 撰寫<br>圖：團隊人像照（需拍攝）</td>
+      <td>了解服務項目</td>
+    </tr>
+    <!-- 服務項目 -->
+    <tr>
+      <td><span class="page-name">服務項目 Services</span></td>
+      <td><span class="tag tag-p1">P1</span> <span class="tag tag-p2">P2+</span></td>
+      <td>
+        <ul class="sub-list">
+          <li>整體衛浴改造（P1）</li>
+          <li>TOTO 品牌安裝（P1）</li>
+          <li>廚具改造（P2）</li>
+          <li>系統櫃規劃（P2）</li>
+          <li>設計師 / 輕裝師合作方案</li>
+          <li>工程流程圖</li>
+          <li>FAQ</li>
+        </ul>
+      </td>
+      <td>讓訪客理解服務範圍，消除疑慮</td>
+      <td>文案：Prospera 撰寫<br>流程圖：協助繪製</td>
+      <td>LINE@ 諮詢</td>
+    </tr>
+    <!-- 工程案例庫 -->
+    <tr>
+      <td><span class="page-name">工程案例庫 Projects</span> <span class="tag tag-key">⭐ 關鍵</span></td>
+      <td><span class="tag tag-p1">P1</span></td>
+      <td>
+        <ul class="sub-list">
+          <li>案例總覽（篩選器）</li>
+          <li>依施工類型 / 空間條件 / 問題解決</li>
+          <li>案例內頁模板（標準化）</li>
+          <li>Before / After 雙欄</li>
+          <li>設備型號說明</li>
+          <li>工程流程紀錄</li>
+          <li>延伸閱讀導流</li>
+        </ul>
+      </td>
+      <td>品牌專業最強展示，GSC 核心，設計師決策依據</td>
+      <td>⚠️ 需從零建立<br>巍傑案例盤點 → 補拍<br>Prospera 協助格式化</td>
+      <td>LINE@ 諮詢 / 預約</td>
+    </tr>
+    <!-- 知識庫 -->
+    <tr>
+      <td><span class="page-name">知識庫 Knowledge</span> <span class="tag tag-seo">SEO</span></td>
+      <td><span class="tag tag-p1">P1</span></td>
+      <td>
+        <ul class="sub-list">
+          <li>工程百科（衛浴線先行）</li>
+          <li>選購指南（三線各建）</li>
+          <li>安裝科普（巍傑外溢）</li>
+          <li>排水系統 / 防漏原理</li>
+          <li>老屋翻新注意事項</li>
+          <li>TOTO 品牌選購比較</li>
+        </ul>
+      </td>
+      <td>GSC 長期信任資產，搜尋流量核心，品牌教育</td>
+      <td>⚠️ 需從零建立<br>衛浴線 3～5 篇先行<br>Prospera 提供初稿框架</td>
+      <td>LINE@ CTA / 案例導流</td>
+    </tr>
+    <!-- 合作夥伴 -->
+    <tr>
+      <td><span class="page-name">合作夥伴 Partners</span> <span class="tag tag-cta">成長引擎</span></td>
+      <td><span class="tag tag-p1">P1</span></td>
+      <td>
+        <ul class="sub-list">
+          <li>室內設計師：申請審核入口</li>
+          <li>輕裝師：表單 + 規格下載</li>
+          <li>軟裝師：培訓資訊 + LINE@</li>
+          <li>合作優勢說明</li>
+          <li>合作流程圖</li>
+          <li>合作案例精選</li>
+        </ul>
+      </td>
+      <td>三層合作對象各有不同 CTA，不能混用</td>
+      <td>文案：Prospera 撰寫<br>流程圖：協助繪製</td>
+      <td>LINE@ / 申請表單</td>
+    </tr>
+    <!-- 聯絡 -->
+    <tr>
+      <td><span class="page-name">聯絡我們 Contact</span></td>
+      <td><span class="tag tag-p1">P1</span></td>
+      <td>
+        <ul class="sub-list">
+          <li>LINE@ 按鈕</li>
+          <li>電話 / Google Map</li>
+          <li>簡易表單（含上傳照片）</li>
+          <li>設計師快速通道</li>
+        </ul>
+      </td>
+      <td>最終轉換出口</td>
+      <td>—</td>
+      <td>LINE@ / 電話</td>
+    </tr>
+    <!-- 預留 -->
+    <tr>
+      <td><span class="page-name">展示中心 Showroom</span></td>
+      <td><span class="tag tag-p2">P2</span></td>
+      <td>地點 / 預約參觀 / 展示設備</td>
+      <td>實體空間體驗導流</td>
+      <td>—</td>
+      <td>預約參觀</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<!-- CONTENT BUILD RISK -->
+<div class="section-label">內容建立責任（顧問執行項）</div>
+<div class="content-risk">
+  <h3>⚠️ 工程案例庫 + 知識庫是整個網站成敗關鍵，兩塊都需要從零建立</h3>
+  <div class="risk-grid">
+    <div class="risk-block">
+      <strong>工程案例庫｜執行步驟</strong>
+      <ul>
+        <li>Step 1：盤點巍傑現有案例（有照片記錄的）</li>
+        <li>Step 2：制定拍攝清單（缺照補拍）</li>
+        <li>Step 3：Prospera 協助格式化（統一模板）</li>
+        <li>Step 4：衛浴線 5 個案例上線</li>
+        <li>Step 5：廚具 / 系統櫃案例 Phase 2 補入</li>
+      </ul>
+    </div>
+    <div class="risk-block">
+      <strong>知識庫｜執行步驟</strong>
+      <ul>
+        <li>Step 1：確認衛浴線 SEO 關鍵字</li>
+        <li>Step 2：Prospera 提供文章框架 + 初稿</li>
+        <li>Step 3：孫欣鈴確認工程細節正確性</li>
+        <li>Step 4：3～5 篇衛浴文章上線</li>
+        <li>Step 5：廚具 / 系統櫃文章 Phase 2 補入</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE -->
+<div class="section-label">三階段執行架構</div>
+<div class="phase-row">
+  <div class="phase-card p1">
+    <h3>Phase 1｜現在執行</h3>
+    <div class="phase-sub">品牌權威建立（衛浴線先行）</div>
+    <ul>
+      <li class="do">✓ H1 六大入口頁</li>
+      <li class="do">✓ 衛浴案例庫（5 個起跳）</li>
+      <li class="do">✓ 知識庫衛浴線（3～5 篇）</li>
+      <li class="do">✓ 合作夥伴頁（三層）</li>
+      <li class="do">✓ GSC 架構建立</li>
+      <li class="dont">✗ 廚具 / 系統櫃內容</li>
+      <li class="dont">✗ 電商 / AI / 選材庫</li>
+    </ul>
+  </div>
+  <div class="phase-card p2">
+    <h3>Phase 2｜下一階段</h3>
+    <div class="phase-sub">合作夥伴工具層 + 三線完整</div>
+    <ul>
+      <li>廚具線案例 + 知識庫</li>
+      <li>系統櫃線案例 + 知識庫</li>
+      <li>設計師 / 輕裝師後台工具</li>
+      <li>多品牌選品頁</li>
+      <li>AI 初步導入</li>
+    </ul>
+  </div>
+  <div class="phase-card p3">
+    <h3>Phase 3｜平台化</h3>
+    <div class="phase-sub">三線生態系建立</div>
+    <ul>
+      <li>導購 / 分潤機制</li>
+      <li>培訓課程數位化</li>
+      <li>AI 選品 / 決策輔助</li>
+      <li>C 軌平台分潤啟動</li>
+      <li>展示中心 Showroom 頁</li>
+    </ul>
+  </div>
+</div>
+
+<!-- NEXT STEPS -->
+<div class="section-label">下一步（紅線）</div>
+<div class="next-row">
+  <div class="next-card">
+    <h3>1｜盤點巍傑既有案例</h3>
+    <p>確認有照片記錄的案例數量，制定補拍清單，目標 Phase 1 上線前備好 5 個衛浴案例。</p>
+  </div>
+  <div class="next-card">
+    <h3>2｜知識庫第一批文章</h3>
+    <p>衛浴線 3～5 篇先行，Prospera 協助初稿框架，孫欣鈴確認工程細節後定稿。</p>
+  </div>
+  <div class="next-card">
+    <h3>3｜上線，不等完美</h3>
+    <p>衛浴線先跑通，廚具 / 系統櫃 Phase 2 補入。Wix 或 WordPress 部署（交工程方執行）。</p>
+  </div>
+</div>
+
+<div class="doc-footer">
+  <span>欣轅 × 巍傑｜Sitemap 內部完整版 v1.1 · Prospera 顧問服務 · 2026-05</span>
+  <span>🔒 機密文件，請勿對外分享</span>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>欣轅官網 Sitemap｜工程規格版 v1.1</title>
+<style>
+  :root {
+    --sand: #f7f5f2;
+    --sand2: #edeae4;
+    --ink: #1e1c18;
+    --ink2: #4a4740;
+    --ink3: #8a8680;
+    --teal: #0f6e56;
+    --border: rgba(30,28,24,0.10);
+    --border2: rgba(30,28,24,0.20);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--sand);
+    color: var(--ink);
+    font-family: 'Hiragino Sans', 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    padding: 40px 32px 80px;
+  }
+
+  .doc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--border2);
+    padding-bottom: 20px;
+    margin-bottom: 36px;
+  }
+  .doc-title { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; }
+  .doc-sub { font-size: 13px; color: var(--ink3); margin-top: 4px; }
+  .doc-version {
+    background: var(--sand2);
+    border: 1px solid var(--border2);
+    border-radius: 4px;
+    padding: 4px 12px;
+    font-size: 11px;
+    color: var(--ink2);
+    font-weight: 600;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink3);
+    margin: 32px 0 12px;
+  }
+
+  /* OVERVIEW CARDS */
+  .overview-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .overview-card {
+    background: #fff;
+    border: 1px solid var(--border2);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .overview-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+  .overview-card p  { font-size: 12px; color: var(--ink3); }
+  .num {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--teal);
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  /* SITEMAP TABLE */
+  .sitemap-wrap { overflow-x: auto; margin-bottom: 28px; }
+  table.sitemap {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border2);
+  }
+  table.sitemap th {
+    background: var(--ink);
+    color: #fff;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
+  table.sitemap td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    color: var(--ink2);
+  }
+  table.sitemap tr:last-child td { border-bottom: none; }
+  table.sitemap tr:hover td { background: var(--sand); }
+  .page-id   { font-size: 10px; color: var(--ink3); font-weight: 600; letter-spacing: 0.5px; }
+  .page-name { font-weight: 700; color: var(--ink); }
+  .page-url  { font-size: 11px; color: var(--teal); font-family: monospace; }
+  .sub-list  { padding-left: 14px; margin: 4px 0 0; }
+  .sub-list li { padding: 2px 0; }
+  .required { color: #a32d2d; font-size: 11px; font-weight: 600; }
+  .optional { color: var(--ink3); font-size: 11px; }
+  .badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 3px;
+    padding: 1px 6px;
+    margin-left: 4px;
+    background: #e1f5ee;
+    color: #0f6e56;
+  }
+  .badge-opt { background: var(--sand2); color: var(--ink3); }
+
+  /* PAGE SPECS */
+  .spec-block {
+    background: #fff;
+    border: 1px solid var(--border2);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+  .spec-header {
+    background: var(--sand2);
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border2);
+  }
+  .spec-header h3 { font-size: 14px; font-weight: 700; }
+  .spec-header .url { font-size: 11px; color: var(--teal); font-family: monospace; }
+  .spec-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+  }
+  .spec-col {
+    padding: 12px 16px;
+    border-right: 1px solid var(--border);
+    font-size: 12px;
+  }
+  .spec-col:last-child { border-right: none; }
+  .spec-col h4 { font-size: 10px; font-weight: 700; letter-spacing: 0.5px; color: var(--ink3); margin-bottom: 6px; }
+  .spec-col ul { padding-left: 14px; color: var(--ink2); }
+  .spec-col li { padding: 2px 0; }
+  .note {
+    padding: 8px 16px;
+    background: #fffbf4;
+    border-top: 1px solid var(--border);
+    font-size: 11px;
+    color: #ba7517;
+  }
+
+  /* TECH REQUIREMENTS */
+  .tech-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .tech-card {
+    background: #fff;
+    border: 1px solid var(--border2);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .tech-card h3 { font-size: 13px; font-weight: 700; margin-bottom: 8px; color: var(--ink); }
+  .tech-card ul { padding-left: 14px; font-size: 12px; color: var(--ink2); }
+  .tech-card li { padding: 3px 0; }
+
+  /* DELIVERY TABLE */
+  table.delivery {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    background: #fff;
+    border: 1px solid var(--border2);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 28px;
+  }
+  table.delivery th {
+    background: var(--ink);
+    color: #fff;
+    padding: 9px 14px;
+    font-size: 11px;
+    font-weight: 600;
+    text-align: left;
+  }
+  table.delivery td {
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--ink2);
+    vertical-align: top;
+  }
+  table.delivery tr:last-child td { border-bottom: none; }
+  .status-tbd  { color: var(--ink3); font-size: 11px; }
+  .status-done { color: var(--teal); font-size: 11px; font-weight: 600; }
+
+  .doc-footer {
+    margin-top: 48px;
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+    font-size: 11px;
+    color: var(--ink3);
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
+</head>
+<body>
+
+<div class="doc-header">
+  <div>
+    <div class="doc-title">欣轅官網 Sitemap｜工程規格版 v1.1</div>
+    <div class="doc-sub">欣轅室內工程有限公司 · 官網建置規格文件 · 2026-05</div>
+  </div>
+  <div class="doc-version">工程方用 · DEV REF</div>
+</div>
+
+<!-- OVERVIEW -->
+<div class="section-label">網站概覽</div>
+<div class="overview-row">
+  <div class="overview-card">
+    <span class="num">6</span>
+    <h3>H1 主入口頁面</h3>
+    <p>Phase 1 全數完成上線</p>
+  </div>
+  <div class="overview-card">
+    <span class="num">3</span>
+    <h3>核心產品線</h3>
+    <p>衛浴 / 廚具 / 系統櫃</p>
+  </div>
+  <div class="overview-card">
+    <span class="num">CMS</span>
+    <h3>案例庫 + 知識庫</h3>
+    <p>需後台動態管理功能</p>
+  </div>
+</div>
+
+<!-- SITEMAP TABLE -->
+<div class="section-label">頁面清單總覽</div>
+<div class="sitemap-wrap">
+<table class="sitemap">
+  <thead>
+    <tr>
+      <th style="width:60px">編號</th>
+      <th style="width:130px">頁面名稱</th>
+      <th>URL 路徑</th>
+      <th>子頁面 / 功能區塊</th>
+      <th>備註</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="page-id">P-01</span></td>
+      <td><span class="page-name">首頁</span></td>
+      <td><span class="page-url">/</span></td>
+      <td>
+        <ul class="sub-list">
+          <li>Hero 全幅區（圖 + 文字 + 2 個按鈕）</li>
+          <li>核心價值欄位（3～4 欄 Icon + 文字）</li>
+          <li>服務入口 Cards（3 張）</li>
+          <li>案例精選（3～6 張，連結案例庫）</li>
+          <li>品牌說明區</li>
+          <li>合作夥伴 CTA 區</li>
+          <li>Journal / 文章入口（連結知識庫）</li>
+        </ul>
+      </td>
+      <td><span class="required">必要</span> 首頁</td>
+    </tr>
+    <tr>
+      <td><span class="page-id">P-02</span></td>
+      <td><span class="page-name">關於欣轅</span></td>
+      <td><span class="page-url">/about</span></td>
+      <td>
+        <ul class="sub-list">
+          <li>品牌故事文字區（長文）</li>
+          <li>團隊介紹（照片 + 姓名 + 職稱）</li>
+          <li>品牌架構說明區</li>
+          <li>企業年表（可先留空版位）</li>
+        </ul>
+      </td>
+      <td><span class="required">必要</span></td>
+    </tr>
+    <tr>
+      <td><span class="page-id">P-03</span></td>
+      <td><span class="page-name">服務項目</span></td>
+      <td><span class="page-url">/services</span></td>
+      <td>
+        <ul class="sub-list">
+          <li>服務列表頁（三大類別入口）</li>
+          <li>P-03-A：整體衛浴改造 <span class="badge">Phase 1</span></li>
+          <li>P-03-B：TOTO 設備安裝 <span class="badge">Phase 1</span></li>
+          <li>P-03-C：廚具改造 <span class="badge badge-opt">Phase 2</span></li>
+          <li>P-03-D：系統櫃規劃 <span class="badge badge-opt">Phase 2</span></li>
+          <li>每頁含：流程圖 / FAQ（可展開收合）/ CTA</li>
+        </ul>
+      </td>
+      <td><span class="required">必要</span> 需支援子頁</td>
+    </tr>
+    <tr>
+      <td><span class="page-id">P-04</span></td>
+      <td><span class="page-name">工程案例庫</span></td>
+      <td><span class="page-url">/projects</span></td>
+      <td>
+        <ul class="sub-list">
+          <li>案例列表頁（格狀排列，3 或 4 欄）</li>
+          <li>篩選功能（施工類型 / 空間條件 / 問題類型）</li>
+          <li>分頁功能</li>
+          <li>案例內頁 /projects/[slug]</li>
+          <li>內頁含：圖片輪播 / Before-After / 文字區塊 / 設備清單 / 延伸閱讀</li>
+        </ul>
+      </td>
+      <td><span class="required">必要</span> 需 CMS 後台</td>
+    </tr>
+    <tr>
+      <td><span class="page-id">P-05</span></td>
+      <td><span class="page-name">知識庫</span></td>
+      <td><span class="page-url">/knowledge</span></td>
+      <td>
+        <ul class="sub-list">
+          <li>文章列表頁（含分類 Tab）</li>
+          <li>分類：工程百科 / 選購指南 / 安裝科普</li>
+          <li>文章內頁 /knowledge/[slug]</li>
+          <li>內頁含：標題 / 內文 / 圖片 / 延伸閱讀 / CTA</li>
+          <li>SEO meta 欄位必要（title / description / OG）</li>
+        </ul>
+      </td>
+      <td><span class="required">必要</span> 需 CMS + SEO 設定</td>
+    </tr>
+    <tr>
+      <td><span class="page-id">P-06</span></td>
+      <td><span class="page-name">合作夥伴</span></td>
+      <td><span class="page-url">/partners</span></td>
+      <td>
+        <ul class="sub-list">
+          <li>三種合作對象各一區塊（設計師 / 輕裝師 / 軟裝師）</li>
+          <li>合作流程圖（橫向）</li>
+          <li>合作案例精選</li>
+          <li>文件下載區（PDF 連結）</li>
+          <li>合作申請表單（含上傳圖面功能）</li>
+        </ul>
+      </td>
+      <td><span class="required">必要</span> 需表單 + 上傳</td>
+    </tr>
+    <tr>
+      <td><span class="page-id">P-07</span></td>
+      <td><span class="page-name">聯絡我們</span></td>
+      <td><span class="page-url">/contact</span></td>
+      <td>
+        <ul class="sub-list">
+          <li>LINE@ 快速按鈕（fixed floating 可選）</li>
+          <li>電話連結</li>
+          <li>Google Map 嵌入</li>
+          <li>聯絡表單（姓名 / 需求 / 照片上傳）</li>
+        </ul>
+      </td>
+      <td><span class="required">必要</span></td>
+    </tr>
+    <tr>
+      <td><span class="page-id">P-08</span></td>
+      <td><span class="page-name">展示中心</span></td>
+      <td><span class="page-url">/showroom</span></td>
+      <td>
+        <ul class="sub-list">
+          <li>地點說明 + Google Map</li>
+          <li>預約參觀表單</li>
+          <li>展示設備說明</li>
+        </ul>
+      </td>
+      <td><span class="optional">Phase 2 選配</span></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<!-- PAGE SPECS -->
+<div class="section-label">重點頁面功能規格</div>
+
+<!-- 案例庫 spec -->
+<div class="spec-block">
+  <div class="spec-header">
+    <h3>P-04 工程案例庫</h3>
+    <span class="url">/projects &amp; /projects/[slug]</span>
+  </div>
+  <div class="spec-body">
+    <div class="spec-col">
+      <h4>列表頁功能</h4>
+      <ul>
+        <li>格狀排列（3 或 4 欄）</li>
+        <li>篩選器（Tag 多選）</li>
+        <li>分頁或無限捲動</li>
+        <li>縮圖 + 標題 + 分類</li>
+      </ul>
+    </div>
+    <div class="spec-col">
+      <h4>內頁區塊</h4>
+      <ul>
+        <li>Hero 大圖或輪播</li>
+        <li>Before / After 雙欄</li>
+        <li>案件背景文字</li>
+        <li>設備清單（型號）</li>
+        <li>工程流程步驟</li>
+        <li>完工多圖展示</li>
+        <li>延伸閱讀（3 張 Card）</li>
+        <li>LINE@ CTA</li>
+      </ul>
+    </div>
+    <div class="spec-col">
+      <h4>後台 CMS 需求</h4>
+      <ul>
+        <li>案例新增 / 編輯 / 刪除</li>
+        <li>多圖上傳</li>
+        <li>Before / After 指定</li>
+        <li>Tag 管理</li>
+        <li>SEO meta 欄位</li>
+        <li>發布 / 草稿狀態</li>
+      </ul>
+    </div>
+  </div>
+  <div class="note">⚠️ 案例內容由業主方提供，工程方只需建立後台上傳機制，不負責內容撰寫。</div>
+</div>
+
+<!-- 知識庫 spec -->
+<div class="spec-block">
+  <div class="spec-header">
+    <h3>P-05 知識庫</h3>
+    <span class="url">/knowledge &amp; /knowledge/[slug]</span>
+  </div>
+  <div class="spec-body">
+    <div class="spec-col">
+      <h4>列表頁功能</h4>
+      <ul>
+        <li>文章列表（含分類 Tab）</li>
+        <li>分類：工程百科 / 選購指南 / 安裝科普</li>
+        <li>縮圖 + 標題 + 摘要 + 分類</li>
+        <li>分頁功能</li>
+      </ul>
+    </div>
+    <div class="spec-col">
+      <h4>內頁區塊</h4>
+      <ul>
+        <li>文章標題</li>
+        <li>Rich text 內文（含圖）</li>
+        <li>延伸閱讀自動推薦</li>
+        <li>LINE@ CTA</li>
+        <li>麵包屑導覽</li>
+      </ul>
+    </div>
+    <div class="spec-col">
+      <h4>SEO 必要設定</h4>
+      <ul>
+        <li>每篇 meta title</li>
+        <li>每篇 meta description</li>
+        <li>OG image 指定</li>
+        <li>Canonical URL</li>
+        <li>Sitemap.xml 自動生成</li>
+        <li>結構化資料（Article schema）</li>
+      </ul>
+    </div>
+  </div>
+  <div class="note">⚠️ 文章內容由業主方提供，工程方只需建立後台編輯機制與 SEO 欄位設定。</div>
+</div>
+
+<!-- TECH REQUIREMENTS -->
+<div class="section-label">技術需求</div>
+<div class="tech-grid">
+  <div class="tech-card">
+    <h3>平台建議</h3>
+    <ul>
+      <li>Wix / WordPress（業主確認中）</li>
+      <li>需支援自訂 URL slug</li>
+      <li>需支援 CMS 後台（案例 + 文章）</li>
+      <li>需支援表單 + 檔案上傳</li>
+      <li>行動裝置完全響應式</li>
+    </ul>
+  </div>
+  <div class="tech-card">
+    <h3>SEO 基礎設定</h3>
+    <ul>
+      <li>每頁獨立 meta title / description</li>
+      <li>OG 標籤（Facebook / LINE 分享預覽）</li>
+      <li>Sitemap.xml 自動生成</li>
+      <li>Google Search Console 串接</li>
+      <li>Google Analytics 安裝</li>
+    </ul>
+  </div>
+  <div class="tech-card">
+    <h3>表單功能</h3>
+    <ul>
+      <li>聯絡表單（含圖片上傳）</li>
+      <li>合作申請表單（含圖面上傳）</li>
+      <li>表單送出 → Email 通知</li>
+      <li>LINE@ 按鈕（全站 floating 可選）</li>
+    </ul>
+  </div>
+  <div class="tech-card">
+    <h3>圖片 / 媒體</h3>
+    <ul>
+      <li>圖片壓縮與最佳化（WebP）</li>
+      <li>多圖輪播元件</li>
+      <li>Before / After 比較元件</li>
+      <li>Lazy loading 必要</li>
+      <li>CDN 建議</li>
+    </ul>
+  </div>
+</div>
+
+<!-- DELIVERY TABLE -->
+<div class="section-label">交付項目確認</div>
+<table class="delivery">
+  <thead>
+    <tr>
+      <th>項目</th>
+      <th>說明</th>
+      <th>由誰提供</th>
+      <th>狀態</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>網站文案</td>
+      <td>各頁面文字內容</td>
+      <td>業主方提供</td>
+      <td><span class="status-tbd">待交付</span></td>
+    </tr>
+    <tr>
+      <td>品牌 LOGO / 視覺規範</td>
+      <td>Logo、字體、主色</td>
+      <td>業主方提供</td>
+      <td><span class="status-tbd">待交付</span></td>
+    </tr>
+    <tr>
+      <td>首頁主視覺圖</td>
+      <td>Hero 區大圖（衛浴空間實拍）</td>
+      <td>業主方提供</td>
+      <td><span class="status-tbd">待交付</span></td>
+    </tr>
+    <tr>
+      <td>工程案例照片</td>
+      <td>Before / After + 完工多張</td>
+      <td>業主方提供</td>
+      <td><span class="status-tbd">待交付</span></td>
+    </tr>
+    <tr>
+      <td>團隊人像照</td>
+      <td>About 頁團隊介紹用</td>
+      <td>業主方提供（需拍攝）</td>
+      <td><span class="status-tbd">待交付</span></td>
+    </tr>
+    <tr>
+      <td>知識庫文章</td>
+      <td>第一批 3～5 篇</td>
+      <td>業主方提供</td>
+      <td><span class="status-tbd">待交付</span></td>
+    </tr>
+    <tr>
+      <td>LINE@ 帳號 ID</td>
+      <td>全站 CTA 連結用</td>
+      <td>業主方提供</td>
+      <td><span class="status-tbd">待確認</span></td>
+    </tr>
+    <tr>
+      <td>Google 帳號存取</td>
+      <td>GSC + GA 串接用</td>
+      <td>業主方提供</td>
+      <td><span class="status-tbd">待確認</span></td>
+    </tr>
+    <tr>
+      <td>網域 / 主機</td>
+      <td>xinyuan.com.tw 或確認域名</td>
+      <td>業主方確認</td>
+      <td><span class="status-tbd">待確認</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="doc-footer">
+  <span>欣轅官網 Sitemap 工程規格版 v1.1 · 2026-05</span>
+  <span>如有疑問請聯繫業主窗口確認</span>
+</div>
+
+</body>
+</html>

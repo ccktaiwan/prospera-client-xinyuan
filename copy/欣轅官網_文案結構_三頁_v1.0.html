@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>欣轅官網｜文案結構 v1.0（工程填入版）</title>
+<style>
+  :root {
+    --sand: #f7f5f2;
+    --sand2: #edeae4;
+    --ink: #1e1c18;
+    --ink2: #4a4740;
+    --ink3: #8a8680;
+    --teal: #0f6e56;
+    --teal-l: #e1f5ee;
+    --amber: #ba7517;
+    --amber-l: #faeeda;
+    --purple: #534ab7;
+    --purple-l: #eeedfe;
+    --red: #a32d2d;
+    --red-l: #fcebeb;
+    --border: rgba(30,28,24,0.10);
+    --border2: rgba(30,28,24,0.20);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--sand);
+    color: var(--ink);
+    font-family: 'Hiragino Sans', 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+    font-size: 13px;
+    line-height: 1.7;
+    padding: 40px 32px 80px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* HEADER */
+  .doc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+  }
+  .doc-title { font-size: 22px; font-weight: 700; }
+  .doc-sub { font-size: 12px; color: var(--ink3); margin-top: 4px; }
+  .badge {
+    background: var(--teal-l);
+    color: var(--teal);
+    border: 1px solid var(--teal);
+    border-radius: 4px;
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  /* PAGE BLOCK */
+  .page-block {
+    background: #fff;
+    border: 1px solid var(--border2);
+    border-radius: 12px;
+    margin-bottom: 40px;
+    overflow: hidden;
+  }
+  .page-header {
+    background: var(--ink);
+    color: #fff;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .page-header h2 { font-size: 16px; font-weight: 700; letter-spacing: 0.3px; }
+  .page-header .url { font-size: 11px; color: rgba(255,255,255,0.55); font-family: monospace; }
+  .page-body { padding: 0; }
+
+  /* SECTION BLOCK */
+  .section {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 24px;
+  }
+  .section:last-child { border-bottom: none; }
+
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .section-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .tag-hero   { background: var(--ink); color: #fff; }
+  .tag-h1     { background: var(--teal-l); color: var(--teal); }
+  .tag-h2     { background: var(--purple-l); color: var(--purple); }
+  .tag-h3     { background: var(--sand2); color: var(--ink2); }
+  .tag-cta    { background: var(--amber-l); color: var(--amber); }
+  .tag-phase  { background: var(--red-l); color: var(--red); font-size: 9px; }
+
+  .section-head h3 { font-size: 13px; font-weight: 700; color: var(--ink2); }
+
+  /* COPY FIELD */
+  .copy-field {
+    margin-bottom: 12px;
+  }
+  .copy-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: var(--ink3);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .copy-value {
+    font-size: 13px;
+    color: var(--ink);
+    background: var(--sand);
+    border: 1px solid var(--border2);
+    border-radius: 6px;
+    padding: 10px 14px;
+    line-height: 1.7;
+  }
+  .copy-value.hero-main {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .copy-value.hero-sub {
+    font-size: 14px;
+    color: var(--ink2);
+  }
+  .copy-value.cta-btn {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--teal);
+    background: var(--teal-l);
+    border-color: var(--teal);
+    padding: 6px 16px;
+    margin-right: 8px;
+  }
+
+  /* NOTE */
+  .note {
+    font-size: 11px;
+    color: var(--amber);
+    background: var(--amber-l);
+    border: 1px solid rgba(186,117,23,0.3);
+    border-radius: 4px;
+    padding: 6px 12px;
+    margin-top: 8px;
+  }
+  .note-teal {
+    color: var(--teal);
+    background: var(--teal-l);
+    border-color: rgba(15,110,86,0.3);
+  }
+  .note-gray {
+    color: var(--ink2);
+    background: var(--sand2);
+    border-color: var(--border2);
+  }
+
+  /* PHASE TOGGLE */
+  .phase-row {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+  .phase-pill {
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 20px;
+    padding: 2px 10px;
+  }
+  .pill-on  { background: var(--teal-l); color: var(--teal); border: 1px solid var(--teal); }
+  .pill-off { background: var(--sand2); color: var(--ink3); border: 1px solid var(--border2); text-decoration: line-through; }
+
+  /* GRID */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+
+  /* FOOTER */
+  .doc-footer {
+    margin-top: 48px;
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+    font-size: 11px;
+    color: var(--ink3);
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
+</head>
+<body>
+
+<div class="doc-header">
+  <div>
+    <div class="doc-title">欣轅官網｜文案結構（工程填入版）</div>
+    <div class="doc-sub">首頁 / 服務項目 / 合作夥伴 · Hero / H1 / H2 / H3 完整文案 · v1.0 · 2026-05</div>
+  </div>
+  <div class="badge">交工程方使用</div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     PAGE 1：首頁 Home
+════════════════════════════════════════ -->
+<div class="page-block">
+  <div class="page-header">
+    <h2>P-01｜首頁 Home</h2>
+    <span class="url">URL: /</span>
+  </div>
+  <div class="page-body">
+
+    <!-- HERO -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-tag tag-hero">HERO</span>
+        <h3>全幅主視覺區（頁面第一屏）</h3>
+      </div>
+
+      <div class="copy-field">
+        <div class="copy-label">主標題 Headline</div>
+        <div class="copy-value hero-main">空間的細節，<br>決定生活的感受。</div>
+      </div>
+
+      <div class="copy-field">
+        <div class="copy-label">副標題 Subheadline</div>
+        <div class="copy-value hero-sub">衛浴、廚具、系統櫃——從金屬與管線到工程完成的每一步，欣轅整合。</div>
+      </div>
+
+      <div class="copy-field">
+        <div class="copy-label">CTA 按鈕</div>
+        <span class="copy-value cta-btn">預約免費諮詢</span>
+        <span class="copy-value cta-btn" style="color:var(--ink2);background:var(--sand2);border-color:var(--border2);">查看工程案例</span>
+      </div>
+
+      <div class="copy-field">
+        <div class="copy-label">背景圖說明（給工程方）</div>
+        <div class="copy-value">高端衛浴空間實拍，以自然採光、石材質感為主。橫幅全版，暗色疊加 30% 讓文字可讀。<br>暫用圖：ChatGPT AI 示意圖（已有）。</div>
+      </div>
+
+      <div class="note">⚠️ 正式圖片需孫欣鈴提供現場實拍，Hero 圖決定整個官網第一印象，優先安排拍攝。</div>
+    </div>
+
+    <!-- H1 核心價值 -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-tag tag-h1">H1</span>
+        <h3>核心價值區（Hero 下方，3 欄）</h3>
+      </div>
+
+      <div class="copy-field">
+        <div class="copy-label">區塊標語</div>
+        <div class="copy-value">我們相信，工程是光學背後一道防線。</div>
+      </div>
+
+      <div class="grid-3">
+        <div>
+          <div class="copy-label">欄一</div>
+          <div class="copy-value">
+            <strong>整合三線工程</strong><br>
+            衛浴、廚具、系統櫃，單一窗口協調所有工班，你只需要一通電話。
+          </div>
+        </div>
+        <div>
+          <div class="copy-label">欄二</div>
+          <div class="copy-value">
+            <strong>工程風險可視化</strong><br>
+            我們把看不見的排水、防水、管線問題，在施工前就說清楚。
+          </div>
+        </div>
+        <div>
+          <div class="copy-label">欄三</div>
+          <div class="copy-value">
+            <strong>設計師的可靠後盾</strong><br>
+            你負責美，我們負責讓美撐得住。工程準時、不出包、有人扛責任。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- H2 三大服務入口 -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-tag tag-h2">H2</span>
+        <h3>三大服務入口 Cards</h3>
+      </div>
+
+      <div class="grid-3">
+        <div>
+          <div class="copy-label">服務一</div>
+          <div class="copy-value">
+            <strong>衛浴整體改造</strong><br>
+            從排水規劃到 TOTO 設備安裝，翻新老屋浴室的完整解法。<br><br>
+            <em>CTA：了解服務 →</em>
+          </div>
+        </div>
+        <div>
+          <div class="copy-label">服務二</div>
+          <div class="copy-value">
+            <strong>廚具與系統櫃</strong><br>
+            精選合作廠商，廚具改造與系統櫃規劃一次到位。<br><br>
+            <em>CTA：了解服務 →</em><br>
+            <span class="phase-pill pill-off" style="font-size:9px">Phase 2 才開</span>
+          </div>
+        </div>
+        <div>
+          <div class="copy-label">服務三</div>
+          <div class="copy-value">
+            <strong>設計師合作方案</strong><br>
+            專屬流程、固定報價、工程保障，讓你的案子不因工程翻車。<br><br>
+            <em>CTA：了解合作 →</em>
+          </div>
+        </div>
+      </div>
+
+      <div class="note note-teal">Phase 1：廚具 / 系統櫃卡片先上，但 CTA 連到「即將推出」或直接導向 LINE@ 諮詢，按鈕不失效。</div>
+    </div>
+
+    <!-- H2 案例精選 -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-tag tag-h2">H2</span>
+        <h3>Selected Works｜案例精選</h3>
+      </div>
+
+      <div class="copy-field">
+        <div class="copy-label">區塊標題</div>
+        <div class="copy-value hero-main" style="font-size:16px">Selected Works</div>
+      </div>
+      <div class="copy-field">
+        <div class="copy-label">區塊副標</div>
+        <div class="copy-value">每一個空間背後，都有一段我們不讓你看見的故事。</div>
+      </div>
+      <div class="copy-field">
+        <div class="copy-label">案例卡片格式（每張）</div>
+        <div class="copy-value">
+          圖片（Before / After 主圖） + 案例名稱 + 空間類型標籤 + 「查看作品 →」<br><br>
+          <strong>佔位示範（Phase 1 先放 3 張）：</strong><br>
+          ① 明仕公寓 Modern Residence｜衛浴整體改造<br>
+          ② 精品飯店 Boutique Hotel｜TOTO 衛浴設備導入<br>
+          ③ 青瓦定宅 Heritage House｜老屋翻新衛浴重建
+        </div>
+      </div>
+      <div class="note">⚠️ 需孫欣鈴提供真實案例照片，Phase 1 至少 3 張可用。暫用 AI 示意圖佔位，但上線前務必替換。</div>
+    </div>
+
+    <!-- H2 TOTO 精選 -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-tag tag-h2">H2</span>
+        <h3>TOTO 精選應用｜品牌知識區</h3>
+      </div>
+
+      <div class="copy-field">
+        <div class="copy-label">區塊標題</div>
+        <div class="copy-value">TOTO 精選應用析</div>
+      </div>
+      <div class="copy-field">
+        <div class="copy-label">區塊副標</div>
+        <div class="copy-value">從選品到安裝，我們比你更了解它。</div>
+      </div>
+
+      <div class="grid-3">
+        <div>
+          <div class="copy-label">欄一</div>
+          <div class="copy-value"><strong>比例焦漫</strong><br>不同空間尺寸對應 TOTO 產品選型建議。<br><em>CTA：查看作品 →</em></div>
+        </div>
+        <div>
+          <div class="copy-label">欄二</div>
+          <div class="copy-value"><strong>進灣掏蔬 Installation Insights</strong><br>常見安裝問題與正確施工細節說明。<br><em>CTA：查看作品 →</em></div>
+        </div>
+        <div>
+          <div class="copy-label">欄三</div>
+          <div class="copy-value"><strong>笠柵柘龍晟暑 Design Inspirations</strong><br>設計師如何在案場中運用 TOTO 創造質感。<br><em>CTA：查看作品 →</em></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- H2 設計師合作 CTA -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-tag tag-h2">H2</span>
+        <h3>設計與工程的夥伴合作｜強 CTA 區</h3>
+      </div>
+
+      <div class="copy-field">
+        <div class="copy-label">標題</div>
+        <div class="copy-value">設計與工程的夥伴合作</div>
+      </div>
+      <div class="copy-field">
+        <div class="copy-label">副標</div>
+        <div class="copy-value">適合習慣一我們橫信篤前調。</div>
+      </div>
+      <div class="copy-field">
+        <div class="copy-label">CTA 按鈕</div>
+        <span class="copy-value cta-btn">比親會由眾許</span>
+      </div>
+    </div>
+
+    <!-- H3 Journal -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-tag tag-h3">H3</span>
+        <h3>觀帖 Journal｜知識庫入口</h3>
+      </div>
+      <div class="copy-field">
+        <div class="copy-label">區塊標題</div>
+        <div class="copy-value">觀帖 Journal</div>
+      </div>
+      <div class="copy-field">
+        <div class="copy-label">說明</div>
+        <div class="copy-value">連結知識庫最新 3 篇文章，格式：縮圖 + 標題 + 分類標籤。Phase 1 先放 3 篇衛浴工程文章佔位。</div>
+      </div>
+      <div class="note note-gray">WordPress 設定：首頁 Journal 區塊自動抓最新 3 篇「知識庫」分類文章，不需手動更新。</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     PAGE 2：服務項目 Services
+════════════════════════════════════════ -->
+<div class="page-block">
+  <div class="page-header">
+    <h2>P-03｜服務項目 Services</h2>
+    <span class="url">URL: /services</span>
+  </div>
+  <div class="page-body">
+
+    <!-- HERO -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-tag tag-hero">HERO</span>
+        <h3>服務頁主視覺</h3>
+      </div>
+      <div class="copy-field">
+        <div class="copy-label">主標題</div>
+        <div class="copy-value hero-main">讓工程，成為空間質感的一部份。</div>
+      </div>
+      <div class="copy-field">
+        <div class="copy-label">副標題</div>
+        <div class="copy-value hero-sub">衛浴 × 廚具：提供您宗菲轅工班雅公諸間</div>
+      </div>
+      <div class="copy-field">
+        <div class="copy-label">CTA 按鈕</div>
+        <span class="copy-value cta-btn">提繫全提育廷</span>
+        <span class="copy-value cta-btn" style="color:var(--ink2);background:var(--sand2);border-color:var(--border2);">觀賦的宛壩回</span>
+      </div>
+    </div>
+
+    <!-- H1 品牌主張 -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-tag tag-h1">H1</span>
+        <h3>品牌主張段落</h3>
+      </div>
+      <div class="copy-field">
+        <div class="copy-label">段落內文</div>
+        <div class="copy-value">
+          在設計圖確定之後，<br>
+          真正決定空間品積的，走施工。<br><br>
+          比例恰到酷怫、封棍走合獵怫，啟禮段坎空間晤晤邑合、顯以現坑工程的謝顏撩凝。<br><br>
+          啟療宣佑設計師觀觀親怕間粒合，邇箸比的坎欏定工程交護，邇箸一文汝場、幫設定；可挨觸。
+        </div>
+      </div>
+    </div>
+
+    <!-- H1 服務一：衛浴整體改造 -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-tag tag-h1">H1</span>
+        <h3>服務一｜衛浴整體改造</h3>
+        <span class="phase-pill pill-on">Phase 1</span>
+      </div>
+
+      <div class="copy-field">
+        <div class="copy-label">服務標題</div>
+        <div class="copy-value hero-main" style="font-size:15px">衛浴整體改造</div>
+      </div>
+
+      <div class="copy-field">
+        <div class="copy-label">服務說明（左欄文字）</div>
+        <div class="copy-value">
+          <strong>一、屈齡軟件</strong><br>
+          屋齡 28 年<br>
+          雕紋空間明鈉光不足<br>
+          胖木的薔未的<br>
+          禒廻比的妝前<br>
+          空間貝筋欏廻造。
+        </div>
+      </div>
+
+      <div class="copy-field">
+        <div class="copy-label">二、設計策略</div>
+        <div class="copy-value">
+          以邇發立前為未階，<br>
+          前庇嗅吡沃廉佑棉比例，<br>
+          防插定用 TOTO 茖摩精摘啖刃，<br>
+          俾插空間庇前邊。
+        </div>
+      </div>
+
+      <div class="copy-field">
+        <div class="copy-label">三、工程順次</div>
+        <div class="copy-value">
+          ● 屏前鏡欏欏抿末現處<br>
+          ● 坎比防木眉<br>
+          ● 謂前全束橾徠繇<br>
+          ● 眉前定設比的坎畢（返支末炯够太拔漁衲閒喲）
+        </div>
+      </div>
+
+      <div class="copy-field">
+        <div class="copy-label">四、設值使用</div>
+        <div class="copy-value">
+          ● TOTO 一整式屆廁<br>
+          ● TOTO 壛信觥艙廁<br>
+          ● 防柯右坎欏廓廓
+        </div>
+      </div>
+
+      <div class="copy-field">
+        <div class="copy-label">標籤（設備型號）</div>
+        <div class="copy-value">TOTO 一整式屆廁　／　TOTO 壛結藏詞　／　防柯右坎欏廓廓</div>
+      </div>
+
+      <div class="note note-teal">WordPress 設定：每個服務子頁用同一個模板（Custom Post Type），欄位包含：服務說明 / 工程步驟 / 設備型號 / Before-After 圖 / FAQ / CTA。</div>
+    </div>
+
+    <!-- H2 工程流程 -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-tag tag-h2">H2</span>
+        <h3>工程標準流程（橫向步驟圖）</h3>
+      </div>
+      <div class="grid-3" style="grid-template-columns:repeat(5,1fr)">
+        <div class="copy-value" style="text-align:center"><strong>Step 1</strong><br>免費現場評估</div>
+        <div class="copy-value" style="text-align:center"><strong>Step 2</strong><br>報價確認</div>
+        <div class="copy-value" style="text-align:center"><strong>Step 3</strong><br>工程施作</div>
+        <div class="copy-value" style="text-align:center"><strong>Step 4</strong><br>完工驗收</div>
+        <div class="copy-value" style="text-align:center"><strong>Step 5</strong><br>售後保固</div>
+      </div>
+    </div>
+
+    <!-- H2 FAQ -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-tag tag-h2">H2</span>
+        <h3>常見問題 FAQ（可展開收合）</h3>
+      </div>
+      <div class="copy-field">
+        <div class="copy-value">
+          <strong>Q1：衛浴改造一般需要幾天？</strong><br>
+          A：視坪數與工程範圍，一般整體改造約 7～14 個工作日，我們在報價時會提供明確工期。<br><br>
+          <strong>Q2：施工期間我可以住在家嗎？</strong><br>
+          A：浴室施工期間建議暫時安排他處，其他空間不受影響。我們會提前規劃，減少對你生活的干擾。<br><br>
+          <strong>Q3：TOTO 設備可以自行購買再請你們安裝嗎？</strong><br>
+          A：可以。但建議透過我們統一採購，可確保設備型號與管線規格相符，避免安裝後出現不相容問題。<br><br>
+          <strong>Q4：你們有保固嗎？</strong><br>
+          A：工程本體提供一年保固，設備保固依各品牌原廠條款。詳細內容會在合約中載明。
+        </div>
+      </div>
+    </div>
+
+    <!-- H2 廚具 / 系統櫃（Phase 2 但先架） -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-tag tag-h2">H2</span>
+        <h3>廚具改造 / 系統櫃規劃</h3>
+        <span class="phase-pill pill-off">Phase 2 開放</span>
+      </div>
+      <div class="copy-field">
+        <div class="copy-label">佔位文案（Phase 1 顯示）</div>
+        <div class="copy-value">
+          <strong>廚具改造｜即將推出</strong><br>
+          精選合作廠商，廚具改造與品牌選品服務即將上線。目前可透過 LINE@ 提前登記諮詢。<br><br>
+          <strong>系統櫃規劃｜即將推出</strong><br>
+          與業界頂尖系統櫃廠商合作，量身規劃每個空間的收納邏輯。歡迎提前聯繫。
+        </div>
+      </div>
+      <div class="note note-teal">WordPress 設定：建立頁面但加上「即將推出」Banner，CTA 導向 LINE@，不顯示報價或詳細內容。Phase 2 直接移除 Banner 即可開放。</div>
+    </div>
+
+    <!-- CTA -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-tag tag-cta">CTA</span>
+        <h3>頁面底部行動區</h3>
+      </div>
+      <div class="copy-field">
+        <div class="copy-label">標題</div>
+        <div class="copy-value">不確定從哪裡開始？讓我們先聊聊。</div>
+      </div>
+      <div class="copy-field">
+        <div class="copy-label">說明</div>
+        <div class="copy-value">免費諮詢，告訴我們你的空間狀況，我們給你一個可執行的方向。</div>
+      </div>
+      <div class="copy-field">
+        <div class="copy-label">按鈕</div>
+        <span class="copy-value cta-btn">LINE@ 立即諮詢</span>
+        <span class="copy-value cta-btn" style="color:var(--ink2);background:var(--sand2);border-color:var(--border2);">上傳照片詢問</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     PAGE 3：合作夥伴 Partners
+════════════════════════════════════════ -->
+<div class="page-block">
+  <div class="page-header">
+    <h2>P-06｜合作夥伴 Partners</h2>
+    <span class="url">URL: /partners</span>
+  </div>
+  <div class="page-body">
+
+    <!-- HERO -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-tag tag-hero">HERO</span>
+        <h3>合作夥伴頁主視覺</h3>
+      </div>
+      <div class="copy-field">
+        <div class="copy-label">主標題</div>
+        <div class="copy-value hero-main">設計師的工程後盾，<br>從第一個案子開始。</div>
+      </div>
+      <div class="copy-field">
+        <div class="copy-label">副標題</div>
+        <div class="copy-value hero-sub">你負責讓空間美，我們負責讓美撐得住。不讓你背鍋，不讓工程翻車。</div>
+      </div>
+    </div>
+
+    <!-- H1 三層合作對象 -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-tag tag-h1">H1</span>
+        <h3>三層合作對象（各自獨立區塊，不能混用）</h3>
+      </div>
+
+      <!-- 室內設計師 -->
+      <div class="copy-field">
+        <div class="copy-label">區塊一｜室內設計師（精選少數）</div>
+        <div class="copy-value">
+          <strong>室內設計師合作｜精選深度合作</strong><br><br>
+          我們只與少數設計師長期合作。<br>
+          不是每個案子都接，是每個我們接的案子都對你負責。<br><br>
+          <strong>我們提供：</strong><br>
+          ● 固定報價不亂改，報你的就是做的<br>
+          ● 工程進度主動通報，你不用追<br>
+          ● 施工問題由我們扛，不推給設計師<br>
+          ● 專人對接，不讓你打轉接電話<br><br>
+          <em>CTA：申請合作夥伴資格 →（連到申請表單）</em><br>
+          <span class="phase-pill pill-on" style="font-size:9px;display:inline-block;margin-top:4px">Phase 1：表單收集，人工審核回覆</span>
+        </div>
+      </div>
+
+      <!-- 輕裝師 -->
+      <div class="copy-field">
+        <div class="copy-label">區塊二｜輕裝師（大量合作）</div>
+        <div class="copy-value">
+          <strong>輕裝師合作｜標準流程快速轉介</strong><br><br>
+          案子來了，你需要的是一個報得快、跑得動、不出問題的工班。<br>
+          我們有標準化流程，讓你把工程的事交給我們，你繼續接案。<br><br>
+          <strong>合作流程：</strong><br>
+          ① 填寫合作表單（含案件說明）<br>
+          ② 48 小時內回覆報價方向<br>
+          ③ 現場評估確認<br>
+          ④ 施工 → 完工 → 結案<br><br>
+          <em>CTA：填寫合作表單 →（連到表單）｜下載施工規格說明書 →（PDF）</em>
+        </div>
+      </div>
+
+      <!-- 軟裝師 -->
+      <div class="copy-field">
+        <div class="copy-label">區塊三｜軟裝師（培訓班底）</div>
+        <div class="copy-value">
+          <strong>軟裝師培訓｜長期生態合作</strong><br><br>
+          我們持續培養能掌握工程知識的軟裝師。<br>
+          懂工程的軟裝師，在客戶面前更有說服力，也能幫客戶避開踩雷。<br><br>
+          <strong>我們提供：</strong><br>
+          ● 工程知識培訓課程<br>
+          ● 現場觀摩機會<br>
+          ● 轉介合作案機制<br><br>
+          <em>CTA：加入 LINE@ 了解培訓資訊 →</em>
+        </div>
+      </div>
+    </div>
+
+    <!-- H2 合作流程 -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-tag tag-h2">H2</span>
+        <h3>合作流程圖（橫向）</h3>
+      </div>
+      <div class="grid-3" style="grid-template-columns:repeat(5,1fr)">
+        <div class="copy-value" style="text-align:center"><strong>諮詢</strong><br>LINE@ 或表單說明需求</div>
+        <div class="copy-value" style="text-align:center"><strong>評估</strong><br>現場勘查確認範圍</div>
+        <div class="copy-value" style="text-align:center"><strong>報價</strong><br>固定報價書送出</div>
+        <div class="copy-value" style="text-align:center"><strong>施工</strong><br>進度主動通報</div>
+        <div class="copy-value" style="text-align:center"><strong>售後</strong><br>完工驗收 + 保固</div>
+      </div>
+    </div>
+
+    <!-- H2 合作案例 -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-tag tag-h2">H2</span>
+        <h3>合作案例精選（3 張）</h3>
+      </div>
+      <div class="copy-field">
+        <div class="copy-value">
+          格式：案例圖 + 設計師名稱（選填）+ 案例類型 + 「查看完整案例 →」<br><br>
+          Phase 1 從工程案例庫中挑選 3 張「有設計師合作」的案例顯示，連結到案例內頁。
+        </div>
+      </div>
+    </div>
+
+    <!-- H3 文件下載 -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-tag tag-h3">H3</span>
+        <h3>文件下載區</h3>
+      </div>
+      <div class="copy-field">
+        <div class="copy-value">
+          ● 欣轅合作夥伴規格說明書（PDF）<br>
+          ● 施工標準流程說明（PDF）<br>
+          ● 設備清單與型號參考表（PDF）<br><br>
+          <em>Phase 1：文件由 Prospera 協助製作，工程方只需設置下載連結欄位。</em>
+        </div>
+      </div>
+      <div class="note">⚠️ PDF 文件需 Prospera 協助完成後才能上傳，列為 Phase 1 交付項目之一。</div>
+    </div>
+
+    <!-- CTA -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-tag tag-cta">CTA</span>
+        <h3>頁面底部行動區</h3>
+      </div>
+      <div class="copy-field">
+        <div class="copy-label">標題</div>
+        <div class="copy-value">準備好開始了嗎？</div>
+      </div>
+      <div class="copy-field">
+        <div class="copy-label">說明</div>
+        <div class="copy-value">無論你是設計師、輕裝師還是軟裝師，歡迎告訴我們你在找的合作方式。</div>
+      </div>
+      <div class="copy-field">
+        <div class="copy-label">按鈕（依對象不同）</div>
+        <span class="copy-value cta-btn">申請設計師合作</span>
+        <span class="copy-value cta-btn" style="margin-top:6px;display:inline-block">填寫輕裝師表單</span>
+        <span class="copy-value cta-btn" style="color:var(--ink2);background:var(--sand2);border-color:var(--border2);margin-top:6px;display:inline-block">軟裝師 LINE@ 入口</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- MVP 說明 -->
+<div style="background:var(--teal-l);border:1px solid var(--teal);border-radius:12px;padding:20px 24px;margin-bottom:40px">
+  <div style="font-weight:700;color:var(--teal);font-size:14px;margin-bottom:10px">MVP 並行策略｜Prospera × 工程方分工說明</div>
+  <div style="font-size:12px;color:var(--ink2);line-height:1.8">
+    <strong>Prospera 負責：</strong>所有頁面文案 / H1 H2 H3 結構 / 案例格式化 / 知識庫初稿 / 合作夥伴說明文件<br>
+    <strong>工程方負責：</strong>WordPress + Stitch 架構建置 / CMS 後台 / 表單 / SEO 基礎設定 / 版型套入<br>
+    <strong>孫欣鈴負責：</strong>案例照片提供 / 設備型號確認 / 工程細節審閱 / Logo 與品牌視覺<br><br>
+    <strong>Phase 1 最小 Demo 上線條件：</strong><br>
+    ① 首頁 + 服務項目 + 合作夥伴 文案就位（本文件）<br>
+    ② 至少 3 個衛浴案例有照片可上架<br>
+    ③ LINE@ 按鈕串接完成<br>
+    ④ GSC + GA 安裝完成<br><br>
+    以上四項完成即可 Demo，其他頁面繼續補。
+  </div>
+</div>
+
+<div class="doc-footer">
+  <span>欣轅官網 文案結構 v1.0 · 2026-05 · 三頁文案工程填入版</span>
+  <span>如有疑問請聯繫業主窗口確認</span>
+</div>
+
+</body>
+</html>
