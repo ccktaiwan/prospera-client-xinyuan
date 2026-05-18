@@ -1,0 +1,17 @@
+# Claude Code local settings
+.claude/
+
+# Demo image cache (regenerable via scripts/build_v3_demo.py)
+demo/generated/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
