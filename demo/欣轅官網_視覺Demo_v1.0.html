@@ -25,7 +25,9 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--stone);color:var(--ink);font-family:'Noto Serif TC',serif;font-size:14px;line-height:1.8;overflow-x:hidden}
+body{background:var(--stone);color:var(--ink);font-family:'Noto Serif TC',serif;font-size:14px;line-height:1.85;letter-spacing:.02em;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+p{letter-spacing:.025em;text-justify:inter-ideograph}
+h1,h2,h3,h4{letter-spacing:.01em}
 
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(242,237,230,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 48px;z-index:200}
@@ -208,6 +210,29 @@ footer p{font-size:11px;color:rgba(255,255,255,.3);letter-spacing:.5px}
 .phase-tag{display:inline-block;font-size:9px;letter-spacing:1.5px;padding:2px 8px;font-family:'Cormorant Garamond',serif;vertical-align:middle;margin-left:8px}
 .pt-on{background:var(--teal-l);color:var(--teal);border:1px solid var(--teal)}
 .pt-off{background:var(--stone2);color:var(--ink3);border:1px solid var(--border2)}
+
+/* ── LINE@ BUTTON ── */
+.btn-line{background:#06c755;color:#fff;padding:16px 32px;font-size:13px;letter-spacing:1.8px;border:none;cursor:pointer;font-family:'Noto Serif TC',serif;display:inline-flex;align-items:center;gap:10px;font-weight:500;text-decoration:none;transition:background .2s}
+.btn-line:hover{background:#05a847}
+.btn-line-tag{font-family:'Cormorant Garamond',serif;letter-spacing:1px;font-weight:600;font-size:13px}
+.line-band{background:linear-gradient(135deg,#06c755 0%,#048b3d 100%);padding:40px 56px;margin:0 0 40px;border-radius:0;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.line-band-text h3{font-family:'Noto Serif TC',serif;font-size:20px;font-weight:500;color:#fff;margin-bottom:6px;letter-spacing:.3px}
+.line-band-text p{font-size:13px;color:rgba(255,255,255,.85);letter-spacing:.05em}
+.btn-line-lg{background:#fff;color:#06c755;padding:18px 36px;font-size:14px;letter-spacing:1.5px;border:none;cursor:pointer;font-family:'Noto Serif TC',serif;display:inline-flex;align-items:center;gap:12px;font-weight:600;text-decoration:none;transition:transform .15s}
+.btn-line-lg:hover{transform:translateY(-2px)}
+.btn-line-lg .lg-tag{background:#06c755;color:#fff;padding:3px 10px;font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:1.5px;border-radius:2px}
+@media (max-width:720px){
+  .line-band{padding:28px 24px;flex-direction:column;align-items:flex-start;gap:18px}
+  .btn-line-lg{width:100%;justify-content:center}
+}
+
+/* ── PLACEHOLDER CARD ENHANCED ── */
+.case-placeholder{padding:24px}
+.case-placeholder-text{font-size:12px;color:var(--ink2);letter-spacing:.5px;text-align:center;line-height:1.7}
+.case-placeholder-title{font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:2px;color:var(--ink2);margin-bottom:8px;text-transform:uppercase}
+.case-placeholder-hint{font-size:11px;color:var(--ink3);line-height:1.7;font-weight:300;margin-top:8px}
+.case-placeholder-list{margin-top:10px;font-size:10.5px;color:var(--ink3);line-height:1.85;font-weight:300}
+.case-placeholder-list li{padding:1px 0;list-style:none}
 </style>
 </head>
 <body>
@@ -249,7 +274,7 @@ footer p{font-size:11px;color:rgba(255,255,255,.3);letter-spacing:.5px}
   <!-- H1 核心價值 -->
   <div class="sec">
     <div class="sec-ey">品牌主張</div>
-    <div class="sec-title">我們相信，工程是<br>光學背後那一道防線。</div>
+    <div class="sec-title">我們相信，工程是<br>美學背後那一道防線。</div>
     <div class="sec-sub">美麗的空間，需要看不見的標準來撐持。欣轅整合工程三線，讓品質有跡可循、有人負責。</div>
     <div class="g3">
       <div class="val-card">
@@ -774,19 +799,40 @@ footer p{font-size:11px;color:rgba(255,255,255,.3);letter-spacing:.5px}
       <div class="case-card">
         <div class="case-placeholder">
           <div class="case-placeholder-icon">＋</div>
-          <div class="case-placeholder-text">等待案例照片<br><span style="font-size:10px;opacity:.7">請提供完工實拍</span></div>
+          <div class="case-placeholder-title">CASE PENDING</div>
+          <div class="case-placeholder-hint">此格將替換為實際工程案例</div>
+          <ul class="case-placeholder-list">
+            <li>Before / After 各 1 張</li>
+            <li>完工實拍 4–6 張</li>
+            <li>使用設備型號清單</li>
+            <li>屋況與工法簡述</li>
+          </ul>
         </div>
       </div>
       <div class="case-card">
         <div class="case-placeholder">
           <div class="case-placeholder-icon">＋</div>
-          <div class="case-placeholder-text">等待案例照片<br><span style="font-size:10px;opacity:.7">請提供完工實拍</span></div>
+          <div class="case-placeholder-title">CASE PENDING</div>
+          <div class="case-placeholder-hint">此格將替換為實際工程案例</div>
+          <ul class="case-placeholder-list">
+            <li>Before / After 各 1 張</li>
+            <li>完工實拍 4–6 張</li>
+            <li>使用設備型號清單</li>
+            <li>屋況與工法簡述</li>
+          </ul>
         </div>
       </div>
       <div class="case-card">
         <div class="case-placeholder">
           <div class="case-placeholder-icon">＋</div>
-          <div class="case-placeholder-text">等待案例照片<br><span style="font-size:10px;opacity:.7">請提供完工實拍</span></div>
+          <div class="case-placeholder-title">CASE PENDING</div>
+          <div class="case-placeholder-hint">此格將替換為實際工程案例</div>
+          <ul class="case-placeholder-list">
+            <li>Before / After 各 1 張</li>
+            <li>完工實拍 4–6 張</li>
+            <li>使用設備型號清單</li>
+            <li>屋況與工法簡述</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -948,8 +994,8 @@ footer p{font-size:11px;color:rgba(255,255,255,.3);letter-spacing:.5px}
     </div>
     <div class="case-grid" style="grid-template-columns:repeat(3,1fr)">
       <div class="case-card"><div class="case-bg" style="background-image:url('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80')"></div><div class="case-overlay"></div><div class="case-body"><div class="case-tag-s">設計師合作</div><h3>案例待填入</h3></div></div>
-      <div class="case-card"><div class="case-placeholder"><div class="case-placeholder-icon">＋</div><div class="case-placeholder-text">等待案例照片</div></div></div>
-      <div class="case-card"><div class="case-placeholder"><div class="case-placeholder-icon">＋</div><div class="case-placeholder-text">等待案例照片</div></div></div>
+      <div class="case-card"><div class="case-placeholder"><div class="case-placeholder-icon">＋</div><div class="case-placeholder-title">PARTNER CASE</div><div class="case-placeholder-hint">合作設計師案例待填入</div></div></div>
+      <div class="case-card"><div class="case-placeholder"><div class="case-placeholder-icon">＋</div><div class="case-placeholder-title">PARTNER CASE</div><div class="case-placeholder-hint">合作設計師案例待填入</div></div></div>
     </div>
   </div>
 
@@ -1008,12 +1054,23 @@ footer p{font-size:11px;color:rgba(255,255,255,.3);letter-spacing:.5px}
     </div>
   </div>
 
-  <div class="sec">
+  <!-- LINE@ 主要 CTA -->
+  <div style="padding:48px 80px 0">
+    <div class="line-band">
+      <div class="line-band-text">
+        <h3>最快聯繫方式｜LINE@ 官方帳號</h3>
+        <p>可上傳屋況照片、直接對話，平均回覆時間 30 分鐘以內。</p>
+      </div>
+      <a class="btn-line-lg" href="#" onclick="event.preventDefault();alert('LINE@ ID 待填入')"><span class="lg-tag">LINE</span>加入官方帳號</a>
+    </div>
+  </div>
+
+  <div class="sec" style="padding-top:32px">
     <div class="contact-grid">
       <div class="contact-info">
-        <h3>直接聯繫我們</h3>
+        <h3>其他聯繫管道</h3>
         <div class="contact-item">
-          <div class="contact-icon">💬</div>
+          <div class="contact-icon" style="background:#e8f7ee;color:#06c755;border-color:#06c755">L</div>
           <div class="contact-text"><h4>LINE@</h4><p>最快回覆方式，可上傳照片說明</p></div>
         </div>
         <div class="contact-item">
