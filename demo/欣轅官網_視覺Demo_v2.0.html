@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>欣轅室內工程｜官網 Demo v2.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* 色系 v2.0 */
+  --cream:    #F7F3EE;   /* 暖米白 */
+  --cream-2:  #EFE8DC;   /* 次層米白 */
+  --cream-3:  #DDD3C0;   /* 深米白／米褐 */
+  --charcoal: #1C1916;   /* 深炭 */
+  --charcoal-2:#2A2620;
+  --ink:      #1C1916;
+  --ink-2:    #3A352E;
+  --ink-3:    #6E6A62;
+  --moss:     #2D6B54;   /* 苔綠 */
+  --moss-d:   #1E4A3A;
+  --moss-l:   #DDE9E1;
+  --gold:     #B8965A;   /* 金色 */
+  --gold-d:   #95773F;
+  --gold-l:   #EEE2C7;
+  --border:   rgba(28,25,22,.10);
+  --border-2: rgba(28,25,22,.20);
+  --nav-h:    72px;
+
+  /* 知識庫深色星空 */
+  --night:    #0B0E1A;
+  --night-2:  #141729;
+  --night-3:  #1E2235;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:'Noto Serif TC','Playfair Display',serif;
+  font-size:14px;
+  line-height:1.85;
+  letter-spacing:.02em;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+p{letter-spacing:.03em}
+h1,h2,h3,h4,h5,h6{letter-spacing:.01em;font-weight:400}
+
+/* 西文／數字字體 */
+.serif-en{font-family:'Playfair Display',serif}
+
+/* ════════════ NAV ════════════ */
+nav{
+  position:fixed;top:0;left:0;right:0;height:var(--nav-h);
+  background:rgba(247,243,238,.93);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 56px;z-index:200;
+  transition:background .3s,border-color .3s;
+}
+nav.on-dark{background:rgba(11,14,26,.85);border-bottom-color:rgba(184,150,90,.18)}
+nav.on-dark .logo{color:#F1E6CD}
+nav.on-dark .logo span{color:var(--gold)}
+nav.on-dark .nav-links a{color:rgba(241,230,205,.7)}
+nav.on-dark .nav-links a:hover,nav.on-dark .nav-links a.act{color:var(--gold);border-bottom-color:var(--gold)}
+nav.on-dark .nav-cta{background:var(--gold)!important;color:var(--night)!important}
+
+.logo{
+  font-family:'Playfair Display',serif;
+  font-size:22px;font-weight:500;letter-spacing:5px;
+  cursor:pointer;color:var(--ink);
+  transition:color .3s;
+}
+.logo span{color:var(--moss);font-style:italic;transition:color .3s}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{
+  font-size:12px;letter-spacing:2px;
+  color:var(--ink-2);text-decoration:none;cursor:pointer;
+  font-family:'Noto Serif TC',serif;
+  padding:4px 0;border-bottom:1px solid transparent;
+  transition:all .25s;
+}
+.nav-links a:hover,.nav-links a.act{color:var(--moss);border-bottom-color:var(--moss)}
+.nav-cta{
+  background:var(--moss)!important;color:#fff!important;
+  padding:10px 24px!important;letter-spacing:1.8px!important;
+  border-bottom:none!important;font-size:12px!important;
+  transition:background .25s!important;
+}
+.nav-cta:hover{background:var(--moss-d)!important;color:#fff!important;border-bottom-color:transparent!important}
+
+/* ════════════ PAGES ════════════ */
+.pg{display:none;padding-top:var(--nav-h);min-height:100vh;animation:fadeIn .4s ease}
+.pg.act{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* ════════════ HERO (首頁全幅) ════════════ */
+.hero{
+  position:relative;height:calc(100vh - var(--nav-h));min-height:640px;
+  display:flex;align-items:flex-end;
+  padding:0 80px 96px;overflow:hidden;background:var(--charcoal);
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=2200&q=85') center/cover no-repeat;
+  filter:brightness(.55) saturate(1.05);
+}
+.hero-grad{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(115deg,rgba(28,25,22,.78) 0%,rgba(28,25,22,.30) 55%,rgba(28,25,22,.55) 100%),
+    radial-gradient(ellipse at 30% 80%,rgba(184,150,90,.18) 0%,transparent 60%);
+}
+.hero-frame{
+  position:absolute;top:48px;right:80px;bottom:48px;left:80px;
+  border:1px solid rgba(238,226,199,.18);
+  pointer-events:none;
+}
+.hero-content{position:relative;z-index:2;max-width:780px}
+.hero-rule{display:flex;align-items:center;gap:18px;margin-bottom:32px}
+.hero-rule::before{content:'';width:56px;height:1px;background:var(--gold)}
+.hero-rule span{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:14px;color:var(--gold);letter-spacing:3px;
+}
+.hero h1{
+  font-family:'Playfair Display','Noto Serif TC',serif;
+  font-size:clamp(48px,7vw,92px);
+  font-weight:500;line-height:1.05;color:#FBF6EC;
+  letter-spacing:-1.5px;margin-bottom:32px;
+}
+.hero h1 em{font-style:italic;color:var(--gold);font-weight:500}
+.hero h1 .br-line{display:block;font-size:.6em;font-style:italic;font-weight:400;color:rgba(241,230,205,.85);margin-top:14px;letter-spacing:.5px}
+.hero-sub{
+  font-size:15px;color:rgba(241,230,205,.78);
+  line-height:2;max-width:540px;margin-bottom:48px;font-weight:300;
+}
+.btn-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.btn-p{
+  background:var(--moss);color:#fff;
+  padding:16px 36px;font-size:13px;letter-spacing:2px;
+  border:none;cursor:pointer;font-family:'Noto Serif TC',serif;
+  transition:all .25s;display:inline-flex;align-items:center;gap:10px;
+}
+.btn-p:hover{background:var(--moss-d);transform:translateY(-1px);box-shadow:0 12px 30px rgba(45,107,84,.25)}
+.btn-g{
+  background:transparent;color:rgba(241,230,205,.9);
+  padding:16px 36px;font-size:13px;letter-spacing:2px;
+  border:1px solid rgba(241,230,205,.35);
+  cursor:pointer;font-family:'Noto Serif TC',serif;transition:all .25s;
+}
+.btn-g:hover{border-color:var(--gold);color:var(--gold)}
+.btn-t{
+  background:transparent;color:var(--moss);
+  padding:13px 30px;font-size:12px;letter-spacing:1.8px;
+  border:1px solid var(--moss);cursor:pointer;
+  font-family:'Noto Serif TC',serif;transition:all .25s;
+}
+.btn-t:hover{background:var(--moss);color:#fff}
+.btn-gold{
+  background:var(--gold);color:var(--charcoal);
+  padding:14px 32px;font-size:12px;letter-spacing:2px;
+  border:none;cursor:pointer;font-family:'Noto Serif TC',serif;
+  transition:all .25s;font-weight:500;
+}
+.btn-gold:hover{background:var(--gold-d);color:#FBF6EC}
+
+/* Hero 右下角期數標 */
+.hero-issue{
+  position:absolute;right:80px;bottom:96px;z-index:2;
+  text-align:right;color:rgba(241,230,205,.6);
+}
+.hero-issue .issue-no{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:60px;font-weight:500;color:var(--gold);line-height:1;
+}
+.hero-issue .issue-label{
+  font-size:11px;letter-spacing:3px;margin-top:6px;
+  font-family:'Playfair Display',serif;
+}
+
+/* ════════════ SECTION COMMONS ════════════ */
+.sec{padding:112px 80px;position:relative}
+.sec-alt{background:var(--cream-2)}
+.sec-dark{background:var(--charcoal);color:#F1E6CD}
+.sec-white{background:#FBF7F0}
+.sec-cream{background:var(--cream)}
+
+.sec-ey{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:14px;letter-spacing:2.5px;color:var(--moss);
+  margin-bottom:18px;display:flex;align-items:center;gap:14px;font-weight:400;
+}
+.sec-ey::before{content:'';width:36px;height:1px;background:var(--moss);flex-shrink:0}
+.sec-dark .sec-ey{color:var(--gold)}.sec-dark .sec-ey::before{background:var(--gold)}
+
+.sec-title{
+  font-family:'Playfair Display','Noto Serif TC',serif;
+  font-size:clamp(32px,4vw,56px);
+  font-weight:500;line-height:1.15;
+  margin-bottom:18px;letter-spacing:-.4px;color:var(--ink);
+}
+.sec-title em{font-style:italic;color:var(--moss);font-weight:500}
+.sec-dark .sec-title{color:#FBF6EC}
+.sec-dark .sec-title em{color:var(--gold)}
+
+.sec-sub{
+  font-size:15px;color:var(--ink-3);
+  max-width:620px;line-height:2;margin-bottom:64px;font-weight:300;
+}
+.sec-dark .sec-sub{color:rgba(241,230,205,.6)}
+
+/* ════════════ 雜誌左右排版 ════════════ */
+.mag{display:grid;grid-template-columns:1.05fr .95fr;gap:96px;align-items:center}
+.mag-rev{grid-template-columns:.95fr 1.05fr}
+.mag-img{
+  aspect-ratio:4/5;background-size:cover;background-position:center;
+  position:relative;box-shadow:0 30px 70px rgba(28,25,22,.18);
+}
+.mag-img::after{
+  content:'';position:absolute;inset:14px;
+  border:1px solid rgba(255,255,255,.4);pointer-events:none;
+}
+.mag-img-tag{
+  position:absolute;left:0;bottom:-26px;
+  background:var(--charcoal);color:var(--gold);
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:12px;letter-spacing:2.5px;padding:10px 22px;
+}
+.mag-text h2{
+  font-family:'Playfair Display','Noto Serif TC',serif;
+  font-size:clamp(28px,3.4vw,46px);font-weight:500;
+  line-height:1.2;margin-bottom:24px;letter-spacing:-.3px;
+}
+.mag-text h2 em{font-style:italic;color:var(--moss);font-weight:500}
+.mag-text .lede{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:18px;color:var(--moss-d);line-height:1.7;
+  margin-bottom:24px;padding-left:18px;border-left:2px solid var(--gold);
+}
+.mag-text p{
+  font-size:14.5px;color:var(--ink-2);line-height:2;
+  font-weight:300;margin-bottom:18px;
+}
+.mag-text .signoff{
+  margin-top:28px;font-family:'Playfair Display',serif;font-style:italic;
+  font-size:14px;color:var(--gold-d);letter-spacing:1px;
+}
+
+/* drop cap 首字放大 */
+.drop-cap::first-letter{
+  font-family:'Playfair Display',serif;
+  font-size:64px;float:left;line-height:.9;
+  padding:6px 12px 0 0;color:var(--moss);font-weight:500;
+}
+
+/* ════════════ VALUE / NUMBER CARDS ════════════ */
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:2px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.g5{display:grid;grid-template-columns:repeat(5,1fr);gap:0}
+
+.val-card{
+  background:#FBF7F0;padding:48px 36px;
+  border-top:2px solid var(--moss);
+  transition:transform .25s;
+}
+.sec-alt .val-card{background:var(--cream)}
+.val-card:hover{transform:translateY(-3px)}
+.val-num{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:52px;font-weight:500;color:var(--gold);
+  line-height:1;margin-bottom:18px;
+}
+.val-card h3{font-size:17px;font-weight:500;margin-bottom:12px;letter-spacing:.3px}
+.val-card p{font-size:14px;color:var(--ink-3);line-height:1.9;font-weight:300}
+
+/* ════════════ SERVICE CARDS ════════════ */
+.svc-card{
+  background:#FBF7F0;padding:52px 40px;
+  border:1px solid var(--border);transition:all .3s;cursor:pointer;
+  position:relative;overflow:hidden;
+}
+.svc-card::after{
+  content:'';position:absolute;left:0;top:0;width:3px;height:0;
+  background:var(--moss);transition:height .4s;
+}
+.svc-card:hover::after{height:100%}
+.svc-card:hover{border-color:var(--moss);transform:translateY(-5px);box-shadow:0 22px 60px rgba(28,25,22,.10)}
+.svc-tag{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:14px;letter-spacing:2px;color:var(--moss);
+  margin-bottom:20px;
+}
+.svc-card h3{font-size:22px;font-weight:500;margin-bottom:14px;letter-spacing:.2px;font-family:'Playfair Display','Noto Serif TC',serif}
+.svc-card p{font-size:14px;color:var(--ink-3);line-height:1.9;font-weight:300;margin-bottom:28px}
+.arr{
+  font-size:12px;color:var(--moss);letter-spacing:1.5px;
+  font-family:'Playfair Display',serif;font-style:italic;
+  display:inline-flex;align-items:center;gap:8px;transition:gap .25s;
+}
+.svc-card:hover .arr{gap:14px;color:var(--gold-d)}
+
+/* ════════════ SERVICE: LEFT TEXT × RIGHT IMAGE ════════════ */
+.svc-row{
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;
+  align-items:center;margin-bottom:24px;
+}
+.svc-row.reverse{direction:rtl}
+.svc-row.reverse > *{direction:ltr}
+.svc-row-text .svc-no{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:14px;letter-spacing:3px;color:var(--gold);
+  margin-bottom:14px;display:block;
+}
+.svc-row-text h2{
+  font-family:'Playfair Display','Noto Serif TC',serif;
+  font-size:clamp(28px,3.2vw,42px);font-weight:500;
+  line-height:1.2;margin-bottom:22px;letter-spacing:-.2px;
+}
+.svc-row-text h2 .ph-tag{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:.45em;color:var(--moss);letter-spacing:1.5px;
+  background:var(--moss-l);padding:4px 12px;border-radius:2px;
+  vertical-align:middle;margin-left:12px;font-weight:400;
+}
+.svc-row-text h2 .ph-tag.off{color:var(--ink-3);background:var(--cream-2);}
+.svc-row-text > p{
+  font-size:14.5px;color:var(--ink-2);line-height:2;
+  font-weight:300;margin-bottom:28px;
+}
+.svc-row-img{
+  aspect-ratio:5/6;background-size:cover;background-position:center;
+  position:relative;box-shadow:0 28px 64px rgba(28,25,22,.16);
+}
+.svc-row-img::after{content:'';position:absolute;inset:12px;border:1px solid rgba(255,255,255,.4);pointer-events:none}
+.svc-row-img-tag{
+  position:absolute;right:0;bottom:-22px;
+  background:var(--gold);color:var(--charcoal);
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:12px;letter-spacing:2.5px;padding:8px 20px;font-weight:500;
+}
+
+.field-h{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:14px;letter-spacing:2px;color:var(--ink-3);
+  text-transform:uppercase;margin-bottom:16px;
+}
+.svc-list{list-style:none}
+.svc-list li{
+  font-size:14px;color:var(--ink-2);line-height:1.95;font-weight:300;
+  padding:8px 0 8px 20px;position:relative;border-bottom:1px solid var(--border);
+}
+.svc-list li::before{
+  content:'—';position:absolute;left:0;color:var(--moss);
+}
+
+/* ════════════ CASE CARDS ════════════ */
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.case-card{
+  position:relative;overflow:hidden;cursor:pointer;
+  aspect-ratio:4/3;background:var(--charcoal-2);
+}
+.case-bg{
+  position:absolute;inset:0;background-size:cover;background-position:center;
+  transition:transform .8s ease;
+}
+.case-card:hover .case-bg{transform:scale(1.08)}
+.case-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(28,25,22,.92) 0%,rgba(28,25,22,.1) 55%,transparent 100%);
+}
+.case-body{position:absolute;bottom:0;left:0;right:0;padding:30px}
+.case-tag-s{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:12px;letter-spacing:2px;color:var(--gold);margin-bottom:8px;
+}
+.case-body h3{
+  font-size:17px;font-weight:500;color:#FBF6EC;margin-bottom:6px;
+  font-family:'Playfair Display','Noto Serif TC',serif;
+}
+.case-body p{font-size:12px;color:rgba(255,255,255,.6)}
+.case-placeholder{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  background:var(--cream-2);border:1.5px dashed var(--cream-3);gap:10px;padding:24px;
+}
+.case-placeholder-icon{font-size:32px;opacity:.4;color:var(--gold)}
+.case-placeholder-title{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:15px;letter-spacing:2px;color:var(--ink-2);margin-bottom:6px;
+}
+.case-placeholder-hint{font-size:12px;color:var(--ink-3);line-height:1.7;font-weight:300;text-align:center}
+.case-placeholder-list{margin-top:10px;font-size:11px;color:var(--ink-3);line-height:1.85;font-weight:300}
+.case-placeholder-list li{padding:1px 0;list-style:none}
+
+/* ════════════ STEP ROW ════════════ */
+.step{padding:36px 30px;border-left:1px solid var(--border);position:relative}
+.step:first-child{border-left:none}
+.sec-dark .step{border-color:rgba(241,230,205,.12)}
+.step-n{
+  font-family:'Playfair Display',serif;font-style:italic;font-weight:500;
+  font-size:48px;color:var(--gold);line-height:1;margin-bottom:14px;
+}
+.sec-dark .step-n{color:var(--gold)}
+.step h4{font-size:15px;font-weight:500;margin-bottom:8px}
+.sec-dark .step h4{color:#FBF6EC}
+.step p{font-size:13px;color:var(--ink-3);line-height:1.85;font-weight:300}
+.sec-dark .step p{color:rgba(241,230,205,.55)}
+
+/* ════════════ FAQ ════════════ */
+.faq-item{border-bottom:1px solid var(--border);padding:24px 0}
+.faq-q{
+  font-size:16px;font-weight:500;color:var(--ink);margin-bottom:10px;
+  font-family:'Playfair Display','Noto Serif TC',serif;
+}
+.faq-q::before{
+  content:'Q.';font-family:'Playfair Display',serif;font-style:italic;
+  color:var(--gold);margin-right:10px;font-weight:500;
+}
+.faq-a{font-size:14px;color:var(--ink-3);line-height:1.95;font-weight:300;padding-left:30px}
+
+/* ════════════ PARTNER TIER CARDS ════════════ */
+.tier-card{
+  padding:48px 40px;border:1px solid var(--border);background:#FBF7F0;position:relative;
+  transition:transform .25s;
+}
+.tier-card:hover{transform:translateY(-3px)}
+.tier-badge{
+  display:inline-block;
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:12px;letter-spacing:1.8px;padding:6px 14px;margin-bottom:20px;font-weight:500;
+}
+.badge-select{background:var(--moss-l);color:var(--moss);border:1px solid var(--moss)}
+.badge-bulk{background:var(--gold-l);color:var(--gold-d);border:1px solid var(--gold)}
+.badge-team{background:var(--cream-2);color:var(--ink-2);border:1px solid var(--border-2)}
+.tier-card h3{
+  font-size:24px;font-weight:500;margin-bottom:14px;
+  font-family:'Playfair Display','Noto Serif TC',serif;letter-spacing:.3px;
+}
+.tier-card > p{font-size:14px;color:var(--ink-3);line-height:1.95;font-weight:300;margin-bottom:24px}
+.tier-list{list-style:none;margin-bottom:28px}
+.tier-list li{
+  font-size:14px;color:var(--ink-2);line-height:1.95;
+  padding:4px 0 4px 18px;position:relative;font-weight:300;
+}
+.tier-list li::before{content:'—';position:absolute;left:0;color:var(--moss)}
+
+/* ════════════ KNOWLEDGE CARDS ════════════ */
+.know-card{
+  background:#FBF7F0;padding:36px 32px;border:1px solid var(--border);
+  cursor:pointer;transition:all .25s;
+}
+.know-card:hover{border-color:var(--moss);transform:translateY(-4px);box-shadow:0 18px 44px rgba(28,25,22,.08)}
+.know-cat{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:13px;letter-spacing:2px;color:var(--moss);margin-bottom:12px;
+}
+.know-card h3{font-size:18px;font-weight:500;margin-bottom:10px;line-height:1.45;font-family:'Playfair Display','Noto Serif TC',serif}
+.know-card p{font-size:13.5px;color:var(--ink-3);line-height:1.85;font-weight:300}
+
+/* ════════════ 知識庫深色星空主題 ════════════ */
+.starry{
+  background:
+    radial-gradient(ellipse at 20% 30%,rgba(184,150,90,.10) 0%,transparent 50%),
+    radial-gradient(ellipse at 80% 70%,rgba(45,107,84,.12) 0%,transparent 55%),
+    linear-gradient(180deg,var(--night) 0%,var(--night-2) 60%,var(--night) 100%);
+  position:relative;color:#F1E6CD;overflow:hidden;
+}
+.starry::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:
+    radial-gradient(1.5px 1.5px at 20% 30%,rgba(255,250,235,.95),transparent 50%),
+    radial-gradient(1px 1px at 35% 12%,rgba(255,250,235,.7),transparent 50%),
+    radial-gradient(2px 2px at 70% 25%,rgba(255,238,210,.95),transparent 50%),
+    radial-gradient(1px 1px at 50% 55%,rgba(255,250,235,.55),transparent 50%),
+    radial-gradient(1.5px 1.5px at 85% 60%,rgba(255,250,235,.8),transparent 50%),
+    radial-gradient(1px 1px at 25% 75%,rgba(255,250,235,.5),transparent 50%),
+    radial-gradient(2px 2px at 60% 85%,rgba(255,238,210,.85),transparent 50%),
+    radial-gradient(1px 1px at 12% 60%,rgba(255,250,235,.65),transparent 50%),
+    radial-gradient(1.5px 1.5px at 90% 15%,rgba(255,250,235,.75),transparent 50%),
+    radial-gradient(1px 1px at 78% 45%,rgba(255,250,235,.5),transparent 50%),
+    radial-gradient(1px 1px at 45% 90%,rgba(255,250,235,.4),transparent 50%),
+    radial-gradient(2px 2px at 8% 18%,rgba(255,238,210,.7),transparent 50%);
+  background-size:1200px 800px;
+  opacity:.9;
+  animation:twinkle 6s ease-in-out infinite alternate;
+}
+.starry::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:
+    radial-gradient(1px 1px at 15% 45%,rgba(255,250,235,.5),transparent 50%),
+    radial-gradient(1px 1px at 55% 22%,rgba(255,250,235,.4),transparent 50%),
+    radial-gradient(1px 1px at 88% 78%,rgba(255,250,235,.5),transparent 50%),
+    radial-gradient(1px 1px at 33% 88%,rgba(255,250,235,.4),transparent 50%),
+    radial-gradient(1px 1px at 68% 65%,rgba(255,250,235,.45),transparent 50%);
+  background-size:900px 700px;opacity:.7;
+  animation:twinkle2 8s ease-in-out infinite alternate;
+}
+@keyframes twinkle{0%{opacity:.6}100%{opacity:1}}
+@keyframes twinkle2{0%{opacity:.4}100%{opacity:.85}}
+
+.starry .sec-ey{color:var(--gold)}
+.starry .sec-ey::before{background:var(--gold)}
+.starry .sec-title{color:#F1E6CD}
+.starry .sec-title em{color:var(--gold);font-style:italic}
+.starry .sec-sub{color:rgba(241,230,205,.6)}
+
+.know-card-dark{
+  background:rgba(20,23,41,.55);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  padding:36px 32px;
+  border:1px solid rgba(184,150,90,.22);
+  cursor:pointer;transition:all .3s;position:relative;overflow:hidden;
+}
+.know-card-dark::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  opacity:.4;transition:opacity .3s;
+}
+.know-card-dark:hover{border-color:var(--gold);transform:translateY(-5px);background:rgba(30,34,53,.7)}
+.know-card-dark:hover::before{opacity:1}
+.know-cat-dark{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:13px;letter-spacing:2px;color:var(--gold);margin-bottom:14px;
+}
+.know-card-dark h3{
+  font-size:19px;font-weight:500;margin-bottom:12px;line-height:1.5;
+  color:#F1E6CD;font-family:'Playfair Display','Noto Serif TC',serif;
+}
+.know-card-dark p{font-size:13.5px;color:rgba(241,230,205,.65);line-height:1.85;font-weight:300}
+
+.tab-bar-dark{
+  display:flex;gap:4px;margin-bottom:48px;
+  border-bottom:1px solid rgba(184,150,90,.2);padding-bottom:0;
+}
+.tab-btn-dark{
+  padding:14px 26px;font-size:13px;letter-spacing:1.8px;
+  border:none;background:transparent;cursor:pointer;
+  color:rgba(241,230,205,.5);border-bottom:2px solid transparent;
+  font-family:'Noto Serif TC',serif;margin-bottom:-1px;transition:all .25s;
+}
+.tab-btn-dark:hover{color:rgba(241,230,205,.9)}
+.tab-btn-dark.act-tab{color:var(--gold);border-bottom-color:var(--gold)}
+
+/* ════════════ ABOUT SPLIT ════════════ */
+.about-split{display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:center}
+.about-img{
+  aspect-ratio:4/5;
+  background:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=85') center/cover;
+  position:relative;box-shadow:0 30px 80px rgba(28,25,22,.18);
+}
+.about-img::after{content:'';position:absolute;inset:14px;border:1px solid rgba(255,255,255,.45);pointer-events:none}
+
+/* ════════════ CONTACT ════════════ */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.contact-info h3{
+  font-family:'Playfair Display','Noto Serif TC',serif;
+  font-size:30px;font-weight:500;margin-bottom:36px;
+}
+.contact-item{display:flex;gap:18px;margin-bottom:26px;align-items:flex-start}
+.contact-icon{
+  width:44px;height:44px;background:var(--moss-l);
+  display:flex;align-items:center;justify-content:center;
+  font-size:17px;flex-shrink:0;border:1px solid var(--moss);color:var(--moss);
+}
+.contact-text h4{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:14px;letter-spacing:1.8px;color:var(--ink-3);margin-bottom:6px;
+}
+.contact-text p{font-size:15px;color:var(--ink)}
+.form-group{margin-bottom:22px}
+.form-label{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:13px;letter-spacing:1.5px;color:var(--ink-3);
+  margin-bottom:8px;display:block;
+}
+.form-input{
+  width:100%;background:#FBF7F0;border:1px solid var(--border-2);
+  padding:14px 18px;font-family:'Noto Serif TC',serif;
+  font-size:14px;color:var(--ink);outline:none;transition:border-color .2s;
+}
+.form-input:focus{border-color:var(--moss)}
+textarea.form-input{resize:vertical;min-height:140px}
+
+/* ════════════ NEEDS PHOTO NOTICE ════════════ */
+.needs-photo{
+  background:var(--gold-l);border:1.5px dashed var(--gold);
+  padding:22px 30px;display:flex;align-items:flex-start;gap:16px;margin-bottom:36px;
+}
+.needs-photo-icon{font-size:22px;flex-shrink:0;margin-top:2px}
+.needs-photo-text h4{
+  font-family:'Playfair Display','Noto Serif TC',serif;
+  font-size:15px;font-weight:600;color:var(--gold-d);margin-bottom:6px;
+}
+.needs-photo-text p{font-size:13px;color:var(--ink-2);line-height:1.8;font-weight:300}
+
+/* ════════════ PAGE HERO VARIANTS ════════════ */
+.hero-sm{
+  position:relative;height:420px;display:flex;align-items:flex-end;
+  padding:0 80px 64px;overflow:hidden;background:var(--charcoal);
+}
+.hero-sm-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.42) saturate(1.05)}
+.hero-sm-grad{
+  position:absolute;inset:0;
+  background:linear-gradient(120deg,rgba(28,25,22,.88) 0%,rgba(28,25,22,.35) 100%);
+}
+.hero-sm-frame{position:absolute;top:32px;right:80px;bottom:32px;left:80px;border:1px solid rgba(238,226,199,.16);pointer-events:none}
+.hero-sm-content{position:relative;z-index:2;max-width:760px}
+.hero-sm h1{
+  font-family:'Playfair Display','Noto Serif TC',serif;
+  font-size:clamp(36px,5vw,64px);font-weight:500;color:#FBF6EC;
+  line-height:1.15;margin-bottom:16px;letter-spacing:-.4px;
+}
+.hero-sm h1 em{font-style:italic;color:var(--gold);font-weight:500}
+.hero-sm p{font-size:14.5px;color:rgba(241,230,205,.7);font-weight:300;max-width:540px;line-height:1.95}
+.hero-sm .eyebrow{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:14px;letter-spacing:3px;color:var(--gold);
+  margin-bottom:20px;display:flex;align-items:center;gap:14px;
+}
+.hero-sm .eyebrow::before{content:'';width:36px;height:1px;background:var(--gold)}
+
+/* ════════════ CTA BAND ════════════ */
+.cta-band{
+  background:linear-gradient(135deg,var(--moss) 0%,var(--moss-d) 100%);
+  padding:80px 80px;display:flex;align-items:center;justify-content:space-between;
+  gap:40px;position:relative;overflow:hidden;
+}
+.cta-band::before{
+  content:'';position:absolute;top:-50%;right:-10%;width:60%;height:200%;
+  background:radial-gradient(ellipse,rgba(184,150,90,.18) 0%,transparent 60%);
+  pointer-events:none;
+}
+.cta-band h2{
+  font-family:'Playfair Display','Noto Serif TC',serif;
+  font-size:clamp(28px,3.4vw,42px);font-weight:500;color:#FBF6EC;
+  max-width:560px;line-height:1.25;position:relative;z-index:1;
+}
+.cta-band h2 em{font-style:italic;color:var(--gold);font-weight:500}
+.cta-band-sub{font-size:14px;color:rgba(241,230,205,.65);margin-top:10px;position:relative;z-index:1}
+.cta-band .btn-row{position:relative;z-index:1}
+
+/* ════════════ FOOTER ════════════ */
+footer{
+  background:var(--charcoal);padding:60px 80px 40px;
+  display:flex;justify-content:space-between;align-items:center;gap:24px;
+  border-top:1px solid rgba(184,150,90,.14);
+}
+footer .logo{color:#F1E6CD;font-size:20px}
+footer .logo span{color:var(--gold)}
+.footer-links{display:flex;gap:28px;flex-wrap:wrap}
+.footer-links a{
+  font-size:12px;color:rgba(241,230,205,.4);cursor:pointer;
+  letter-spacing:1.2px;transition:color .2s;
+  font-family:'Noto Serif TC',serif;
+}
+.footer-links a:hover{color:var(--gold)}
+footer p.copy{font-size:11px;color:rgba(241,230,205,.3);letter-spacing:.5px}
+
+/* ════════════ LINE@ ════════════ */
+.btn-line-lg{
+  background:#fff;color:#06c755;padding:18px 38px;
+  font-size:14px;letter-spacing:1.5px;border:none;cursor:pointer;
+  font-family:'Noto Serif TC',serif;display:inline-flex;
+  align-items:center;gap:12px;font-weight:600;text-decoration:none;
+  transition:transform .15s;
+}
+.btn-line-lg:hover{transform:translateY(-2px)}
+.btn-line-lg .lg-tag{
+  background:#06c755;color:#fff;padding:3px 10px;
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:12px;letter-spacing:1.5px;border-radius:2px;font-weight:600;
+}
+.line-band{
+  background:linear-gradient(135deg,#06c755 0%,#048b3d 100%);
+  padding:44px 56px;border-radius:0;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:32px;flex-wrap:wrap;position:relative;overflow:hidden;
+}
+.line-band::before{
+  content:'';position:absolute;top:-50%;right:-10%;width:50%;height:200%;
+  background:radial-gradient(ellipse,rgba(255,255,255,.12) 0%,transparent 60%);
+}
+.line-band-text h3{
+  font-family:'Playfair Display','Noto Serif TC',serif;
+  font-size:22px;font-weight:500;color:#fff;margin-bottom:8px;letter-spacing:.3px;
+}
+.line-band-text p{font-size:14px;color:rgba(255,255,255,.85);letter-spacing:.05em}
+
+.phase-tag{
+  display:inline-block;font-family:'Playfair Display',serif;font-style:italic;
+  font-size:11px;letter-spacing:1.5px;padding:3px 10px;
+  vertical-align:middle;margin-left:10px;font-weight:500;
+}
+.pt-on{background:var(--moss-l);color:var(--moss);border:1px solid var(--moss)}
+.pt-off{background:var(--cream-2);color:var(--ink-3);border:1px solid var(--border-2)}
+
+/* ════════════ TEAM ════════════ */
+.team-avatar{
+  width:74px;height:74px;border-radius:50%;
+  background:var(--cream-3);margin:0 auto 14px;overflow:hidden;
+}
+.team-name{font-size:16px;font-weight:500;margin-bottom:4px;font-family:'Playfair Display','Noto Serif TC',serif}
+.team-role{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:12px;color:var(--ink-3);letter-spacing:1.2px;
+}
+
+/* ════════════ RWD ════════════ */
+@media (max-width:980px){
+  .sec{padding:72px 32px}
+  nav{padding:0 24px}
+  .nav-links{gap:18px}
+  .nav-links a{font-size:11px}
+  .hero{padding:0 32px 64px}
+  .hero-frame,.hero-sm-frame{display:none}
+  .hero-issue{display:none}
+  .mag,.svc-row,.about-split,.contact-grid{grid-template-columns:1fr;gap:48px}
+  .g3,.g4,.g5{grid-template-columns:1fr 1fr}
+  .case-grid{grid-template-columns:1fr 1fr}
+  .cta-band{flex-direction:column;align-items:flex-start;padding:56px 32px}
+  footer{flex-direction:column;text-align:center;padding:40px 32px}
+  .hero-sm{padding:0 32px 48px}
+  .line-band{padding:32px 28px;flex-direction:column;align-items:flex-start;gap:18px}
+}
+@media (max-width:600px){
+  .g3,.g4,.g5,.case-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════ NAV ════════════════════════════════ -->
+<nav id="mainNav">
+  <div class="logo" onclick="show('home')">Xin <span>Yuan</span></div>
+  <div class="nav-links">
+    <a onclick="show('home')"      id="n-home">首頁</a>
+    <a onclick="show('about')"     id="n-about">關於欣轅</a>
+    <a onclick="show('services')"  id="n-services">服務項目</a>
+    <a onclick="show('projects')"  id="n-projects">工程案例</a>
+    <a onclick="show('knowledge')" id="n-knowledge">知識庫</a>
+    <a onclick="show('partners')"  id="n-partners">合作夥伴</a>
+    <a onclick="show('contact')"   id="n-contact" class="nav-cta">預約諮詢</a>
+  </div>
+</nav>
+
+
+<!-- ════════════════════════════════ 首頁 HOME ════════════════════════════════ -->
+<div class="pg act" id="home">
+
+  <!-- HERO 全幅圖片疊文字 -->
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grad"></div>
+    <div class="hero-frame"></div>
+    <div class="hero-content">
+      <div class="hero-rule"><span>The Craft of Spaces &nbsp;·&nbsp; Volume I</span></div>
+      <h1>
+        空間的細節，<br>
+        <em>決定生活的</em>感受。
+        <span class="br-line">— a quiet manifesto for thoughtful interiors</span>
+      </h1>
+      <p class="hero-sub">衛浴、廚具、系統櫃——欣轅整合工程每一個看不見的環節，讓設計的美真正撐得住。</p>
+      <div class="btn-row">
+        <button class="btn-p" onclick="show('contact')">預約免費諮詢 →</button>
+        <button class="btn-g" onclick="show('projects')">翻閱工程案例</button>
+      </div>
+    </div>
+    <div class="hero-issue">
+      <div class="issue-no">№ 01</div>
+      <div class="issue-label">EST. 2026</div>
+    </div>
+  </div>
+
+  <!-- 雜誌左右排版：品牌主張 -->
+  <div class="sec sec-cream">
+    <div class="mag">
+      <div class="mag-text">
+        <div class="sec-ey">Editor's Note</div>
+        <h2>工程，是<em>美學背後</em><br>那一道沉默的防線。</h2>
+        <p class="lede">「我們相信，看得見的美，需要看不見的標準來撐持。」</p>
+        <p class="drop-cap">欣轅整合衛浴、廚具、系統櫃三線工程——從排水坡度到磁磚收邊，從管線走向到泥作厚度，每一個細節，都被寫成可被追蹤的標準。</p>
+        <p>不只做工程，更把工程風險說清楚、把施工標準寫出來、把每一個交付變成可被檢查的紀錄。</p>
+        <div class="signoff">— 欣轅編輯部</div>
+      </div>
+      <div style="position:relative">
+        <div class="mag-img" style="background-image:url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=85')"></div>
+        <div class="mag-img-tag">Volume I · No. 01</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 核心價值 -->
+  <div class="sec sec-alt">
+    <div class="sec-ey">Pillars</div>
+    <div class="sec-title">三道<em>標準</em>，<br>撐起一個品牌。</div>
+    <div class="sec-sub">美麗的空間，需要看不見的標準來撐持。欣轅整合三線工程，讓品質有跡可循、有人負責。</div>
+    <div class="g3">
+      <div class="val-card">
+        <div class="val-num">01</div>
+        <h3>整合三線工程</h3>
+        <p>衛浴、廚具、系統櫃，單一窗口協調所有工班。你只需要說清楚你要什麼，其他交給欣轅。</p>
+      </div>
+      <div class="val-card">
+        <div class="val-num">02</div>
+        <h3>工程風險可視化</h3>
+        <p>排水、防水、管線——欣轅在施工前就說清楚風險在哪，讓你做決定，不讓你事後才知道。</p>
+      </div>
+      <div class="val-card">
+        <div class="val-num">03</div>
+        <h3>設計師的可靠後盾</h3>
+        <p>你負責讓空間美，欣轅負責讓美撐得住。工程準時、不出包、有問題我們扛。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 雜誌左右排版：服務概念（右圖左文） -->
+  <div class="sec sec-cream">
+    <div class="mag mag-rev">
+      <div style="position:relative">
+        <div class="mag-img" style="background-image:url('https://images.unsplash.com/photo-1620626011761-996317702519?w=1200&q=85')"></div>
+        <div class="mag-img-tag">Services · Phase I</div>
+      </div>
+      <div class="mag-text">
+        <div class="sec-ey">Three Services</div>
+        <h2>從單一設備安裝，<br>到全室<em>整合工程</em>。</h2>
+        <p class="lede">每一個我們承接的案子，都有同一道工程語言。</p>
+        <p>衛浴整體改造、TOTO 品牌安裝、設計師整合方案——三條服務線各自獨立，又彼此補位。</p>
+        <p>從單一馬桶安裝到全室浴室翻新，從設備選型到工程交付，欣轅提供完整解法。</p>
+        <div class="btn-row" style="margin-top:32px">
+          <button class="btn-t" onclick="show('services')">翻到服務項目 →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 三大服務入口 -->
+  <div class="sec sec-alt">
+    <div class="sec-ey">Service Index</div>
+    <div class="sec-title">服務目錄</div>
+    <div class="g3">
+      <div class="svc-card" onclick="show('services')">
+        <div class="svc-tag">Bathroom · 01</div>
+        <h3>衛浴整體改造</h3>
+        <p>從排水規劃、防水處理到 TOTO 設備安裝，翻新老屋浴室的一站式解法。</p>
+        <span class="arr">了解服務 →</span>
+      </div>
+      <div class="svc-card" onclick="show('services')">
+        <div class="svc-tag">Installation · 02</div>
+        <h3>TOTO 品牌安裝</h3>
+        <p>授權安裝、型號確認、規格對齊，讓你買對設備、裝得漂亮、用得安心。</p>
+        <span class="arr">了解服務 →</span>
+      </div>
+      <div class="svc-card" onclick="show('partners')">
+        <div class="svc-tag">Partnership · 03</div>
+        <h3>設計師合作方案</h3>
+        <p>固定報價、進度透明、工程保障。讓你的案子不因工程翻車，不讓設計師替我們背鍋。</p>
+        <span class="arr">了解合作 →</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 精選案例 -->
+  <div class="sec sec-dark">
+    <div class="sec-ey">Selected Works</div>
+    <div class="sec-title">精選<em>工程案例</em></div>
+    <div class="sec-sub">每一個完工的空間，都藏著欣轅解決問題的過程。</div>
+
+    <div class="needs-photo" style="background:rgba(184,150,90,.10);border-color:rgba(184,150,90,.42)">
+      <div class="needs-photo-icon">📸</div>
+      <div class="needs-photo-text">
+        <h4 style="color:var(--gold)">等待真實案例照片</h4>
+        <p style="color:rgba(241,230,205,.55)">此區域預留給巍傑實際工程案例的 Before / After 照片。請提供至少 3 組完工實拍，上線後將替換為真實案例。</p>
+      </div>
+    </div>
+
+    <div class="case-grid">
+      <div class="case-card">
+        <div class="case-bg" style="background-image:url('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=900&q=85')"></div>
+        <div class="case-overlay"></div>
+        <div class="case-body">
+          <div class="case-tag-s">Project 01 · 衛浴整體改造</div>
+          <h3>台北信義區住宅</h3>
+          <p>老屋翻新 · TOTO 設備安裝</p>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-bg" style="background-image:url('https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=900&q=85')"></div>
+        <div class="case-overlay"></div>
+        <div class="case-body">
+          <div class="case-tag-s">Project 02 · 防水 排水重建</div>
+          <h3>新北老屋翻新</h3>
+          <p>防水層重建 · 排水系統重整</p>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-bg" style="background-image:url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=900&q=85')"></div>
+        <div class="case-overlay"></div>
+        <div class="case-body">
+          <div class="case-tag-s">Project 03 · TOTO 品牌安裝</div>
+          <h3>台中精品飯店客房</h3>
+          <p>智能馬桶 · 乾濕分離改造</p>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:44px;text-align:center">
+      <button class="btn-g" onclick="show('projects')">翻閱全部案例 →</button>
+    </div>
+  </div>
+
+  <!-- TOTO 知識區 -->
+  <div class="sec sec-cream">
+    <div class="sec-ey">Brand Knowledge</div>
+    <div class="sec-title">TOTO <em>精選應用</em>解析</div>
+    <div class="sec-sub">從選品到安裝，欣轅比你更了解它在不同空間的表現。</div>
+    <div class="g3">
+      <div class="know-card" onclick="show('knowledge')">
+        <div class="know-cat">Selection · 選型指南</div>
+        <h3>尺寸與比例選型</h3>
+        <p>不同坪數、不同格局，適合的 TOTO 產品不一樣。欣轅幫你對照屋況，選對型號。</p>
+      </div>
+      <div class="know-card" onclick="show('knowledge')">
+        <div class="know-cat">Installation · 安裝細節</div>
+        <h3>安裝細節與常見問題</h3>
+        <p>哪些地方最容易出錯？哪些細節影響使用體驗？工程師的第一手說明。</p>
+      </div>
+      <div class="know-card" onclick="show('knowledge')">
+        <div class="know-cat">Inspiration · 設計靈感</div>
+        <h3>設計師的應用靈感</h3>
+        <p>真實案場中，設計師如何把 TOTO 設備融入空間語彙？看案例說明。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 設計師合作 CTA -->
+  <div class="cta-band">
+    <div>
+      <h2>設計與工程，<br>可以是真正的<em>夥伴關係</em>。</h2>
+      <p class="cta-band-sub">欣轅只與少數設計師長期合作。如果你在找一個真正能依靠的工程夥伴，歡迎認識我們。</p>
+    </div>
+    <button class="btn-gold" style="white-space:nowrap" onclick="show('partners')">了解合作方式 →</button>
+  </div>
+
+  <!-- Journal -->
+  <div class="sec sec-alt">
+    <div class="sec-ey">Journal · 工程紀錄</div>
+    <div class="sec-title">工程<em>知識</em>與案例紀錄</div>
+    <div class="sec-sub">把工程不可見的細節，寫成人人看得懂的說明。</div>
+    <div class="g3">
+      <div class="know-card" onclick="show('knowledge')">
+        <div class="know-cat">工程百科</div>
+        <h3>老屋浴室翻新前，你必須先確認這五件事</h3>
+        <p>很多翻新工程後來追加費用，往往是因為這五個問題沒有在施工前釐清……</p>
+      </div>
+      <div class="know-card" onclick="show('knowledge')">
+        <div class="know-cat">選購指南</div>
+        <h3>TOTO 智能馬桶選型指南：三個型號的真實差異</h3>
+        <p>市面上 TOTO 智能馬桶型號繁多，這篇從坪數、水壓、預算三個角度幫你選……</p>
+      </div>
+      <div class="know-card" onclick="show('knowledge')">
+        <div class="know-cat">安裝科普</div>
+        <h3>為什麼浴室防水要做兩層？一次說清楚</h3>
+        <p>很多人以為防水就是刷一層防水塗料，但在老屋翻新的情境下，這樣做是不夠的……</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="logo">Xin <span>Yuan</span> <span style="font-size:13px;color:rgba(241,230,205,.35);margin-left:12px;letter-spacing:2px;font-style:normal">室內工程</span></div>
+    <div class="footer-links">
+      <a onclick="show('about')">關於欣轅</a>
+      <a onclick="show('services')">服務項目</a>
+      <a onclick="show('projects')">工程案例</a>
+      <a onclick="show('knowledge')">知識庫</a>
+      <a onclick="show('partners')">合作夥伴</a>
+      <a onclick="show('contact')">聯絡我們</a>
+    </div>
+    <p class="copy">© 2026 欣轅室內工程有限公司</p>
+  </footer>
+</div>
+
+
+<!-- ════════════════════════════════ 關於欣轅 ABOUT ════════════════════════════════ -->
+<div class="pg" id="about">
+  <div class="hero-sm">
+    <div class="hero-sm-bg" style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1800&q=85')"></div>
+    <div class="hero-sm-grad"></div>
+    <div class="hero-sm-frame"></div>
+    <div class="hero-sm-content">
+      <div class="eyebrow">About · Vol. I &nbsp;Issue 02</div>
+      <h1>把工程標準，<br>變成<em>品牌信任</em>。</h1>
+      <p>欣轅整合衛浴、廚具、系統櫃三線工程，以看得見的標準建立看不見的信任。</p>
+    </div>
+  </div>
+
+  <!-- 雜誌左右：品牌故事 -->
+  <div class="sec sec-cream">
+    <div class="about-split">
+      <div>
+        <div class="sec-ey">Story · 品牌故事</div>
+        <div class="sec-title">工程，是<br>空間品質的<em>地基</em>。</div>
+        <p class="drop-cap" style="font-size:15px;color:var(--ink-2);line-height:2;font-weight:300;margin-bottom:22px">
+          很多美麗的空間，幾年後開始出問題——不是設計不好，是工程沒做對。
+        </p>
+        <p style="font-size:14.5px;color:var(--ink-2);line-height:2;font-weight:300;margin-bottom:22px">
+          欣轅從衛浴工程出發，逐步整合廚具與系統櫃，目標是成為室內設計師與業主最可以依靠的工程整合夥伴。我們不只做工程，我們把工程風險說清楚、把施工標準寫出來、把每一個細節變成可被追蹤的記錄。
+        </p>
+        <p style="font-size:14.5px;color:var(--ink-2);line-height:2;font-weight:300">
+          把看不見的工程風險，寫成人人看得懂的標準——這是欣轅存在的理由。
+        </p>
+        <div style="margin-top:28px;font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:var(--gold-d);letter-spacing:1px">— 欣轅編輯部</div>
+      </div>
+      <div class="about-img"></div>
+    </div>
+  </div>
+
+  <!-- 欣轅 × 巍傑 -->
+  <div class="sec sec-alt">
+    <div class="sec-ey">Brand Architecture</div>
+    <div class="sec-title">欣轅 <em>×</em> 巍傑</div>
+    <div class="sec-sub">兩個品牌，一個工程標準。</div>
+    <div class="g2">
+      <div class="val-card" style="border-top-color:var(--moss)">
+        <div class="svc-tag">Brand · 品牌母艦</div>
+        <h3 style="font-size:24px;font-family:'Playfair Display','Noto Serif TC',serif;font-weight:500;margin-bottom:14px">欣轅室內工程</h3>
+        <p>品牌定位、客戶服務、設計師合作、整合工程規劃。所有對外的品牌承諾與服務標準，由欣轅承擔與交付。</p>
+      </div>
+      <div class="val-card" style="border-top-color:var(--gold)">
+        <div class="svc-tag" style="color:var(--gold-d)">Technique · 技術執行</div>
+        <h3 style="font-size:24px;font-family:'Playfair Display','Noto Serif TC',serif;font-weight:500;margin-bottom:14px">巍傑工程</h3>
+        <p>施工技術、工程執行、品質把關。多年累積的工程實績與專業能力，是欣轅品牌信任的技術根基。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 核心定位 -->
+  <div class="sec sec-cream">
+    <div class="sec-ey">Positioning</div>
+    <div class="sec-title">三維<em>定位</em></div>
+    <div class="g3">
+      <div class="val-card">
+        <div class="val-num" style="font-size:32px;font-style:italic">產業</div>
+        <h3>室內裝潢 × 衛浴工程</h3>
+        <p>專注居住空間的整合工程，從住宅翻新到商業空間配合施工。</p>
+      </div>
+      <div class="val-card">
+        <div class="val-num" style="font-size:32px;font-style:italic">位置</div>
+        <h3>工程整合服務商</h3>
+        <p>整合衛浴、廚具、系統櫃三線工程，提供設計師與業主單一窗口的工程服務。</p>
+      </div>
+      <div class="val-card">
+        <div class="val-num" style="font-size:32px;font-style:italic">差異</div>
+        <h3>風險可視化標準</h3>
+        <p>把不可見的工程風險，寫成人人看得懂的標準。施工前說清楚，施工中有記錄，完工後有保固。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 團隊 -->
+  <div class="sec sec-alt">
+    <div class="sec-ey">Team · 專業團隊</div>
+    <div class="sec-title">團隊<em>介紹</em></div>
+    <div class="needs-photo">
+      <div class="needs-photo-icon">📸</div>
+      <div class="needs-photo-text">
+        <h4>等待團隊人像照</h4>
+        <p>請提供工程團隊與品牌團隊的人像照片（姓名 + 職稱 + 專長），完成後將填入此區域。</p>
+      </div>
+    </div>
+    <div class="g4">
+      <div class="tier-card" style="text-align:center;padding:36px 24px">
+        <div class="team-avatar"></div>
+        <div class="team-name">孫欣鈴</div>
+        <div class="team-role">Brand Director · 品牌總監</div>
+        <p style="font-size:13px;color:var(--ink-3);margin-top:12px;line-height:1.75;font-weight:300">品牌策略 × 客戶服務</p>
+      </div>
+      <div class="tier-card" style="text-align:center;padding:36px 24px;background:var(--cream-2)">
+        <div class="team-avatar"></div>
+        <div class="team-name">工程負責人</div>
+        <div class="team-role">Site Lead · 巍傑工程</div>
+        <p style="font-size:13px;color:var(--ink-3);margin-top:12px;line-height:1.75;font-weight:300">衛浴工程 × 品質把關</p>
+      </div>
+      <div class="tier-card" style="text-align:center;padding:36px 24px">
+        <div class="team-avatar"></div>
+        <div class="team-name">待填入</div>
+        <div class="team-role">Consultant · 工程顧問</div>
+        <p style="font-size:13px;color:var(--ink-3);margin-top:12px;line-height:1.75;font-weight:300">施工規劃 × 風險評估</p>
+      </div>
+      <div class="tier-card" style="text-align:center;padding:36px 24px;background:var(--cream-2)">
+        <div class="team-avatar"></div>
+        <div class="team-name">待填入</div>
+        <div class="team-role">Designer Liaison · 設計師窗口</div>
+        <p style="font-size:13px;color:var(--ink-3);margin-top:12px;line-height:1.75;font-weight:300">設計師合作 × 專案管理</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <div>
+      <h2>想了解欣轅<br>能為你的案子<em>做什麼</em>？</h2>
+    </div>
+    <button class="btn-gold" onclick="show('contact')">預約免費諮詢 →</button>
+  </div>
+  <footer>
+    <div class="logo">Xin <span>Yuan</span></div>
+    <div class="footer-links">
+      <a onclick="show('home')">首頁</a>
+      <a onclick="show('services')">服務項目</a>
+      <a onclick="show('projects')">工程案例</a>
+      <a onclick="show('knowledge')">知識庫</a>
+      <a onclick="show('partners')">合作夥伴</a>
+      <a onclick="show('contact')">聯絡我們</a>
+    </div>
+    <p class="copy">© 2026 欣轅室內工程有限公司</p>
+  </footer>
+</div>
+
+
+<!-- ════════════════════════════════ 服務項目 SERVICES（左文右圖） ════════════════════════════════ -->
+<div class="pg" id="services">
+  <div class="hero-sm">
+    <div class="hero-sm-bg" style="background-image:url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1800&q=85')"></div>
+    <div class="hero-sm-grad"></div>
+    <div class="hero-sm-frame"></div>
+    <div class="hero-sm-content">
+      <div class="eyebrow">Services · Vol. I &nbsp;Issue 03</div>
+      <h1>讓工程，成為<br>空間<em>質感</em>的一部份。</h1>
+      <p>衛浴整體改造、TOTO 品牌安裝、設計師整合服務——欣轅提供三線工程的完整解法。</p>
+    </div>
+  </div>
+
+  <!-- 品牌主張 -->
+  <div class="sec sec-cream">
+    <div class="sec-ey">Position · 我們的立場</div>
+    <div class="sec-title">在設計圖確定之後，<br>真正決定品質的，是<em>施工</em>。</div>
+    <p style="font-size:15px;color:var(--ink-2);line-height:2;font-weight:300;max-width:720px">
+      比例恰到好處、材料走合適的路，這些需要把空間條件、屋況結合、融以現場工程的經驗才能判斷。欣轅協助設計師與業主把想法落地，讓每一分工程交付都有標準可循、有人負責、可被追蹤。
+    </p>
+  </div>
+
+  <!-- Service 01：衛浴整體改造（左文右圖） -->
+  <div class="sec sec-alt">
+    <div class="svc-row">
+      <div class="svc-row-text">
+        <span class="svc-no">Service 01 · Bathroom</span>
+        <h2>衛浴整體改造 <span class="ph-tag">Phase I</span></h2>
+        <p>老屋浴室翻新最複雜的不是選磁磚，是那些看不見的問題——排水坡度、防水層狀況、管線走向、泥作厚度。欣轅在施工前先做屋況評估，把風險說清楚，讓你知道自己在買什麼。</p>
+        <div class="field-h">適合對象</div>
+        <ul class="svc-list" style="margin-bottom:32px">
+          <li>屋齡超過 15 年、浴室從未翻修過的住宅</li>
+          <li>有漏水、排水慢、異味等明顯問題的空間</li>
+          <li>設計師承接的住宅案，需要可靠工程夥伴配合</li>
+          <li>想整合衛浴設備更換與空間改造的業主</li>
+        </ul>
+        <div class="field-h">處理範圍</div>
+        <ul class="svc-list" style="margin-bottom:32px">
+          <li>防水層檢測與重建</li>
+          <li>排水系統重整（坡度、地漏位置）</li>
+          <li>管線評估與更換（冷熱水、糞管）</li>
+          <li>泥作打除與重建、磁磚鋪設與收邊</li>
+          <li>衛浴設備安裝（TOTO 為主）</li>
+        </ul>
+        <button class="btn-t" onclick="show('contact')">預約免費現場評估 →</button>
+      </div>
+      <div style="position:relative">
+        <div class="svc-row-img" style="background-image:url('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1200&q=85')"></div>
+        <div class="svc-row-img-tag">Bathroom · 01</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service 02：TOTO 安裝（右圖左文，反向） -->
+  <div class="sec sec-cream">
+    <div class="svc-row reverse">
+      <div style="position:relative">
+        <div class="svc-row-img" style="background-image:url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200&q=85')"></div>
+        <div class="svc-row-img-tag">TOTO · 02</div>
+      </div>
+      <div class="svc-row-text">
+        <span class="svc-no">Service 02 · Installation</span>
+        <h2>TOTO 品牌安裝服務 <span class="ph-tag">Phase I</span></h2>
+        <p>TOTO 設備好不好裝，取決於管線規格有沒有對齊、安裝師傅夠不夠熟悉產品細節。欣轅長期配合 TOTO 多款產品，從選型建議到安裝完成，讓設備真正發揮它應有的性能。</p>
+        <div class="field-h">可安裝項目</div>
+        <ul class="svc-list" style="margin-bottom:32px">
+          <li>智能馬桶（含免治馬桶座）</li>
+          <li>一體成型浴缸</li>
+          <li>花灑系統與龍頭</li>
+          <li>臉盆、浴櫃組合</li>
+          <li>鏡櫃與收納配件</li>
+        </ul>
+        <button class="btn-t" onclick="show('contact')">詢問安裝服務 →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service 03：設計師整合（左文右圖） -->
+  <div class="sec sec-alt">
+    <div class="svc-row">
+      <div class="svc-row-text">
+        <span class="svc-no">Service 03 · Partnership</span>
+        <h2>設計師整合工程方案 <span class="ph-tag">Phase I</span></h2>
+        <p>設計師最不需要的，是一個讓你擔心的工班。欣轅提供固定報價、固定工期、主動進度通報，讓你把精力留在設計上，工程的事我們來扛。</p>
+        <div class="g2" style="margin-bottom:28px;gap:2px">
+          <div class="val-card" style="padding:30px 24px;background:var(--cream)">
+            <div class="val-num" style="font-size:38px">01</div>
+            <h3 style="font-size:15px">報價透明</h3>
+            <p style="font-size:13px">書面報價、不口頭估價，追加項目需事前確認。</p>
+          </div>
+          <div class="val-card" style="padding:30px 24px;background:var(--cream)">
+            <div class="val-num" style="font-size:38px">02</div>
+            <h3 style="font-size:15px">主動通報</h3>
+            <p style="font-size:13px">工期確認後主動通報進度，你不需要追問。</p>
+          </div>
+          <div class="val-card" style="padding:30px 24px;background:var(--cream)">
+            <div class="val-num" style="font-size:38px">03</div>
+            <h3 style="font-size:15px">責任自負</h3>
+            <p style="font-size:13px">工程問題由欣轅負責，不轉嫁給設計師。</p>
+          </div>
+          <div class="val-card" style="padding:30px 24px;background:var(--cream)">
+            <div class="val-num" style="font-size:38px">04</div>
+            <h3 style="font-size:15px">完工文件</h3>
+            <p style="font-size:13px">竣工報告與保固文件，可轉交業主存查。</p>
+          </div>
+        </div>
+        <button class="btn-t" onclick="show('partners')">了解合作方案 →</button>
+      </div>
+      <div style="position:relative">
+        <div class="svc-row-img" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=85')"></div>
+        <div class="svc-row-img-tag">Partnership · 03</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 廚具 / 系統櫃佔位 -->
+  <div class="sec sec-cream">
+    <div class="sec-ey">Coming · 即將推出</div>
+    <div class="sec-title">廚具改造 <em>·</em> 系統櫃規劃 <span class="phase-tag pt-off">Phase II</span></div>
+    <div class="g2" style="margin-top:32px">
+      <div class="svc-card" style="cursor:default;opacity:.75">
+        <div class="svc-tag">Kitchen</div>
+        <h3>廚具改造</h3>
+        <p>精選廚具合作廠商，提供廚房改造與品牌選品服務。目前可透過 LINE@ 提前登記詢問。</p>
+        <span class="arr" style="color:var(--ink-3)">即將推出</span>
+      </div>
+      <div class="svc-card" style="cursor:default;opacity:.75">
+        <div class="svc-tag">Cabinet</div>
+        <h3>系統櫃規劃</h3>
+        <p>與業界優質系統櫃廠商合作，為你的空間量身規劃收納邏輯。歡迎提前告訴我們你的需求。</p>
+        <span class="arr" style="color:var(--ink-3)">即將推出</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 工程流程 -->
+  <div class="sec sec-dark">
+    <div class="sec-ey">Workflow · 工程流程</div>
+    <div class="sec-title"><em>標準</em>工程流程</div>
+    <div class="g5" style="margin-top:48px">
+      <div class="step"><div class="step-n">01</div><h4>免費現場評估</h4><p>屋況診斷、風險說明，不花一分錢先了解自己的空間。</p></div>
+      <div class="step"><div class="step-n">02</div><h4>書面報價</h4><p>明確報價書，工期寫清楚，不打模糊仗。</p></div>
+      <div class="step"><div class="step-n">03</div><h4>工程施作</h4><p>進度主動通報，關鍵節點拍照記錄。</p></div>
+      <div class="step"><div class="step-n">04</div><h4>完工驗收</h4><p>逐項對照確認，問題當場解決。</p></div>
+      <div class="step"><div class="step-n">05</div><h4>售後保固</h4><p>工程本體一年保固，設備依品牌原廠。</p></div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="sec sec-cream">
+    <div class="sec-ey">FAQ · 常見問題</div>
+    <div class="sec-title">常見<em>問題</em></div>
+    <div style="max-width:780px;margin-top:32px">
+      <div class="faq-item"><div class="faq-q">衛浴整體改造大概需要幾天？</div><div class="faq-a">視坪數與工程範圍而定，一般住宅衛浴整體改造約 10～15 個工作日。欣轅在報價時會提供明確工期，並在合約中載明。</div></div>
+      <div class="faq-item"><div class="faq-q">施工期間可以住在家裡嗎？</div><div class="faq-a">浴室施工期間建議暫時安排他處使用衛浴，其餘空間不受影響。欣轅會在施工前與你確認時程，減少對生活的干擾。</div></div>
+      <div class="faq-item"><div class="faq-q">TOTO 設備可以自購，請欣轅安裝嗎？</div><div class="faq-a">可以。但建議透過欣轅確認型號與管線規格的相容性，避免設備到場後才發現不符而需要額外調整。</div></div>
+      <div class="faq-item"><div class="faq-q">報價會追加嗎？</div><div class="faq-a">原則上不追加。若施工中發現原本無法預見的隱蔽問題，欣轅會先告知、確認後才動工，不擅自追加。</div></div>
+      <div class="faq-item"><div class="faq-q">有提供保固嗎？</div><div class="faq-a">工程本體提供一年保固，設備保固依各品牌原廠條款。所有保固範圍會在合約中明確記載。</div></div>
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <div><h2>不確定從哪裡開始？<br>讓我們先<em>聊聊</em>。</h2><p class="cta-band-sub">免費現場評估，告訴欣轅你的空間狀況，給你一個誠實、可執行的方向。</p></div>
+    <button class="btn-gold" onclick="show('contact')">LINE@ 立即諮詢 →</button>
+  </div>
+  <footer>
+    <div class="logo">Xin <span>Yuan</span></div>
+    <div class="footer-links">
+      <a onclick="show('home')">首頁</a><a onclick="show('about')">關於</a><a onclick="show('services')">服務</a><a onclick="show('projects')">案例</a><a onclick="show('knowledge')">知識庫</a><a onclick="show('partners')">合作</a><a onclick="show('contact')">聯絡</a>
+    </div>
+    <p class="copy">© 2026 欣轅</p>
+  </footer>
+</div>
+
+
+<!-- ════════════════════════════════ 工程案例庫 PROJECTS ════════════════════════════════ -->
+<div class="pg" id="projects">
+  <div class="hero-sm">
+    <div class="hero-sm-bg" style="background-image:url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1800&q=85')"></div>
+    <div class="hero-sm-grad"></div>
+    <div class="hero-sm-frame"></div>
+    <div class="hero-sm-content">
+      <div class="eyebrow">Projects · Vol. I &nbsp;Issue 04</div>
+      <h1>每一個完工空間，<br>都有一段<em>故事</em>。</h1>
+      <p>從問題診斷到完工交付，欣轅把每個工程案例完整記錄下來。</p>
+    </div>
+  </div>
+
+  <div class="sec sec-cream">
+    <div class="needs-photo" style="margin-bottom:40px">
+      <div class="needs-photo-icon">📸</div>
+      <div class="needs-photo-text">
+        <h4>此區域等待真實工程案例照片</h4>
+        <p>請提供巍傑實際完工案例的 Before / After 照片、工程描述、使用設備型號。目標：Phase 1 上線前準備至少 5 個衛浴案例。照片到位後，這些卡片將全部替換為真實案例。</p>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:10px;margin-bottom:40px;flex-wrap:wrap">
+      <button class="btn-t" style="font-size:12px;padding:8px 20px">全部</button>
+      <button class="btn-t" style="font-size:12px;padding:8px 20px;background:var(--cream-2);color:var(--ink-2);border-color:var(--border-2)">衛浴改造</button>
+      <button class="btn-t" style="font-size:12px;padding:8px 20px;background:var(--cream-2);color:var(--ink-2);border-color:var(--border-2)">TOTO 安裝</button>
+      <button class="btn-t" style="font-size:12px;padding:8px 20px;background:var(--cream-2);color:var(--ink-2);border-color:var(--border-2)">防水工程</button>
+      <button class="btn-t" style="font-size:12px;padding:8px 20px;background:var(--cream-2);color:var(--ink-2);border-color:var(--border-2)">老屋翻新</button>
+    </div>
+
+    <div class="case-grid">
+      <div class="case-card">
+        <div class="case-bg" style="background-image:url('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=900&q=85')"></div>
+        <div class="case-overlay"></div>
+        <div class="case-body"><div class="case-tag-s">Project 01 · 衛浴整體改造</div><h3>台北信義區 30 坪住宅</h3><p>屋齡 28 年 · TOTO 設備安裝</p></div>
+      </div>
+      <div class="case-card">
+        <div class="case-bg" style="background-image:url('https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=900&q=85')"></div>
+        <div class="case-overlay"></div>
+        <div class="case-body"><div class="case-tag-s">Project 02 · 防水 排水重建</div><h3>新北老屋翻新</h3><p>防水層重建 · 排水系統重整</p></div>
+      </div>
+      <div class="case-card">
+        <div class="case-bg" style="background-image:url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=900&q=85')"></div>
+        <div class="case-overlay"></div>
+        <div class="case-body"><div class="case-tag-s">Project 03 · TOTO 品牌安裝</div><h3>台中精品飯店客房</h3><p>智能馬桶 · 乾濕分離</p></div>
+      </div>
+      <div class="case-card">
+        <div class="case-placeholder">
+          <div class="case-placeholder-icon">＋</div>
+          <div class="case-placeholder-title">CASE PENDING</div>
+          <div class="case-placeholder-hint">此格將替換為實際工程案例</div>
+          <ul class="case-placeholder-list">
+            <li>Before / After 各 1 張</li>
+            <li>完工實拍 4–6 張</li>
+            <li>使用設備型號清單</li>
+            <li>屋況與工法簡述</li>
+          </ul>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-placeholder">
+          <div class="case-placeholder-icon">＋</div>
+          <div class="case-placeholder-title">CASE PENDING</div>
+          <div class="case-placeholder-hint">此格將替換為實際工程案例</div>
+          <ul class="case-placeholder-list">
+            <li>Before / After 各 1 張</li>
+            <li>完工實拍 4–6 張</li>
+            <li>使用設備型號清單</li>
+            <li>屋況與工法簡述</li>
+          </ul>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-placeholder">
+          <div class="case-placeholder-icon">＋</div>
+          <div class="case-placeholder-title">CASE PENDING</div>
+          <div class="case-placeholder-hint">此格將替換為實際工程案例</div>
+          <ul class="case-placeholder-list">
+            <li>Before / After 各 1 張</li>
+            <li>完工實拍 4–6 張</li>
+            <li>使用設備型號清單</li>
+            <li>屋況與工法簡述</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <div><h2>你的案子，<br>可能就是<em>下一個</em>。</h2></div>
+    <button class="btn-gold" onclick="show('contact')">預約免費諮詢 →</button>
+  </div>
+  <footer>
+    <div class="logo">Xin <span>Yuan</span></div>
+    <div class="footer-links">
+      <a onclick="show('home')">首頁</a><a onclick="show('about')">關於</a><a onclick="show('services')">服務</a><a onclick="show('projects')">案例</a><a onclick="show('knowledge')">知識庫</a><a onclick="show('partners')">合作</a><a onclick="show('contact')">聯絡</a>
+    </div>
+    <p class="copy">© 2026 欣轅</p>
+  </footer>
+</div>
+
+
+<!-- ════════════════════════════════ 知識庫 KNOWLEDGE（深色星空主題） ════════════════════════════════ -->
+<div class="pg" id="knowledge">
+  <div class="hero-sm starry" style="height:480px">
+    <div class="hero-sm-content" style="position:relative;z-index:3">
+      <div class="eyebrow" style="color:var(--gold)">Knowledge · Vol. I &nbsp;Issue 05</div>
+      <h1>把工程的<em>「不可見風險」</em>，<br>寫成人人看得懂的標準。</h1>
+      <p>工程百科、選購指南、安裝科普——欣轅把工程知識透明化。</p>
+    </div>
+  </div>
+
+  <!-- 深色星空主內容 -->
+  <div class="sec starry">
+    <div class="sec-ey">Index · 文章索引</div>
+    <div class="sec-title">A Field <em>Almanac</em><br>for Bathroom Engineering</div>
+    <div class="sec-sub">工程現場的紀錄，整理成讀者看得懂的條目。深夜時讀，最適合。</div>
+
+    <!-- Tab Bar (深色版) -->
+    <div class="tab-bar-dark">
+      <button onclick="switchTab(this,'tab-all')" class="tab-btn-dark act-tab">全部</button>
+      <button onclick="switchTab(this,'tab-eng')" class="tab-btn-dark">工程百科</button>
+      <button onclick="switchTab(this,'tab-buy')" class="tab-btn-dark">選購指南</button>
+      <button onclick="switchTab(this,'tab-ins')" class="tab-btn-dark">安裝科普</button>
+    </div>
+
+    <div class="g3">
+      <div class="know-card-dark">
+        <div class="know-cat-dark">Engineering · 工程百科</div>
+        <h3>老屋浴室翻新前，你必須先確認這五件事</h3>
+        <p>很多翻新工程後來追加費用，往往是因為這五個問題沒有在施工前釐清。防水、排水、管線、泥作、設備規格——每一個都是地雷。</p>
+      </div>
+      <div class="know-card-dark">
+        <div class="know-cat-dark">Selection · 選購指南</div>
+        <h3>TOTO 智能馬桶選型指南：三個型號的真實差異</h3>
+        <p>市面上 TOTO 智能馬桶型號繁多，這篇從坪數、水壓、預算三個角度幫你選出最適合的款式。</p>
+      </div>
+      <div class="know-card-dark">
+        <div class="know-cat-dark">Installation · 安裝科普</div>
+        <h3>為什麼浴室防水要做兩層？一次說清楚</h3>
+        <p>很多人以為防水就是刷一層塗料，但在老屋翻新的情境下，這樣做是不夠的。從施工邏輯說清楚為什麼要兩層。</p>
+      </div>
+      <div class="know-card-dark">
+        <div class="know-cat-dark">Engineering · 工程百科</div>
+        <h3>排水坡度到底要多少？工程師的說明</h3>
+        <p>浴室積水的主要原因，十之八九出在排水坡度。這篇說明正確的坡度標準，以及施工時如何確認。</p>
+      </div>
+      <div class="know-card-dark">
+        <div class="know-cat-dark">Installation · 安裝科普</div>
+        <h3>TOTO 花灑安裝的三個常見錯誤</h3>
+        <p>即使是好的設備，裝錯了也會出問題。這三個錯誤欣轅在施工現場見過太多次，分享給你避開。</p>
+      </div>
+      <div class="know-card-dark">
+        <div class="know-cat-dark">Selection · 選購指南</div>
+        <h3>浴室磁磚怎麼選？從防滑係數到維護成本</h3>
+        <p>磁磚不只是美觀問題，防滑係數、吸水率、縫隙大小都影響長期使用。選磁磚前先看這篇。</p>
+      </div>
+    </div>
+
+    <div style="margin-top:64px;text-align:center;position:relative;z-index:3">
+      <p style="font-family:'Playfair Display',serif;font-style:italic;color:var(--gold);font-size:15px;letter-spacing:1.5px;margin-bottom:8px">— Read by lamplight —</p>
+      <p style="color:rgba(241,230,205,.5);font-size:13px;font-weight:300">在深夜，把工程知識讀完。</p>
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <div><h2>看完文章，<br>想確認自己的<em>空間狀況</em>？</h2><p class="cta-band-sub">免費諮詢，讓欣轅幫你診斷。</p></div>
+    <button class="btn-gold" onclick="show('contact')">LINE@ 立即諮詢 →</button>
+  </div>
+  <footer>
+    <div class="logo">Xin <span>Yuan</span></div>
+    <div class="footer-links">
+      <a onclick="show('home')">首頁</a><a onclick="show('about')">關於</a><a onclick="show('services')">服務</a><a onclick="show('projects')">案例</a><a onclick="show('knowledge')">知識庫</a><a onclick="show('partners')">合作</a><a onclick="show('contact')">聯絡</a>
+    </div>
+    <p class="copy">© 2026 欣轅</p>
+  </footer>
+</div>
+
+
+<!-- ════════════════════════════════ 合作夥伴 PARTNERS ════════════════════════════════ -->
+<div class="pg" id="partners">
+  <div class="hero-sm">
+    <div class="hero-sm-bg" style="background-image:url('https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1800&q=85')"></div>
+    <div class="hero-sm-grad"></div>
+    <div class="hero-sm-frame"></div>
+    <div class="hero-sm-content">
+      <div class="eyebrow">Partners · Vol. I &nbsp;Issue 06</div>
+      <h1>設計師的工程後盾，<br>從第一個案子<em>開始建立</em>。</h1>
+      <p>你負責讓空間美，欣轅負責讓美撐得住。不讓你背鍋，不讓工程翻車。</p>
+    </div>
+  </div>
+
+  <!-- 三層架構 -->
+  <div class="sec sec-cream">
+    <div class="sec-ey">Three Tracks · 合作對象</div>
+    <div class="sec-title">三種<em>合作方式</em>，<br>找到適合你的那一種。</div>
+    <div class="g3" style="margin-top:32px">
+      <div class="tier-card">
+        <div class="tier-badge badge-select">Select · 精選少數</div>
+        <h3>室內設計師</h3>
+        <p>欣轅只與少數設計師長期合作。不是每個案子都接，是每個我們接的案子都認真對你負責。</p>
+        <ul class="tier-list">
+          <li>固定報價不亂改，報你的就是做的</li>
+          <li>進度主動通報，你不用追</li>
+          <li>工程問題由欣轅扛，不推給設計師</li>
+          <li>竣工提供完工報告與保固文件</li>
+        </ul>
+        <button class="btn-t" style="width:100%;margin-top:8px" onclick="show('contact')">申請設計師合作 →</button>
+      </div>
+      <div class="tier-card" style="background:var(--cream-2)">
+        <div class="tier-badge badge-bulk">Bulk · 大量合作</div>
+        <h3>輕裝師</h3>
+        <p>案子來了，你需要的是一個報得快、跑得動的工班。標準化流程，讓你快速取得報價，把工程交給欣轅。</p>
+        <ul class="tier-list">
+          <li>填寫表單後 48 小時內回覆報價方向</li>
+          <li>標準化施工流程，可預期工期</li>
+          <li>快速轉介，持續接案不卡關</li>
+        </ul>
+        <button class="btn-t" style="width:100%;margin-top:8px" onclick="show('contact')">填寫輕裝師表單 →</button>
+      </div>
+      <div class="tier-card">
+        <div class="tier-badge badge-team">Team · 已有班底</div>
+        <h3>軟裝師</h3>
+        <p>懂工程的軟裝師，在客戶面前更有說服力。欣轅持續培訓能掌握工程知識的軟裝師。</p>
+        <ul class="tier-list">
+          <li>工程知識培訓課程</li>
+          <li>現場觀摩機會</li>
+          <li>案件轉介合作機制</li>
+          <li>持續更新的工程知識資源</li>
+        </ul>
+        <button class="btn-t" style="width:100%;margin-top:8px" onclick="show('contact')">加入 LINE@ 了解培訓 →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 合作流程 -->
+  <div class="sec sec-dark">
+    <div class="sec-ey">Workflow · 合作流程</div>
+    <div class="sec-title"><em>標準</em>合作流程</div>
+    <div class="g5" style="margin-top:48px">
+      <div class="step"><div class="step-n">01</div><h4>諮詢</h4><p>LINE@ 或表單說明案件需求</p></div>
+      <div class="step"><div class="step-n">02</div><h4>評估</h4><p>現場勘查確認施工範圍</p></div>
+      <div class="step"><div class="step-n">03</div><h4>報價</h4><p>書面報價書，工期確認</p></div>
+      <div class="step"><div class="step-n">04</div><h4>施工</h4><p>進度主動通報，記錄留存</p></div>
+      <div class="step"><div class="step-n">05</div><h4>售後</h4><p>完工驗收 + 一年工程保固</p></div>
+    </div>
+  </div>
+
+  <!-- 合作案例 -->
+  <div class="sec sec-alt">
+    <div class="sec-ey">Cases · 合作案例</div>
+    <div class="sec-title">與設計師<em>合作的案例</em></div>
+    <div class="needs-photo">
+      <div class="needs-photo-icon">📸</div>
+      <div class="needs-photo-text">
+        <h4>等待合作案例照片</h4>
+        <p>此區域將放置與設計師合作的工程案例。請提供 3 組有合作背景的案例照片，上線後填入。</p>
+      </div>
+    </div>
+    <div class="case-grid">
+      <div class="case-card"><div class="case-bg" style="background-image:url('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=900&q=85')"></div><div class="case-overlay"></div><div class="case-body"><div class="case-tag-s">Project · 設計師合作</div><h3>案例待填入</h3></div></div>
+      <div class="case-card"><div class="case-placeholder"><div class="case-placeholder-icon">＋</div><div class="case-placeholder-title">PARTNER CASE</div><div class="case-placeholder-hint">合作設計師案例待填入</div></div></div>
+      <div class="case-card"><div class="case-placeholder"><div class="case-placeholder-icon">＋</div><div class="case-placeholder-title">PARTNER CASE</div><div class="case-placeholder-hint">合作設計師案例待填入</div></div></div>
+    </div>
+  </div>
+
+  <!-- 文件下載 -->
+  <div class="sec sec-cream">
+    <div class="sec-ey">Documents · 合作文件</div>
+    <div class="sec-title">下載<em>合作資料</em></div>
+    <div class="g3" style="margin-top:32px">
+      <div class="val-card" style="cursor:pointer">
+        <div class="val-num" style="font-size:32px">PDF</div>
+        <h3>合作夥伴規格說明書</h3>
+        <p>欣轅合作方式、施工標準、報價流程完整說明。</p>
+      </div>
+      <div class="val-card" style="cursor:pointer">
+        <div class="val-num" style="font-size:32px">PDF</div>
+        <h3>標準施工流程說明</h3>
+        <p>各工程類型的標準施工步驟與品質確認清單。</p>
+      </div>
+      <div class="val-card" style="cursor:pointer">
+        <div class="val-num" style="font-size:32px">PDF</div>
+        <h3>設備型號規格對照表</h3>
+        <p>常用 TOTO 設備型號與管線規格對照，方便設計師選型。</p>
+      </div>
+    </div>
+    <div class="needs-photo" style="margin-top:32px">
+      <div class="needs-photo-icon">📄</div>
+      <div class="needs-photo-text">
+        <h4>PDF 文件製作中</h4>
+        <p>以上三份文件正在製作，完成後將開放下載。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <div><h2>準備好<em>開始了嗎</em>？<br>告訴欣轅你是哪一種夥伴。</h2></div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <button class="btn-gold" onclick="show('contact')">申請設計師合作</button>
+      <button class="btn-g" onclick="show('contact')">填寫輕裝師表單</button>
+    </div>
+  </div>
+  <footer>
+    <div class="logo">Xin <span>Yuan</span></div>
+    <div class="footer-links">
+      <a onclick="show('home')">首頁</a><a onclick="show('about')">關於</a><a onclick="show('services')">服務</a><a onclick="show('projects')">案例</a><a onclick="show('knowledge')">知識庫</a><a onclick="show('partners')">合作</a><a onclick="show('contact')">聯絡</a>
+    </div>
+    <p class="copy">© 2026 欣轅</p>
+  </footer>
+</div>
+
+
+<!-- ════════════════════════════════ 聯絡我們 CONTACT ════════════════════════════════ -->
+<div class="pg" id="contact">
+  <div class="hero-sm">
+    <div class="hero-sm-bg" style="background-image:url('https://images.unsplash.com/photo-1600607688969-a5bfcd646154?w=1800&q=85')"></div>
+    <div class="hero-sm-grad"></div>
+    <div class="hero-sm-frame"></div>
+    <div class="hero-sm-content">
+      <div class="eyebrow">Contact · Vol. I &nbsp;Issue 07</div>
+      <h1>讓我們先<em>聊聊</em><br>你的空間需求。</h1>
+      <p>免費現場評估，不花一分錢先了解自己的空間問題。</p>
+    </div>
+  </div>
+
+  <!-- LINE@ 主要 CTA -->
+  <div style="padding:56px 80px 0">
+    <div class="line-band">
+      <div class="line-band-text">
+        <h3>最快聯繫方式｜LINE@ 官方帳號</h3>
+        <p>可上傳屋況照片、直接對話，平均回覆時間 30 分鐘以內。</p>
+      </div>
+      <a class="btn-line-lg" href="#" onclick="event.preventDefault();alert('LINE@ ID 待填入')"><span class="lg-tag">LINE</span>加入官方帳號</a>
+    </div>
+  </div>
+
+  <div class="sec" style="padding-top:48px">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>其他聯繫管道</h3>
+        <div class="contact-item">
+          <div class="contact-icon" style="background:#E8F7EE;color:#06c755;border-color:#06c755">L</div>
+          <div class="contact-text"><h4>LINE@</h4><p>最快回覆方式，可上傳照片說明</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div class="contact-text"><h4>Telephone · 電話</h4><p>待填入（請孫欣鈴提供）</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div class="contact-text"><h4>Address · 地址</h4><p>待填入（請孫欣鈴提供）</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div class="contact-text"><h4>Hours · 服務時間</h4><p>週一至週六 09:00–18:00</p></div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:'Playfair Display','Noto Serif TC',serif;font-size:26px;font-weight:500;margin-bottom:32px">填寫諮詢表單</h3>
+        <div class="form-group"><label class="form-label">Name · 姓名</label><input class="form-input" placeholder="你的姓名"></div>
+        <div class="form-group"><label class="form-label">Contact · 聯絡方式（電話 / LINE）</label><input class="form-input" placeholder="方便聯繫的方式"></div>
+        <div class="form-group"><label class="form-label">Brief · 需求說明</label><textarea class="form-input" placeholder="簡單描述你的空間狀況或需求，例如：屋齡、坪數、想改造的項目……"></textarea></div>
+        <button class="btn-p" style="width:100%;padding:18px;font-size:14px;letter-spacing:2.5px">送出諮詢 →</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="logo">Xin <span>Yuan</span></div>
+    <div class="footer-links">
+      <a onclick="show('home')">首頁</a><a onclick="show('about')">關於</a><a onclick="show('services')">服務</a><a onclick="show('projects')">案例</a><a onclick="show('knowledge')">知識庫</a><a onclick="show('partners')">合作</a><a onclick="show('contact')">聯絡</a>
+    </div>
+    <p class="copy">© 2026 欣轅室內工程有限公司</p>
+  </footer>
+</div>
+
+
+<script>
+function show(id){
+  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('act'));
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('act'));
+  document.getElementById(id).classList.add('act');
+  var n=document.getElementById('n-'+id);
+  if(n)n.classList.add('act');
+
+  // 知識庫切換深色主題（NAV 連動）
+  var nav=document.getElementById('mainNav');
+  if(id==='knowledge'){ nav.classList.add('on-dark'); }
+  else{ nav.classList.remove('on-dark'); }
+
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function switchTab(btn,tab){
+  document.querySelectorAll('.tab-btn-dark,.tab-btn').forEach(b=>b.classList.remove('act-tab'));
+  btn.classList.add('act-tab');
+}
+</script>
+</body>
+</html>
