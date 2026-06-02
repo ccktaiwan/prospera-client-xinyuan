@@ -5,7 +5,7 @@ Date: 2026-06-02
 tenant_id: xinyuan
 
 ## Role
-欣靚美學工坊客戶專屬品牌 KB。
+欣轅室內工程客戶專屬品牌 KB。
 Platform repos 透過 tenant_id=xinyuan 存取此 repo 的品牌設定。
 
 ## Connected Services
