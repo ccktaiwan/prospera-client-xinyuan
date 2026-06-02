@@ -1,16 +1,16 @@
 # REPOSITORY_MATURITY_DECLARATION | xinyuan-website
-Ring: R5 Products
+Ring: R5 Products (Client Repo)
 Declared Type: CLIENT_REPO
-Declared Level: 1
+Declared Level: 2
 Declaration Date: 2026-06-02
-Governing Authority: prospera-constitution-governance
 
-## Level 1 Evidence
-- ECOSYSTEM_ROLE.md: defined
+## Level 2 Evidence
+- historical_outputs/: 3 real content files generated via Prospera OS
 - brand_config.json: tenant_id configured
-- CONTRACT.md: platform connections defined
-- AGENTS.md: permissions defined
+- CONTRACT.md: consulting + gengrant connected
+- ECOSYSTEM_ROLE.md: CLIENT_REPO role defined
 
-## Next Level Gate (Level 2)
-- historical_outputs/ directory with real content
-- Connected to consulting platform with real outputs
+## Level 3 Gate
+- LINE official account connected
+- Real case photos replacing Unsplash placeholders
+- WordPress + Stitch handoff complete
