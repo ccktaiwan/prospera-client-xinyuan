@@ -1,0 +1,18 @@
+{
+  "tenant_id": "xinyuan",
+  "client_name": "欣靚美學工坊",
+  "industry": "interior_design",
+  "brand_tone": "質感、專業、創意",
+  "target_audience": "25-45歲有裝修需求的屋主",
+  "platforms": [
+    "Instagram",
+    "Pinterest",
+    "Facebook"
+  ],
+  "connected_services": [
+    "consulting",
+    "gengrant"
+  ],
+  "prospera_ecosystem": true,
+  "created_at": "2026-06-02T09:50:09.639751+00:00"
+}
