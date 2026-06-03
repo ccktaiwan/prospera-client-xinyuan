@@ -3,11 +3,10 @@
   "client_name": "欣轅室內工程",
   "industry": "interior_engineering",
   "assessment_date": "2026-06-03",
-  "assessed_by": "Prospera OS session_42",
+  "assessed_by": "Prospera OS session_44",
   "current_stage": 1,
   "target_stage": 2,
   "stage_model_version": "SME_STAGE_MODEL v1.0 (ADR-021)",
-
   "evidence_current_stage": [
     "官方網站存在（xinyuan-website repo 有完整 HTML 結構）",
     "有品牌識別：欣轅室內工程名稱、TOTO 合作夥伴資格",
@@ -16,7 +15,6 @@
     "有合作夥伴文件：設計師/輕裝師/軟裝師協作說明（docs/partner-docs/）",
     "有 Q3 行銷策略文件 (historical_outputs/strategy_q3_2026.md)"
   ],
-
   "gaps_to_target_stage": [
     "無固定發文頻率計畫（每週目標貼文數未設定）",
     "LINE 官方帳號尚未開通（PHASE_2_PLAN.md 提及但未完成）",
@@ -25,49 +23,70 @@
     "WordPress + Stitch 工程師交接清單未完成（PHASE_2_PLAN.md 待辦）",
     "素材盤點表待孫欣鈴回填（PHASE_2_PLAN.md 提及）"
   ],
-
-  "active_capabilities": ["content", "strategy"],
-
+  "active_capabilities": [
+    "content",
+    "strategy"
+  ],
   "recommended_next_workflows": [
     {
       "workflow": "content",
       "priority": "high",
       "reason": "建立每週固定發文節奏：Instagram 每週 2 篇工程案例 + Facebook 每週 1 篇長文",
-      "output_targets": ["ig_post_week01.md", "ig_post_week02.md", "fb_post_week01.md"]
+      "output_targets": [
+        "ig_post_week01.md",
+        "ig_post_week02.md",
+        "fb_post_week01.md"
+      ]
     },
     {
       "workflow": "strategy",
       "priority": "medium",
       "reason": "制定 Line 官方帳號開通後的歡迎訊息和自動回覆策略",
-      "output_targets": ["line_welcome_strategy.md"]
+      "output_targets": [
+        "line_welcome_strategy.md"
+      ]
     },
     {
       "workflow": "gengrant",
       "priority": "medium",
       "reason": "室內設計業可申請品牌形象升級補助計畫，搭配數位化佈局",
-      "output_targets": ["grant_brand_upgrade_draft.md"]
+      "output_targets": [
+        "grant_brand_upgrade_draft.md"
+      ]
     }
   ],
-
   "kpi_targets": {
     "instagram_followers_target": 500,
     "monthly_new_posts_target": 12,
     "monthly_inquiries_target": 5,
     "line_official_account": "NOT_YET_SETUP"
   },
-
   "ei_scope": {
-    "signal_categories": ["government_subsidies", "real_estate_market", "design_trends", "construction_material_prices"],
-    "priority_keywords": ["室內設計", "裝修補助", "房市", "TOTO", "浴室翻新"],
+    "signal_categories": [
+      "government_subsidies",
+      "real_estate_market",
+      "design_trends",
+      "construction_material_prices"
+    ],
+    "priority_keywords": [
+      "室內設計",
+      "裝修補助",
+      "房市",
+      "TOTO",
+      "浴室翻新"
+    ],
     "alert_threshold": "medium"
   },
-
   "blockers": [
     "真實工程照片：需孫欣鈴提供，或啟動拍攝",
     "LINE 官方帳號：需客戶端完成申請（非 Prospera 能代辦）",
     "素材盤點表：待客戶回填後，Prospera 可批量生成對應文案"
   ],
-
-  "next_review_session": "session_45",
-  "advancement_condition": "LINE 帳號開通 + 每週發文 ≥ 2 篇連續 4 週 → 升 Stage 2"
+  "next_review_session": "session_47",
+  "advancement_condition": "LINE 帳號開通 + 每週發文 ≥ 2 篇連續 4 週 → 升 Stage 2",
+  "progress_notes": [
+    "S43: IG week03+FB week02+LINE plan written",
+    "Brand KB initialized",
+    "LINE strategy ready - awaiting account"
+  ]
 }
