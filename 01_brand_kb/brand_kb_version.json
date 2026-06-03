@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-06-03",
+  "approved_by": "Kevin Chang",
+  "status": "DRAFT",
+  "tenant_id": "xinyuan",
+  "brand_name": "欣轅室內工程",
+  "layer": "01_brand_kb",
+  "notes": "Initial Brand KB setup per ADR-020. Awaiting logo asset and brand voice confirmation."
+}
