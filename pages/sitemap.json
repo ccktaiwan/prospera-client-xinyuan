@@ -1,0 +1,32 @@
+{
+  "pages": [
+    {
+      "id": "home",
+      "file": "index.html",
+      "title": "首頁",
+      "nav": true
+    },
+    {
+      "id": "services",
+      "file": "services.html",
+      "title": "服務項目",
+      "nav": true
+    },
+    {
+      "id": "about",
+      "file": "about.html",
+      "title": "關於欣轅",
+      "nav": true
+    },
+    {
+      "id": "contact",
+      "file": "contact.html",
+      "title": "聯絡估價",
+      "nav": true,
+      "cta": true
+    }
+  ],
+  "generated": "2026-06-03T16:57:18.527504",
+  "phase": "2",
+  "status": "ready_for_launch"
+}
