@@ -1,0 +1,30 @@
+{
+  "tenant_id": "xinyuan",
+  "client_type": "室内設計公司",
+  "industry": "室内工程",
+  "maturity_level": 2,
+  "active_phases": ["02", "03"],
+  "top_problems": [
+    "無固定發文頻率",
+    "缺乏真實工程照片",
+    "LINE 官方帳號未開通"
+  ],
+  "effective_strategies": [
+    "TOTO 合作認可作為信任錨點",
+    "設計師 B2B 合作夥伴策略"
+  ],
+  "prompt_performance": {},
+  "kpi_achieved": {
+    "instagram_followers": null,
+    "monthly_posts": null,
+    "monthly_inquiries": null
+  },
+  "brand_voice": {
+    "tone": "專業、可靠、細心",
+    "avoid": ["過度行銷語言", "誇大承諾"]
+  },
+  "satisfaction_score": null,
+  "sharing_scope": "internal",
+  "exported_at": null,
+  "created_at": "2026-06-03"
+}
