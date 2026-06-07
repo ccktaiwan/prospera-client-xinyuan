@@ -1,0 +1,3 @@
+# CODEOWNERS — 治理機制持續化（PENDING-014 rollout, S19）
+# PR 觸及檔案時指派 code owner;強制 owner review 須 branch protection 勾選(Tier0,待 Kevin)。
+* @ccktaiwan
