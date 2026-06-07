@@ -1,4 +1,4 @@
-# CONTRACT | xinyuan-website
+# CONTRACT | prospera-client-xinyuan
 Ring: R5 Products (Client Repo)
 Version: v1.0
 Date: 2026-06-02

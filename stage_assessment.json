@@ -8,7 +8,7 @@
   "target_stage": 2,
   "stage_model_version": "SME_STAGE_MODEL v1.0 (ADR-021)",
   "evidence_current_stage": [
-    "官方網站存在（xinyuan-website repo 有完整 HTML 結構）",
+    "官方網站存在（prospera-client-xinyuan repo 有完整 HTML 結構）",
     "有品牌識別：欣轅室內工程名稱、TOTO 合作夥伴資格",
     "有知識庫內容：6 篇浴室工程專業文章（docs/knowledge/）",
     "有初始社群文案：Facebook 貼文 + Instagram 貼文 (historical_outputs/)",

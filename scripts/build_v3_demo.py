@@ -36,7 +36,7 @@ CACHE.mkdir(parents=True, exist_ok=True)
 SRC_HTML = ROOT / "demo" / "欣轅官網_視覺Demo_v2.0.html"
 OUT_HTML = ROOT / "demo" / "欣轅官網_視覺Demo_v3.0.html"
 
-UA = "Mozilla/5.0 (xinyuan-website/v3-demo build)"
+UA = "Mozilla/5.0 (prospera-client-xinyuan/v3-demo build)"
 
 
 def fetch_and_square(photo_id: str) -> bytes:

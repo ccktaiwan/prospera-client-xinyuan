@@ -1,4 +1,4 @@
-# AGENTS | xinyuan-website
+# AGENTS | prospera-client-xinyuan
 Ring: R5 Client Repo
 Role: CLIENT_REPO — 欣轅室內工程品牌 KB
 PERMIT: read brand_config / write historical_outputs / update brand settings

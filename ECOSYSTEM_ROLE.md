@@ -1,4 +1,4 @@
-# ECOSYSTEM_ROLE | xinyuan-website
+# ECOSYSTEM_ROLE | prospera-client-xinyuan
 Date: 2026-06-02
 Type: CLIENT_REPO (客戶專屬)
 Governing: GOVERNANCE_PLAN v3.0

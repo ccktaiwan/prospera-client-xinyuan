@@ -1,4 +1,4 @@
-# REPOSITORY_MATURITY_DECLARATION | xinyuan-website
+# REPOSITORY_MATURITY_DECLARATION | prospera-client-xinyuan
 Ring: R5 Products (Client Repo)
 Declared Type: CLIENT_REPO
 Declared Level: 2
