@@ -1,3 +1,4 @@
+<!-- Prospera SYSTEM HEADER (ADR-0032/SBOM) | 性質:idea | 設計:Kevin 架構 | 執行:AI 工具(claude.ai+Claude Code) | 驗證:無機制驗證 | IP:創造性歸 Kevin(發明人), AI 為執行工具 -->
 # LINE官方帳號 歡迎訊息策略 | 欣轅室內工程
 Generated: 2026-06-03 | Session 42 | Stage 1→2 Gap Action
 

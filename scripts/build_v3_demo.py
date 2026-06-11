@@ -1,3 +1,6 @@
+# ── Prospera SYSTEM HEADER (ADR-0032/SBOM) ──
+# 性質:engineering ｜設計:Kevin 架構 ｜執行:AI 工具(claude.ai+Claude Code)
+# 驗證:無機制驗證 ｜IP:創造性歸 Kevin(發明人), AI 為執行工具 (ADR-0032)
 """Build demo v3.0 by downloading the 10 Unsplash bathroom photos used in v2.0,
 center-cropping each to 1024x1024 JPEG, base64-encoding, and inlining as
 data URIs in a new HTML file. No API key required (direct CDN download)."""
