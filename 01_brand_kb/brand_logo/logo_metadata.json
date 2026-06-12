@@ -1,1 +1,10 @@
-{"version":"1.0","designed_at":null,"designer":null,"colors":[],"logo_storage_mode":"repo","primary_file":"logo_primary.svg","status":"PENDING"}
+{
+  "_ip_notice": "創造性歸 Kevin(發明人), AI 為執行工具 (ADR-0032)",
+  "version": "1.0",
+  "designed_at": null,
+  "designer": null,
+  "colors": [],
+  "logo_storage_mode": "repo",
+  "primary_file": "logo_primary.svg",
+  "status": "PENDING"
+}

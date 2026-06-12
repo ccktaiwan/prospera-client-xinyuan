@@ -1,1 +1,11 @@
-{"version":"1.0","last_updated":"2026-06-03","approved_by":"Kevin Chang","status":"DRAFT","tenant_id":"xinyuan","brand_name":"xinyuan interior","layer":"01_brand_kb","notes":"Initial Brand KB setup per ADR-020."}
+{
+  "_ip_notice": "創造性歸 Kevin(發明人), AI 為執行工具 (ADR-0032)",
+  "version": "1.0",
+  "last_updated": "2026-06-03",
+  "approved_by": "Kevin Chang",
+  "status": "DRAFT",
+  "tenant_id": "xinyuan",
+  "brand_name": "xinyuan interior",
+  "layer": "01_brand_kb",
+  "notes": "Initial Brand KB setup per ADR-020."
+}

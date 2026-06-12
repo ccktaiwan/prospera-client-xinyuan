@@ -1,1 +1,32 @@
-{"tenant_id":"xinyuan","client_type":"interior_engineering","maturity_level":2,"active_phases":["02","03"],"top_problems":["no_fixed_posting_schedule","no_real_photos","line_not_setup"],"effective_strategies":["TOTO_partner_trust_anchor","designer_b2b_strategy"],"prompt_performance":{},"kpi_achieved":{},"brand_voice":{"tone":"professional_reliable","avoid":["oversell","exaggerate"]},"satisfaction_score":null,"sharing_scope":"internal","exported_at":null,"created_at":"2026-06-03"}
+{
+  "_ip_notice": "創造性歸 Kevin(發明人), AI 為執行工具 (ADR-0032)",
+  "tenant_id": "xinyuan",
+  "client_type": "interior_engineering",
+  "maturity_level": 2,
+  "active_phases": [
+    "02",
+    "03"
+  ],
+  "top_problems": [
+    "no_fixed_posting_schedule",
+    "no_real_photos",
+    "line_not_setup"
+  ],
+  "effective_strategies": [
+    "TOTO_partner_trust_anchor",
+    "designer_b2b_strategy"
+  ],
+  "prompt_performance": {},
+  "kpi_achieved": {},
+  "brand_voice": {
+    "tone": "professional_reliable",
+    "avoid": [
+      "oversell",
+      "exaggerate"
+    ]
+  },
+  "satisfaction_score": null,
+  "sharing_scope": "internal",
+  "exported_at": null,
+  "created_at": "2026-06-03"
+}
