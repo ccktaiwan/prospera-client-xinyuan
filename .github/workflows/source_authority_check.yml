@@ -1,0 +1,25 @@
+# Source Authority Check — T0-03 客戶事實來源權威強制化（BLOCKING）
+# Source script: prospera-constitution-governance/governance/fitness/fitness_source_authority_check.py
+# 檢查 CONTAINER_IDENTITY.md / cowork-*-facts-*.md：
+#   R1 已核准事實來源非 L1 官方 → exit1  R2 已核准無唯一鍵 → exit1  R3 簡體字 → exit1
+# 真 BLOCKING（無 continue-on-error）。無事實檔=休眠不擋。
+name: Source Authority Check (T0-03)
+on:
+  push:
+  pull_request:
+jobs:
+  source-authority:
+    name: T0-03 來源權威強制（BLOCK）
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fetch script (gov SSOT)
+        run: |
+          curl -fsSL \
+            https://raw.githubusercontent.com/ccktaiwan/prospera-constitution-governance/main/governance/fitness/fitness_source_authority_check.py \
+            -o /tmp/fitness_source_authority_check.py
+      - name: Run (BLOCKING)
+        run: python3 /tmp/fitness_source_authority_check.py .

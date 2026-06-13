@@ -1,0 +1,26 @@
+# Fact Reconcile Check — T0-02 生成事實回扣 L-官方已核准基準（WARN 觀察期）
+# Source script: prospera-constitution-governance/governance/fitness/fitness_fact_reconcile_check.py
+# 檢查交付物 vs CONTAINER_IDENTITY 已核准基準：W1 統編不符 W2 人名形近 W3 關聯edge無依據 W5 簡體
+#   WARN 模式：continue-on-error: true（記不一致但不擋 commit）。
+#   觀察期至 2026-06-20，零誤報後移除 continue-on-error 升 BLOCKING。
+name: Fact Reconcile Check (T0-02 WARN to 2026-06-20)
+on:
+  push:
+  pull_request:
+jobs:
+  fact-reconcile:
+    name: T0-02 fact-reconcile（WARN 觀察期）
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fetch script (gov SSOT)
+        run: |
+          curl -fsSL \
+            https://raw.githubusercontent.com/ccktaiwan/prospera-constitution-governance/main/governance/fitness/fitness_fact_reconcile_check.py \
+            -o /tmp/fitness_fact_reconcile_check.py
+      - name: Run (WARN — never blocks during observation)
+        continue-on-error: true
+        run: python3 /tmp/fitness_fact_reconcile_check.py .
