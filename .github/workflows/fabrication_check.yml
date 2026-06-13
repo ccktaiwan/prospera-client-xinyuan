@@ -1,0 +1,36 @@
+# Fabrication Check (Fitness D) — 限客戶面交付域 blocking（移植調校版工具，2026-06-13）
+name: Fabrication Check
+on:
+  push:
+  pull_request:
+concurrency:
+  group: fabcheck-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  fabrication-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - name: Compute changed client-facing files
+        run: |
+          git config core.quotepath false
+          if [ "${{ github.event_name }}" = "pull_request" ]; then RANGE="${{ github.event.pull_request.base.sha }}...${{ github.sha }}";
+          else B="${{ github.event.before }}"; if [ -z "$B" ] || [ "$B" = "0000000000000000000000000000000000000000" ]; then RANGE="HEAD~1 HEAD"; else RANGE="$B ${{ github.sha }}"; fi; fi
+          git diff --name-only --diff-filter=ACM $RANGE -- '*.md' '*.txt' > all.txt || true
+          grep -E '(^|/)(05_products|reports|outputs|historical_outputs|drafts|client-deliverables|consulting-delivery|copy)/' all.txt 2>/dev/null \
+            | grep -vE '(^|/)(governance|00_governance|99_governance|00_identity|01_ground_truth)/' \
+            | grep -vE '(_STATE\.md$|MASTER_LOG\.md$|SYSTEM_INVENTORY\.json$|/tools/|_inventory)' \
+            > scan.txt || true
+          echo "---- 待掃 ----"; cat scan.txt; echo "(空=無客戶面變更,通過)"
+      - name: Run fabrication_check (blocking)
+        run: |
+          fail=0
+          while IFS= read -r f; do
+            [ -z "$f" ] && continue; [ -f "$f" ] || continue
+            python tools/fitness_fabrication_check.py "$f"; rc=$?
+            if [ "$rc" = "1" ]; then echo "::error file=$f::Fitness D 疑捏造"; fail=1; fi
+          done < scan.txt
+          [ "$fail" = "1" ] && { echo "BLOCK"; exit 1; } || echo "PASS"
